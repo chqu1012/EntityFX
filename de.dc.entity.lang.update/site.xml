@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature url="features/de.dc.entity.lang.feature_1.0.13.201908161435.jar" id="de.dc.entity.lang.feature" version="1.0.13.201908161435">
+      <category name="de.dc.entity.lang.update"/>
+   </feature>
+   <category-def name="de.dc.entity.lang.update" label="Frater Anatis - Entity Dsl"/>
+</site>
