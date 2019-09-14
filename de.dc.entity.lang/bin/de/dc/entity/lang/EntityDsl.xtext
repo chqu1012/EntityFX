@@ -14,6 +14,7 @@ Entity returns Entity:
 	'{'
 		('useSpring:' useSpring=EBoolean)?
 		('useHistory:' useHistory=EBoolean)? 
+		('generateDemo:' generateDemo=EBoolean)? 
 		(field+=Field (field+=Field)*)?
 		(repository=Repository)?
 	'}';

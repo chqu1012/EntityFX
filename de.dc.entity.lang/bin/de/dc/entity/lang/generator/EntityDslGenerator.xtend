@@ -22,6 +22,9 @@ class EntityDslGenerator implements IGenerator {
 			val exportPath = entity.packagePath.replace('.', '/')
 			if(entity.useSpring){
 				SpringTemplates.values.forEach[tpl|
+					if((entity.generateDemo && tpl==SpringTemplates.Demo)){
+						return
+					}
 					val tplPath = tpl.getExportPath(entity)
 					val content = tpl.template.gen(entity)
 					fsa.generateFile(exportPath+'/'+tplPath, content);

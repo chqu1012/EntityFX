@@ -123,13 +123,22 @@ public interface ModelPackage extends EPackage {
 	int ENTITY__USE_TABLE_VIEW = 5;
 
 	/**
+	 * The feature id for the '<em><b>Generate Demo</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY__GENERATE_DEMO = 6;
+
+	/**
 	 * The feature id for the '<em><b>Field</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY__FIELD = 6;
+	int ENTITY__FIELD = 7;
 
 	/**
 	 * The feature id for the '<em><b>Repository</b></em>' containment reference.
@@ -138,7 +147,7 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY__REPOSITORY = 7;
+	int ENTITY__REPOSITORY = 8;
 
 	/**
 	 * The number of structural features of the '<em>Entity</em>' class.
@@ -147,7 +156,7 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_FEATURE_COUNT = 8;
+	int ENTITY_FEATURE_COUNT = 9;
 
 	/**
 	 * The number of operations of the '<em>Entity</em>' class.
@@ -519,6 +528,17 @@ public interface ModelPackage extends EPackage {
 	EAttribute getEntity_UseTableView();
 
 	/**
+	 * Returns the meta object for the attribute '{@link de.dc.entity.model.Entity#isGenerateDemo <em>Generate Demo</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Generate Demo</em>'.
+	 * @see de.dc.entity.model.Entity#isGenerateDemo()
+	 * @see #getEntity()
+	 * @generated
+	 */
+	EAttribute getEntity_GenerateDemo();
+
+	/**
 	 * Returns the meta object for the containment reference list '{@link de.dc.entity.model.Entity#getField <em>Field</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -868,6 +888,14 @@ public interface ModelPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute ENTITY__USE_TABLE_VIEW = eINSTANCE.getEntity_UseTableView();
+
+		/**
+		 * The meta object literal for the '<em><b>Generate Demo</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ENTITY__GENERATE_DEMO = eINSTANCE.getEntity_GenerateDemo();
 
 		/**
 		 * The meta object literal for the '<em><b>Field</b></em>' containment reference list feature.

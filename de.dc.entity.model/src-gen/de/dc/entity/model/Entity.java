@@ -21,6 +21,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link de.dc.entity.model.Entity#isUseHistory <em>Use History</em>}</li>
  *   <li>{@link de.dc.entity.model.Entity#isUseFormular <em>Use Formular</em>}</li>
  *   <li>{@link de.dc.entity.model.Entity#isUseTableView <em>Use Table View</em>}</li>
+ *   <li>{@link de.dc.entity.model.Entity#isGenerateDemo <em>Generate Demo</em>}</li>
  *   <li>{@link de.dc.entity.model.Entity#getField <em>Field</em>}</li>
  *   <li>{@link de.dc.entity.model.Entity#getRepository <em>Repository</em>}</li>
  * </ul>
@@ -165,6 +166,29 @@ public interface Entity extends EObject {
 	 * @generated
 	 */
 	void setUseTableView(boolean value);
+
+	/**
+	 * Returns the value of the '<em><b>Generate Demo</b></em>' attribute.
+	 * The default value is <code>"true"</code>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Generate Demo</em>' attribute.
+	 * @see #setGenerateDemo(boolean)
+	 * @see de.dc.entity.model.ModelPackage#getEntity_GenerateDemo()
+	 * @model default="true" unique="false"
+	 * @generated
+	 */
+	boolean isGenerateDemo();
+
+	/**
+	 * Sets the value of the '{@link de.dc.entity.model.Entity#isGenerateDemo <em>Generate Demo</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Generate Demo</em>' attribute.
+	 * @see #isGenerateDemo()
+	 * @generated
+	 */
+	void setGenerateDemo(boolean value);
 
 	/**
 	 * Returns the value of the '<em><b>Field</b></em>' containment reference list.

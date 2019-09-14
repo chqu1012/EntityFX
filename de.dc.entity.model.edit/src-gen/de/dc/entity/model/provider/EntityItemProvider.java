@@ -64,6 +64,7 @@ public class EntityItemProvider extends ItemProviderAdapter
 			addUseHistoryPropertyDescriptor(object);
 			addUseFormularPropertyDescriptor(object);
 			addUseTableViewPropertyDescriptor(object);
+			addGenerateDemoPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -160,6 +161,22 @@ public class EntityItemProvider extends ItemProviderAdapter
 						getString("_UI_PropertyDescriptor_description", "_UI_Entity_useTableView_feature",
 								"_UI_Entity_type"),
 						ModelPackage.Literals.ENTITY__USE_TABLE_VIEW, true, false, false,
+						ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Generate Demo feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addGenerateDemoPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Entity_generateDemo_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Entity_generateDemo_feature",
+								"_UI_Entity_type"),
+						ModelPackage.Literals.ENTITY__GENERATE_DEMO, true, false, false,
 						ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE, null, null));
 	}
 
@@ -276,6 +293,7 @@ public class EntityItemProvider extends ItemProviderAdapter
 		case ModelPackage.ENTITY__USE_HISTORY:
 		case ModelPackage.ENTITY__USE_FORMULAR:
 		case ModelPackage.ENTITY__USE_TABLE_VIEW:
+		case ModelPackage.ENTITY__GENERATE_DEMO:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		case ModelPackage.ENTITY__FIELD:

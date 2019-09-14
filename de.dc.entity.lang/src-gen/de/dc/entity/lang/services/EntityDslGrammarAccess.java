@@ -45,25 +45,31 @@ public class EntityDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cUseHistoryAssignment_6_1 = (Assignment)cGroup_6.eContents().get(1);
 		private final RuleCall cUseHistoryEBooleanParserRuleCall_6_1_0 = (RuleCall)cUseHistoryAssignment_6_1.eContents().get(0);
 		private final Group cGroup_7 = (Group)cGroup.eContents().get(7);
-		private final Assignment cFieldAssignment_7_0 = (Assignment)cGroup_7.eContents().get(0);
-		private final RuleCall cFieldFieldParserRuleCall_7_0_0 = (RuleCall)cFieldAssignment_7_0.eContents().get(0);
-		private final Assignment cFieldAssignment_7_1 = (Assignment)cGroup_7.eContents().get(1);
-		private final RuleCall cFieldFieldParserRuleCall_7_1_0 = (RuleCall)cFieldAssignment_7_1.eContents().get(0);
-		private final Assignment cRepositoryAssignment_8 = (Assignment)cGroup.eContents().get(8);
-		private final RuleCall cRepositoryRepositoryParserRuleCall_8_0 = (RuleCall)cRepositoryAssignment_8.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_9 = (Keyword)cGroup.eContents().get(9);
+		private final Keyword cGenerateDemoKeyword_7_0 = (Keyword)cGroup_7.eContents().get(0);
+		private final Assignment cGenerateDemoAssignment_7_1 = (Assignment)cGroup_7.eContents().get(1);
+		private final RuleCall cGenerateDemoEBooleanParserRuleCall_7_1_0 = (RuleCall)cGenerateDemoAssignment_7_1.eContents().get(0);
+		private final Group cGroup_8 = (Group)cGroup.eContents().get(8);
+		private final Assignment cFieldAssignment_8_0 = (Assignment)cGroup_8.eContents().get(0);
+		private final RuleCall cFieldFieldParserRuleCall_8_0_0 = (RuleCall)cFieldAssignment_8_0.eContents().get(0);
+		private final Assignment cFieldAssignment_8_1 = (Assignment)cGroup_8.eContents().get(1);
+		private final RuleCall cFieldFieldParserRuleCall_8_1_0 = (RuleCall)cFieldAssignment_8_1.eContents().get(0);
+		private final Assignment cRepositoryAssignment_9 = (Assignment)cGroup.eContents().get(9);
+		private final RuleCall cRepositoryRepositoryParserRuleCall_9_0 = (RuleCall)cRepositoryAssignment_9.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_10 = (Keyword)cGroup.eContents().get(10);
 		
 		//Entity:
 		//	{Entity} ('packagePath' packagePath=QualifiedName)?
 		//	'Entity'
 		//	name=EString
-		//	'{' ('useSpring:' useSpring=EBoolean)? ('useHistory:' useHistory=EBoolean)? (field+=Field field+=Field*)?
+		//	'{' ('useSpring:' useSpring=EBoolean)? ('useHistory:' useHistory=EBoolean)? ('generateDemo:' generateDemo=EBoolean)?
+		//	(field+=Field field+=Field*)?
 		//	repository=Repository?
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//{Entity} ('packagePath' packagePath=QualifiedName)? 'Entity' name=EString '{' ('useSpring:' useSpring=EBoolean)?
-		//('useHistory:' useHistory=EBoolean)? (field+=Field field+=Field*)? repository=Repository? '}'
+		//('useHistory:' useHistory=EBoolean)? ('generateDemo:' generateDemo=EBoolean)? (field+=Field field+=Field*)?
+		//repository=Repository? '}'
 		public Group getGroup() { return cGroup; }
 		
 		//{Entity}
@@ -117,29 +123,41 @@ public class EntityDslGrammarAccess extends AbstractGrammarElementFinder {
 		//EBoolean
 		public RuleCall getUseHistoryEBooleanParserRuleCall_6_1_0() { return cUseHistoryEBooleanParserRuleCall_6_1_0; }
 		
-		//(field+=Field field+=Field*)?
+		//('generateDemo:' generateDemo=EBoolean)?
 		public Group getGroup_7() { return cGroup_7; }
 		
+		//'generateDemo:'
+		public Keyword getGenerateDemoKeyword_7_0() { return cGenerateDemoKeyword_7_0; }
+		
+		//generateDemo=EBoolean
+		public Assignment getGenerateDemoAssignment_7_1() { return cGenerateDemoAssignment_7_1; }
+		
+		//EBoolean
+		public RuleCall getGenerateDemoEBooleanParserRuleCall_7_1_0() { return cGenerateDemoEBooleanParserRuleCall_7_1_0; }
+		
+		//(field+=Field field+=Field*)?
+		public Group getGroup_8() { return cGroup_8; }
+		
 		//field+=Field
-		public Assignment getFieldAssignment_7_0() { return cFieldAssignment_7_0; }
+		public Assignment getFieldAssignment_8_0() { return cFieldAssignment_8_0; }
 		
 		//Field
-		public RuleCall getFieldFieldParserRuleCall_7_0_0() { return cFieldFieldParserRuleCall_7_0_0; }
+		public RuleCall getFieldFieldParserRuleCall_8_0_0() { return cFieldFieldParserRuleCall_8_0_0; }
 		
 		//field+=Field*
-		public Assignment getFieldAssignment_7_1() { return cFieldAssignment_7_1; }
+		public Assignment getFieldAssignment_8_1() { return cFieldAssignment_8_1; }
 		
 		//Field
-		public RuleCall getFieldFieldParserRuleCall_7_1_0() { return cFieldFieldParserRuleCall_7_1_0; }
+		public RuleCall getFieldFieldParserRuleCall_8_1_0() { return cFieldFieldParserRuleCall_8_1_0; }
 		
 		//repository=Repository?
-		public Assignment getRepositoryAssignment_8() { return cRepositoryAssignment_8; }
+		public Assignment getRepositoryAssignment_9() { return cRepositoryAssignment_9; }
 		
 		//Repository
-		public RuleCall getRepositoryRepositoryParserRuleCall_8_0() { return cRepositoryRepositoryParserRuleCall_8_0; }
+		public RuleCall getRepositoryRepositoryParserRuleCall_9_0() { return cRepositoryRepositoryParserRuleCall_9_0; }
 		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_9() { return cRightCurlyBracketKeyword_9; }
+		public Keyword getRightCurlyBracketKeyword_10() { return cRightCurlyBracketKeyword_10; }
 	}
 	public class EStringElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.dc.entity.lang.EntityDsl.EString");
@@ -765,7 +783,8 @@ public class EntityDslGrammarAccess extends AbstractGrammarElementFinder {
 	//	{Entity} ('packagePath' packagePath=QualifiedName)?
 	//	'Entity'
 	//	name=EString
-	//	'{' ('useSpring:' useSpring=EBoolean)? ('useHistory:' useHistory=EBoolean)? (field+=Field field+=Field*)?
+	//	'{' ('useSpring:' useSpring=EBoolean)? ('useHistory:' useHistory=EBoolean)? ('generateDemo:' generateDemo=EBoolean)?
+	//	(field+=Field field+=Field*)?
 	//	repository=Repository?
 	//	'}';
 	public EntityElements getEntityAccess() {

@@ -186,12 +186,37 @@ ruleEntity returns [EObject current=null]
 			)
 		)?
 		(
+			otherlv_10='generateDemo:'
+			{
+				newLeafNode(otherlv_10, grammarAccess.getEntityAccess().getGenerateDemoKeyword_7_0());
+			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getEntityAccess().getFieldFieldParserRuleCall_7_0_0());
+						newCompositeNode(grammarAccess.getEntityAccess().getGenerateDemoEBooleanParserRuleCall_7_1_0());
 					}
-					lv_field_10_0=ruleField
+					lv_generateDemo_11_0=ruleEBoolean
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getEntityRule());
+						}
+						set(
+							$current,
+							"generateDemo",
+							lv_generateDemo_11_0,
+							"de.dc.entity.lang.EntityDsl.EBoolean");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+		)?
+		(
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getEntityAccess().getFieldFieldParserRuleCall_8_0_0());
+					}
+					lv_field_12_0=ruleField
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getEntityRule());
@@ -199,7 +224,7 @@ ruleEntity returns [EObject current=null]
 						add(
 							$current,
 							"field",
-							lv_field_10_0,
+							lv_field_12_0,
 							"de.dc.entity.lang.EntityDsl.Field");
 						afterParserOrEnumRuleCall();
 					}
@@ -208,9 +233,9 @@ ruleEntity returns [EObject current=null]
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getEntityAccess().getFieldFieldParserRuleCall_7_1_0());
+						newCompositeNode(grammarAccess.getEntityAccess().getFieldFieldParserRuleCall_8_1_0());
 					}
-					lv_field_11_0=ruleField
+					lv_field_13_0=ruleField
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getEntityRule());
@@ -218,7 +243,7 @@ ruleEntity returns [EObject current=null]
 						add(
 							$current,
 							"field",
-							lv_field_11_0,
+							lv_field_13_0,
 							"de.dc.entity.lang.EntityDsl.Field");
 						afterParserOrEnumRuleCall();
 					}
@@ -228,9 +253,9 @@ ruleEntity returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getEntityAccess().getRepositoryRepositoryParserRuleCall_8_0());
+					newCompositeNode(grammarAccess.getEntityAccess().getRepositoryRepositoryParserRuleCall_9_0());
 				}
-				lv_repository_12_0=ruleRepository
+				lv_repository_14_0=ruleRepository
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getEntityRule());
@@ -238,15 +263,15 @@ ruleEntity returns [EObject current=null]
 					set(
 						$current,
 						"repository",
-						lv_repository_12_0,
+						lv_repository_14_0,
 						"de.dc.entity.lang.EntityDsl.Repository");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)?
-		otherlv_13='}'
+		otherlv_15='}'
 		{
-			newLeafNode(otherlv_13, grammarAccess.getEntityAccess().getRightCurlyBracketKeyword_9());
+			newLeafNode(otherlv_15, grammarAccess.getEntityAccess().getRightCurlyBracketKeyword_10());
 		}
 	)
 ;

@@ -84,6 +84,9 @@ public class SpringModelTemplate implements IGenerator<Entity> {
             boolean _contains = field.getDatatype().getQualifiedName().contains("java.util.List");
             if (_contains) {
               _builder.append("\t");
+              _builder.append("@Transient");
+              _builder.newLine();
+              _builder.append("\t");
               _builder.append("private ");
               String _qualifiedName = field.getDatatype().getQualifiedName();
               _builder.append(_qualifiedName, "\t");

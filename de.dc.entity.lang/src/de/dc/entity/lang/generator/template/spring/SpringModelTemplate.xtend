@@ -28,6 +28,7 @@ class SpringModelTemplate implements IGenerator<Entity>{
 		@Column(nullable = «field.isRequired»)
 		private «field.datatype.simpleName» «field.name.toFirstLower»;
 		«ELSEIF field.datatype.qualifiedName.contains('java.util.List')»
+		@Transient
 		private «field.datatype.qualifiedName» «field.name.toFirstLower» = new java.util.ArrayList<>();
 		«ENDIF»
 		«ENDFOR»

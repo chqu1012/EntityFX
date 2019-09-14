@@ -20,6 +20,7 @@ class Entity{
 	boolean useHistory = 'true'
 	boolean useFormular = 'true'
 	boolean useTableView = 'true'
+	boolean generateDemo = 'true'
 	contains Field[0..*] field
 	contains Repository repository
 }

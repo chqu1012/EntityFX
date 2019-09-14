@@ -63,11 +63,11 @@ class SpringTableViewTemplate implements IGenerator<Entity>{
 		}
 		
 		public void add(«name»... «name.toFirstLower»s) {
-			masterData.addAll(«name.toFirstLower»s);
+			context.getMasterData().addAll(«name.toFirstLower»s);
 		}
 		
 		public void remove(«name»... «name.toFirstLower»s) {
-			masterData.removeAll(«name.toFirstLower»s);
+			context.getMasterData().removeAll(«name.toFirstLower»s);
 		}
 	
 		private <T, U> void setupCellValueFactory(TableColumn<T, U> column, Function<T, ObservableValue<U>> mapper) {

@@ -78,6 +78,7 @@ public class EntityDslParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getEntityAccess().getGroup_5(), "rule__Entity__Group_5__0");
 			builder.put(grammarAccess.getEntityAccess().getGroup_6(), "rule__Entity__Group_6__0");
 			builder.put(grammarAccess.getEntityAccess().getGroup_7(), "rule__Entity__Group_7__0");
+			builder.put(grammarAccess.getEntityAccess().getGroup_8(), "rule__Entity__Group_8__0");
 			builder.put(grammarAccess.getEDoubleAccess().getGroup(), "rule__EDouble__Group__0");
 			builder.put(grammarAccess.getEDoubleAccess().getGroup_1(), "rule__EDouble__Group_1__0");
 			builder.put(grammarAccess.getFieldAccess().getGroup(), "rule__Field__Group__0");
@@ -284,9 +285,10 @@ public class EntityDslParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getEntityAccess().getNameAssignment_3(), "rule__Entity__NameAssignment_3");
 			builder.put(grammarAccess.getEntityAccess().getUseSpringAssignment_5_1(), "rule__Entity__UseSpringAssignment_5_1");
 			builder.put(grammarAccess.getEntityAccess().getUseHistoryAssignment_6_1(), "rule__Entity__UseHistoryAssignment_6_1");
-			builder.put(grammarAccess.getEntityAccess().getFieldAssignment_7_0(), "rule__Entity__FieldAssignment_7_0");
-			builder.put(grammarAccess.getEntityAccess().getFieldAssignment_7_1(), "rule__Entity__FieldAssignment_7_1");
-			builder.put(grammarAccess.getEntityAccess().getRepositoryAssignment_8(), "rule__Entity__RepositoryAssignment_8");
+			builder.put(grammarAccess.getEntityAccess().getGenerateDemoAssignment_7_1(), "rule__Entity__GenerateDemoAssignment_7_1");
+			builder.put(grammarAccess.getEntityAccess().getFieldAssignment_8_0(), "rule__Entity__FieldAssignment_8_0");
+			builder.put(grammarAccess.getEntityAccess().getFieldAssignment_8_1(), "rule__Entity__FieldAssignment_8_1");
+			builder.put(grammarAccess.getEntityAccess().getRepositoryAssignment_9(), "rule__Entity__RepositoryAssignment_9");
 			builder.put(grammarAccess.getFieldAccess().getNameAssignment_3_1(), "rule__Field__NameAssignment_3_1");
 			builder.put(grammarAccess.getFieldAccess().getDatatypeAssignment_4_1(), "rule__Field__DatatypeAssignment_4_1");
 			builder.put(grammarAccess.getFieldAccess().getRequiredAssignment_5_1(), "rule__Field__RequiredAssignment_5_1");

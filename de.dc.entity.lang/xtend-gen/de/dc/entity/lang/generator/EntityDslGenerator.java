@@ -1,5 +1,6 @@
 package de.dc.entity.lang.generator;
 
+import com.google.common.base.Objects;
 import com.google.common.collect.Iterables;
 import com.google.inject.Inject;
 import de.dc.entity.lang.generator.template.ResourceTemplate;
@@ -37,6 +38,9 @@ public class EntityDslGenerator implements IGenerator {
         boolean _isUseSpring = entity.isUseSpring();
         if (_isUseSpring) {
           final Consumer<SpringTemplates> _function = (SpringTemplates tpl) -> {
+            if ((entity.isGenerateDemo() && Objects.equal(tpl, SpringTemplates.Demo))) {
+              return;
+            }
             final String tplPath = tpl.getExportPath(entity);
             final String content = tpl.getTemplate().gen(entity);
             fsa.generateFile(((exportPath + "/") + tplPath), content);

@@ -348,6 +348,7 @@ public class EntityDslSemanticSequencer extends XbaseSemanticSequencer {
 	 *         name=EString 
 	 *         useSpring=EBoolean? 
 	 *         useHistory=EBoolean? 
+	 *         generateDemo=EBoolean? 
 	 *         (field+=Field field+=Field*)? 
 	 *         repository=Repository?
 	 *     )

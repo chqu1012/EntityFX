@@ -37,6 +37,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link de.dc.entity.model.impl.EntityImpl#isUseHistory <em>Use History</em>}</li>
  *   <li>{@link de.dc.entity.model.impl.EntityImpl#isUseFormular <em>Use Formular</em>}</li>
  *   <li>{@link de.dc.entity.model.impl.EntityImpl#isUseTableView <em>Use Table View</em>}</li>
+ *   <li>{@link de.dc.entity.model.impl.EntityImpl#isGenerateDemo <em>Generate Demo</em>}</li>
  *   <li>{@link de.dc.entity.model.impl.EntityImpl#getField <em>Field</em>}</li>
  *   <li>{@link de.dc.entity.model.impl.EntityImpl#getRepository <em>Repository</em>}</li>
  * </ul>
@@ -163,6 +164,26 @@ public class EntityImpl extends MinimalEObjectImpl.Container implements Entity {
 	 * @ordered
 	 */
 	protected boolean useTableView = USE_TABLE_VIEW_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #isGenerateDemo() <em>Generate Demo</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isGenerateDemo()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean GENERATE_DEMO_EDEFAULT = true;
+
+	/**
+	 * The cached value of the '{@link #isGenerateDemo() <em>Generate Demo</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isGenerateDemo()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean generateDemo = GENERATE_DEMO_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getField() <em>Field</em>}' containment reference list.
@@ -352,6 +373,30 @@ public class EntityImpl extends MinimalEObjectImpl.Container implements Entity {
 	 * @generated
 	 */
 	@Override
+	public boolean isGenerateDemo() {
+		return generateDemo;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setGenerateDemo(boolean newGenerateDemo) {
+		boolean oldGenerateDemo = generateDemo;
+		generateDemo = newGenerateDemo;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ModelPackage.ENTITY__GENERATE_DEMO, oldGenerateDemo,
+					generateDemo));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EList<Field> getField() {
 		if (field == null) {
 			field = new EObjectContainmentEList<Field>(Field.class, this, ModelPackage.ENTITY__FIELD);
@@ -447,6 +492,8 @@ public class EntityImpl extends MinimalEObjectImpl.Container implements Entity {
 			return isUseFormular();
 		case ModelPackage.ENTITY__USE_TABLE_VIEW:
 			return isUseTableView();
+		case ModelPackage.ENTITY__GENERATE_DEMO:
+			return isGenerateDemo();
 		case ModelPackage.ENTITY__FIELD:
 			return getField();
 		case ModelPackage.ENTITY__REPOSITORY:
@@ -481,6 +528,9 @@ public class EntityImpl extends MinimalEObjectImpl.Container implements Entity {
 			return;
 		case ModelPackage.ENTITY__USE_TABLE_VIEW:
 			setUseTableView((Boolean) newValue);
+			return;
+		case ModelPackage.ENTITY__GENERATE_DEMO:
+			setGenerateDemo((Boolean) newValue);
 			return;
 		case ModelPackage.ENTITY__FIELD:
 			getField().clear();
@@ -519,6 +569,9 @@ public class EntityImpl extends MinimalEObjectImpl.Container implements Entity {
 		case ModelPackage.ENTITY__USE_TABLE_VIEW:
 			setUseTableView(USE_TABLE_VIEW_EDEFAULT);
 			return;
+		case ModelPackage.ENTITY__GENERATE_DEMO:
+			setGenerateDemo(GENERATE_DEMO_EDEFAULT);
+			return;
 		case ModelPackage.ENTITY__FIELD:
 			getField().clear();
 			return;
@@ -549,6 +602,8 @@ public class EntityImpl extends MinimalEObjectImpl.Container implements Entity {
 			return useFormular != USE_FORMULAR_EDEFAULT;
 		case ModelPackage.ENTITY__USE_TABLE_VIEW:
 			return useTableView != USE_TABLE_VIEW_EDEFAULT;
+		case ModelPackage.ENTITY__GENERATE_DEMO:
+			return generateDemo != GENERATE_DEMO_EDEFAULT;
 		case ModelPackage.ENTITY__FIELD:
 			return field != null && !field.isEmpty();
 		case ModelPackage.ENTITY__REPOSITORY:
@@ -580,6 +635,8 @@ public class EntityImpl extends MinimalEObjectImpl.Container implements Entity {
 		result.append(useFormular);
 		result.append(", useTableView: ");
 		result.append(useTableView);
+		result.append(", generateDemo: ");
+		result.append(generateDemo);
 		result.append(')');
 		return result.toString();
 	}

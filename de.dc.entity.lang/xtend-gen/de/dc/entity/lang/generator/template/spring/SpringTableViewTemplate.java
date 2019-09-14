@@ -205,7 +205,7 @@ public class SpringTableViewTemplate implements IGenerator<Entity> {
     _builder.append("s) {");
     _builder.newLineIfNotEmpty();
     _builder.append("\t\t");
-    _builder.append("masterData.addAll(");
+    _builder.append("context.getMasterData().addAll(");
     String _firstLower_1 = StringExtensions.toFirstLower(name);
     _builder.append(_firstLower_1, "\t\t");
     _builder.append("s);");
@@ -224,7 +224,7 @@ public class SpringTableViewTemplate implements IGenerator<Entity> {
     _builder.append("s) {");
     _builder.newLineIfNotEmpty();
     _builder.append("\t\t");
-    _builder.append("masterData.removeAll(");
+    _builder.append("context.getMasterData().removeAll(");
     String _firstLower_3 = StringExtensions.toFirstLower(name);
     _builder.append(_firstLower_3, "\t\t");
     _builder.append("s);");
