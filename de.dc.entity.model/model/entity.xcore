@@ -1,0 +1,62 @@
+@Ecore(nsURI="http://www.frateranatis.org/entity")
+@GenModel(multipleEditorPages="false", 
+	creationIcons="false", 
+	editDirectory="/de.dc.entity.model.edit/src-gen",
+	editorDirectory="/de.dc.entity.model.editor/src-gen", 
+	richClientPlatform="true", 
+	codeFormatting="true",
+	importerID="org.eclipse.emf.importer.ecore", 
+	runtimePlatform="RCP", 
+	fileExtensions="entity", 
+	tableProviders="true", dataTypeConverters="true")
+package de.dc.entity.model
+
+import org.eclipse.xtext.common.types.JvmTypeReference
+
+class Entity{
+	String packagePath
+	String name
+	boolean useSpring = 'true'
+	boolean useHistory = 'true'
+	boolean useFormular = 'true'
+	boolean useTableView = 'true'
+	contains Field[0..*] field
+	contains Repository repository
+}
+
+class Repository{
+	String jdbcUrl
+	boolean generateDummyInsert = 'false'
+	contains SQLStatement[0..*] statement
+}
+
+class SQLStatement{
+	String name
+	String query
+	contains JvmTypeReference returnValue
+}
+
+class Field{
+	String name
+	boolean required = 'false'
+	boolean useByTableView = 'true'
+	boolean useByRepository = 'true'
+	contains JvmTypeReference datatype
+	contains FXControl control
+}
+
+class FXControl{
+	String name
+	String tooltip
+	String description
+	Binding binding
+	double columnWidth = '100.0'
+	contains JvmTypeReference control
+}
+
+enum Binding{
+	textProperty
+	valueProperty
+	localDateTimeProperty
+	localDateProperty
+}

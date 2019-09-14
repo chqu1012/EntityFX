@@ -1,0 +1,31 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: de.dc.entity.lang
+Bundle-ManifestVersion: 2
+Bundle-Name: de.dc.entity.lang
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: de.dc.entity.lang; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: de.dc.entity.model,
+ org.eclipse.xtext,
+ org.eclipse.xtext.xbase,
+ org.eclipse.equinox.common;bundle-version="3.5.0",
+ org.eclipse.xtext.common.types,
+ org.eclipse.xtext.xbase.lib;bundle-version="2.14.0",
+ org.eclipse.xtext.util,
+ org.eclipse.xtend.lib;bundle-version="2.14.0",
+ org.antlr.runtime;bundle-version="[3.2.0,3.2.1)",
+ org.objectweb.asm;bundle-version="[7.0.0,7.1.0)";resolution:=optional
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: de.dc.entity.lang,
+ de.dc.entity.lang.formatting2,
+ de.dc.entity.lang.generator,
+ de.dc.entity.lang.generator.template,
+ de.dc.entity.lang.jvmmodel,
+ de.dc.entity.lang.parser.antlr,
+ de.dc.entity.lang.parser.antlr.internal,
+ de.dc.entity.lang.scoping,
+ de.dc.entity.lang.serializer,
+ de.dc.entity.lang.services,
+ de.dc.entity.lang.validation
+Import-Package: org.apache.log4j
