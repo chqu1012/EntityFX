@@ -40,7 +40,7 @@ public class ExporterTemplate implements IGenerator<Entity> {
     _builder.append("public class ");
     String _name = t.getName();
     _builder.append(_name);
-    _builder.append("gExporter {");
+    _builder.append("Exporter {");
     _builder.newLineIfNotEmpty();
     _builder.append("\t");
     _builder.newLine();

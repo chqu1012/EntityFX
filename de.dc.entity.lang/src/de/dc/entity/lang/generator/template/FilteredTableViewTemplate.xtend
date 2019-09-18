@@ -17,6 +17,7 @@ class FilteredTableViewTemplate implements IGenerator<Entity> {
 	import javafx.scene.input.MouseEvent;
 	import javafx.scene.control.Dialog;
 	import «t.packagePath».model.*;
+	import «t.packagePath».util.*;
 	import «t.packagePath».repository.*;
 	import javafx.beans.value.ChangeListener;
 	import javafx.beans.value.ObservableValue;
@@ -28,6 +29,12 @@ class FilteredTableViewTemplate implements IGenerator<Entity> {
 	import javafx.util.Pair;
 	import javafx.scene.layout.GridPane;
 	import javafx.scene.control.*;
+	import javafx.event.ActionEvent;
+	import javafx.stage.FileChooser;
+	import javafx.stage.Stage;
+	
+	import java.io.File;
+	import java.io.IOException;
 	
 	public class Filtered«t.name»TableView extends VBox{
 	

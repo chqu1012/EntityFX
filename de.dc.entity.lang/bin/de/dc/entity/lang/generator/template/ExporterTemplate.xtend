@@ -17,7 +17,7 @@ class ExporterTemplate implements IGenerator<Entity>{
 	
 	import javafx.scene.control.TableView;
 	
-	public class «t.name»gExporter {
+	public class «t.name»Exporter {
 		
 		public enum Type{
 			HTML,
