@@ -50,6 +50,7 @@ public class TableViewTemplate implements IGenerator<Entity> {
     _builder.newLine();
     _builder.append("import javafx.scene.control.TableView;");
     _builder.newLine();
+    _builder.append("import javafx.collections.transformation.SortedList;");
     _builder.newLine();
     _builder.append("import javafx.collections.FXCollections;");
     _builder.newLine();
@@ -193,8 +194,11 @@ public class TableViewTemplate implements IGenerator<Entity> {
     _builder.append("\t\t");
     _builder.newLine();
     _builder.append("\t\t");
-    _builder.append("SortedList<Person> sortedData = new SortedList<>(context.getFilteredMasterData());");
-    _builder.newLine();
+    _builder.append("SortedList<");
+    String _name_5 = t.getName();
+    _builder.append(_name_5, "\t\t");
+    _builder.append("> sortedData = new SortedList<>(context.getFilteredMasterData());");
+    _builder.newLineIfNotEmpty();
     _builder.append("\t\t");
     _builder.append("sortedData.comparatorProperty().bind(comparatorProperty());");
     _builder.newLine();

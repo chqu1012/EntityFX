@@ -14,6 +14,8 @@ class FilteredTableViewTemplate implements IGenerator<Entity> {
 	
 	import com.google.inject.Inject;
 	
+	import javafx.scene.input.MouseEvent;
+	import javafx.scene.control.Dialog;
 	import «t.packagePath».model.*;
 	import «t.packagePath».repository.*;
 	import javafx.beans.value.ChangeListener;
@@ -22,16 +24,21 @@ class FilteredTableViewTemplate implements IGenerator<Entity> {
 	import javafx.scene.control.TextField;
 	import javafx.scene.layout.Priority;
 	import javafx.scene.layout.VBox;
-	
+	import javafx.scene.control.ButtonType;
+	import javafx.util.Pair;
+	import javafx.scene.control.Label;
+	import javafx.scene.layout.GridPane;
 	
 	public class Filtered«t.name»TableView extends VBox{
 	
 		private TextField textSearch = new TextField();
 		private «t.name»FX context;
+		private «t.name»TableView tableView;
 		
 		@Inject
 		public Filtered«t.name»TableView(«t.name»FX context, «t.name»TableView tableView) {
 			this.context = context;
+			this.tableView = tableView;
 			setSpacing(10d);
 			getChildren().add(textSearch);
 			VBox.setVgrow(tableView, Priority.ALWAYS);
@@ -48,7 +55,7 @@ class FilteredTableViewTemplate implements IGenerator<Entity> {
 		
 		private void openDialog(MouseEvent e) {
 			if (e.getClickCount()==2) {
-				«t.name» selection = getSelectionModel().getSelectedItem();
+				«t.name» selection = tableView.getSelectionModel().getSelectedItem();
 				if (selection!=null) {
 					Dialog<Pair<String, String>> dialog = new Dialog<>();
 					dialog.setTitle("«t.name» Dialog");
@@ -61,10 +68,10 @@ class FilteredTableViewTemplate implements IGenerator<Entity> {
 					grid.setPadding(new Insets(20, 150, 10, 10));
 		
 					«FOR i : 0..(t.field.size-1)»
-					grid.add(new Label("«t.name»:"), 0, «i»);
-					TextField «t.name.toLowerCase»Text = new TextField();
-					«t.name.toLowerCase»Text.setText(String.valueOf(context.get«t.field.get(i)»()));
-					grid.add(«t.name.toLowerCase»Text, 1, «i»);
+					grid.add(new Label("«t.field.get(i).name»:"), 0, «i»);
+					TextField «t.field.get(i).name.toLowerCase»Text = new TextField();
+					«t.field.get(i).name.toLowerCase»Text.setText(String.valueOf(context.get«t.field.get(i).name»Property().get()));
+					grid.add(«t.field.get(i).name.toLowerCase»Text, 1, «i»);
 					«ENDFOR»
 					dialog.getDialogPane().setContent(grid);
 					dialog.showAndWait();
@@ -85,7 +92,7 @@ class FilteredTableViewTemplate implements IGenerator<Entity> {
 				boolean isEmpty = newValue==null || newValue.isEmpty();
 				«FOR field : t.field»
 				«IF field.isRequired»
-				boolean contains«field.name» = p.get«field.name»().toLowerCase().contains(newValue.toLowerCase());
+				boolean contains«field.name» = String.valueOf(p.get«field.name»()).toLowerCase().contains(newValue.toLowerCase());
 				«ENDIF»
 				«ENDFOR»
 				«val contains = t.field.filter[isRequired].map['contains'+it.name].reduce[p1, p2|p1+' || '+p2]»

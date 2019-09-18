@@ -21,7 +21,7 @@ class TableViewTemplate implements IGenerator<Entity>{
 	import javafx.scene.control.TableColumn;
 	import javafx.scene.control.TableColumn.CellDataFeatures;
 	import javafx.scene.control.TableView;
-	
+	import javafx.collections.transformation.SortedList;
 	import javafx.collections.FXCollections;
 	import javafx.collections.ObservableList;
 	import javafx.collections.transformation.FilteredList;
@@ -50,7 +50,7 @@ class TableViewTemplate implements IGenerator<Entity>{
 			
 			context.getMasterData().addAll(«name.toFirstLower»Repository.findAll());
 			
-			SortedList<Person> sortedData = new SortedList<>(context.getFilteredMasterData());
+			SortedList<«t.name»> sortedData = new SortedList<>(context.getFilteredMasterData());
 			sortedData.comparatorProperty().bind(comparatorProperty());
 			
 			setItems(sortedData);
