@@ -38,17 +38,17 @@ class FilteredTableViewTemplate implements IGenerator<Entity> {
 	
 	public class Filtered«t.name»TableView extends VBox{
 	
-		private TextField textSearch = new TextField();
-		private «t.name»FX context;
-		private «t.name»TableView tableView;
+		protected TextField textSearch = new TextField();
+		protected «t.name»FX context;
+		protected «t.name»TableView tableView;
 		
-		private Menu menuExport = new Menu("Export");
-		private MenuItem menuItemText = new MenuItem("Text");
-		private MenuItem menuItemExcel = new MenuItem("Excel");
-		private MenuItem menuItemHtml = new MenuItem("Html");
-		private MenuItem menuItemOpenDetails = new MenuItem("Open Details");
+		protected Menu menuExport = new Menu("Export");
+		protected MenuItem menuItemText = new MenuItem("Text");
+		protected MenuItem menuItemExcel = new MenuItem("Excel");
+		protected MenuItem menuItemHtml = new MenuItem("Html");
+		protected MenuItem menuItemOpenDetails = new MenuItem("Open Details");
 		
-		private «t.name»Exporter «t.name.toFirstLower»Exporter = new «t.name»Exporter();
+		protected «t.name»Exporter «t.name.toFirstLower»Exporter = new «t.name»Exporter();
 		
 		@Inject
 		public Filtered«t.name»TableView(«t.name»FX context, «t.name»TableView tableView) {

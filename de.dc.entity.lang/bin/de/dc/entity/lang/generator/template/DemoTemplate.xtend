@@ -13,7 +13,7 @@ class DemoTemplate implements IGenerator<Entity>{
 	import «t.packagePath».di.*;
 	import javafx.application.Application;
 	import javafx.scene.Scene;
-	import javafx.scene.layout.BorderPane;
+	import javafx.scene.control.SplitPane;
 	import javafx.stage.Stage;
 	
 	«val name = t.name.toFirstUpper»
@@ -25,9 +25,9 @@ class DemoTemplate implements IGenerator<Entity>{
 			«name»Formular «name.toFirstLower»Formular = «name»Platform.getInstance(«name»Formular.class);
 			Filtered«name»TableView «name.toFirstLower»TableView = «name»Platform.getInstance(Filtered«name»TableView.class);
 			
-			BorderPane root = new BorderPane();
-			root.setCenter(«name.toFirstLower»TableView);
-			root.setRight(«name.toFirstLower»Formular);
+			SplitPane root = new SplitPane(«name.toFirstLower»TableView, «name.toFirstLower»Formular);
+			root.setStyle("-fx-box-border: transparent;");
+			root.setDividerPosition(0, 0.7);
 			stage.setScene(new Scene(root , 1200, 600));
 			stage.show();
 		}
