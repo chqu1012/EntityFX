@@ -43,6 +43,33 @@ class FilteredTableViewTemplate implements IGenerator<Entity> {
 			setPadding(new Insets(10d));
 			
 			tableView.getSelectionModel().selectedItemProperty().addListener(this::onTableSelectionChanged);
+			tableView.setOnMouseClicked(this::openDialog);
+		}
+		
+		private void openDialog(MouseEvent e) {
+			if (e.getClickCount()==2) {
+				«t.name» selection = getSelectionModel().getSelectedItem();
+				if (selection!=null) {
+					Dialog<Pair<String, String>> dialog = new Dialog<>();
+					dialog.setTitle("«t.name» Dialog");
+		
+					dialog.getDialogPane().getButtonTypes().addAll(ButtonType.OK, ButtonType.CANCEL);
+		
+					GridPane grid = new GridPane();
+					grid.setHgap(10);
+					grid.setVgap(10);
+					grid.setPadding(new Insets(20, 150, 10, 10));
+		
+					«FOR i : 0..(t.field.size-1)»
+					grid.add(new Label("«t.name»:"), 0, «i»);
+					TextField «t.name.toLowerCase»Text = new TextField();
+					«t.name.toLowerCase»Text.setText(String.valueOf(context.get«t.field.get(i)»()));
+					grid.add(«t.name.toLowerCase»Text, 1, «i»);
+					«ENDFOR»
+					dialog.getDialogPane().setContent(grid);
+					dialog.showAndWait();
+				}
+			}
 		}
 		
 		public void onTableSelectionChanged(ObservableValue<? extends «t.name»> observable, «t.name» oldValue, «t.name» newValue) {
