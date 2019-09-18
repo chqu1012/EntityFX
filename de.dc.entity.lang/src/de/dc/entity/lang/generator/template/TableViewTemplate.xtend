@@ -29,11 +29,8 @@ class TableViewTemplate implements IGenerator<Entity>{
 	«val name = t.name.toFirstUpper»
 	public class «name»TableView extends TableView<«name»>{
 		
-		private ObservableList<«name»> masterData = FXCollections.observableArrayList();
-		private FilteredList<«name»> filteredData = new FilteredList<>(masterData, p->true);
-		
-		private «name»FX context;
-		private «name»Repository «name.toFirstLower»Repository;
+		protected «name»FX context;
+		protected «name»Repository «name.toFirstLower»Repository;
 		
 		@Inject
 		public «name»TableView(«name»FX context, «name»Repository «name.toFirstLower»Repository) {
@@ -52,23 +49,27 @@ class TableViewTemplate implements IGenerator<Entity>{
 			«ENDIF»«ENDFOR»
 			
 			context.getMasterData().addAll(«name.toFirstLower»Repository.findAll());
-			setItems(context.getFilteredMasterData());
+			
+			SortedList<Person> sortedData = new SortedList<>(context.getFilteredMasterData());
+			sortedData.comparatorProperty().bind(comparatorProperty());
+			
+			setItems(sortedData);
 		}
 	
 		public FilteredList<«name»> getFilteredList(){
-			return filteredData;
+			return context.getFilteredMasterData();
 		}
 		
 		public ObservableList<«name»> getMasterData(){
-			return masterData;
+			return context.getMasterData();
 		}
 		
 		public void add(«name»... «name.toFirstLower»s) {
-			masterData.addAll(«name.toFirstLower»s);
+			context.getMasterData().addAll(«name.toFirstLower»s);
 		}
 		
 		public void remove(«name»... «name.toFirstLower»s) {
-			masterData.removeAll(«name.toFirstLower»s);
+			context.getMasterData().removeAll(«name.toFirstLower»s);
 		}
 	
 		private <T, U> void setupCellValueFactory(TableColumn<T, U> column, Function<T, ObservableValue<U>> mapper) {

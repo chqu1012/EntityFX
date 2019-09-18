@@ -164,7 +164,15 @@ public class SpringTableViewTemplate implements IGenerator<Entity> {
     _builder.append("\t\t");
     _builder.newLine();
     _builder.append("\t\t");
-    _builder.append("setItems(context.getMasterData());");
+    _builder.append("SortedList<Person> sortedData = new SortedList<>(context.getFilteredMasterData());");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append("sortedData.comparatorProperty().bind(comparatorProperty());");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append("setItems(sortedData);");
     _builder.newLine();
     _builder.append("\t");
     _builder.append("}");

@@ -51,7 +51,10 @@ class SpringTableViewTemplate implements IGenerator<Entity>{
 			getColumns().add(column«field.name»);
 			«ENDIF»«ENDFOR»
 			
-			setItems(context.getMasterData());
+			SortedList<Person> sortedData = new SortedList<>(context.getFilteredMasterData());
+			sortedData.comparatorProperty().bind(comparatorProperty());
+			
+			setItems(sortedData);
 		}
 	
 		public FilteredList<«name»> getFilteredList(){
