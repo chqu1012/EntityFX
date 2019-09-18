@@ -13,7 +13,6 @@ class SpringModelTemplate implements IGenerator<Entity>{
 	import java.util.*;
 	import java.time.*;
 	import org.apache.commons.lang.builder.ToStringBuilder;
-	
 	import javax.persistence.*;
 	
 	@Entity
@@ -25,6 +24,7 @@ class SpringModelTemplate implements IGenerator<Entity>{
 		private Long id;
 		«FOR field : t.field»
 		«IF field.useByRepository»
+		«IF field.isIsClob»@Lob«ENDIF»
 		@Column(nullable = «field.isRequired»)
 		private «field.datatype.simpleName» «field.name.toFirstLower»;
 		«ELSEIF field.datatype.qualifiedName.contains('java.util.List')»

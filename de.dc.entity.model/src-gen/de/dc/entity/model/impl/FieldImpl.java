@@ -29,6 +29,7 @@ import org.eclipse.xtext.common.types.JvmTypeReference;
  *   <li>{@link de.dc.entity.model.impl.FieldImpl#isRequired <em>Required</em>}</li>
  *   <li>{@link de.dc.entity.model.impl.FieldImpl#isUseByTableView <em>Use By Table View</em>}</li>
  *   <li>{@link de.dc.entity.model.impl.FieldImpl#isUseByRepository <em>Use By Repository</em>}</li>
+ *   <li>{@link de.dc.entity.model.impl.FieldImpl#isIsClob <em>Is Clob</em>}</li>
  *   <li>{@link de.dc.entity.model.impl.FieldImpl#getDatatype <em>Datatype</em>}</li>
  *   <li>{@link de.dc.entity.model.impl.FieldImpl#getControl <em>Control</em>}</li>
  * </ul>
@@ -115,6 +116,26 @@ public class FieldImpl extends MinimalEObjectImpl.Container implements Field {
 	 * @ordered
 	 */
 	protected boolean useByRepository = USE_BY_REPOSITORY_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #isIsClob() <em>Is Clob</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isIsClob()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean IS_CLOB_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isIsClob() <em>Is Clob</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isIsClob()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean isClob = IS_CLOB_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getDatatype() <em>Datatype</em>}' containment reference.
@@ -255,6 +276,29 @@ public class FieldImpl extends MinimalEObjectImpl.Container implements Field {
 	 * @generated
 	 */
 	@Override
+	public boolean isIsClob() {
+		return isClob;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setIsClob(boolean newIsClob) {
+		boolean oldIsClob = isClob;
+		isClob = newIsClob;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ModelPackage.FIELD__IS_CLOB, oldIsClob, isClob));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public JvmTypeReference getDatatype() {
 		return datatype;
 	}
@@ -384,6 +428,8 @@ public class FieldImpl extends MinimalEObjectImpl.Container implements Field {
 			return isUseByTableView();
 		case ModelPackage.FIELD__USE_BY_REPOSITORY:
 			return isUseByRepository();
+		case ModelPackage.FIELD__IS_CLOB:
+			return isIsClob();
 		case ModelPackage.FIELD__DATATYPE:
 			return getDatatype();
 		case ModelPackage.FIELD__CONTROL:
@@ -411,6 +457,9 @@ public class FieldImpl extends MinimalEObjectImpl.Container implements Field {
 			return;
 		case ModelPackage.FIELD__USE_BY_REPOSITORY:
 			setUseByRepository((Boolean) newValue);
+			return;
+		case ModelPackage.FIELD__IS_CLOB:
+			setIsClob((Boolean) newValue);
 			return;
 		case ModelPackage.FIELD__DATATYPE:
 			setDatatype((JvmTypeReference) newValue);
@@ -442,6 +491,9 @@ public class FieldImpl extends MinimalEObjectImpl.Container implements Field {
 		case ModelPackage.FIELD__USE_BY_REPOSITORY:
 			setUseByRepository(USE_BY_REPOSITORY_EDEFAULT);
 			return;
+		case ModelPackage.FIELD__IS_CLOB:
+			setIsClob(IS_CLOB_EDEFAULT);
+			return;
 		case ModelPackage.FIELD__DATATYPE:
 			setDatatype((JvmTypeReference) null);
 			return;
@@ -468,6 +520,8 @@ public class FieldImpl extends MinimalEObjectImpl.Container implements Field {
 			return useByTableView != USE_BY_TABLE_VIEW_EDEFAULT;
 		case ModelPackage.FIELD__USE_BY_REPOSITORY:
 			return useByRepository != USE_BY_REPOSITORY_EDEFAULT;
+		case ModelPackage.FIELD__IS_CLOB:
+			return isClob != IS_CLOB_EDEFAULT;
 		case ModelPackage.FIELD__DATATYPE:
 			return datatype != null;
 		case ModelPackage.FIELD__CONTROL:
@@ -495,6 +549,8 @@ public class FieldImpl extends MinimalEObjectImpl.Container implements Field {
 		result.append(useByTableView);
 		result.append(", useByRepository: ");
 		result.append(useByRepository);
+		result.append(", isClob: ");
+		result.append(isClob);
 		result.append(')');
 		return result.toString();
 	}

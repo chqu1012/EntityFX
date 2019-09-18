@@ -145,8 +145,10 @@ class ModelRepositoryTemplate implements IGenerator<Entity>{
 		val fieldName = field.name.splitCamelCaseString.map[it].reduce[p1, p2|p1+'_'+p2].toUpperCase
 		if((typeName).equals("LocalDateTime")){
 			return '''resultSet.getTimestamp("«fieldName»").toLocalDateTime()''';
-		}else if(typeName.equals('String')){
+		}else if(typeName.equals('String') && !field.isIsClob){
 			return '''resultSet.getString("«fieldName»")''';
+		}else if(typeName.equals('String') && field.isIsClob){
+			return '''resultSet.getClob("«fieldName»")''';
 		}else if(typeName.equals('Double') || typeName.equals('double') ){
 			return '''resultSet.getDouble("«fieldName»")''';
 		}else if(typeName.equals('Long') || typeName.equals('long') ){

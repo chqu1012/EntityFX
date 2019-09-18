@@ -657,48 +657,55 @@ public class ModelRepositoryTemplate implements IGenerator<Entity> {
       _builder.append("\").toLocalDateTime()");
       return _builder.toString();
     } else {
-      boolean _equals_1 = typeName.equals("String");
-      if (_equals_1) {
+      if ((typeName.equals("String") && (!field.isIsClob()))) {
         StringConcatenation _builder_1 = new StringConcatenation();
         _builder_1.append("resultSet.getString(\"");
         _builder_1.append(fieldName);
         _builder_1.append("\")");
         return _builder_1.toString();
       } else {
-        if ((typeName.equals("Double") || typeName.equals("double"))) {
+        if ((typeName.equals("String") && field.isIsClob())) {
           StringConcatenation _builder_2 = new StringConcatenation();
-          _builder_2.append("resultSet.getDouble(\"");
+          _builder_2.append("resultSet.getClob(\"");
           _builder_2.append(fieldName);
           _builder_2.append("\")");
           return _builder_2.toString();
         } else {
-          if ((typeName.equals("Long") || typeName.equals("long"))) {
+          if ((typeName.equals("Double") || typeName.equals("double"))) {
             StringConcatenation _builder_3 = new StringConcatenation();
-            _builder_3.append("resultSet.getLong(\"");
+            _builder_3.append("resultSet.getDouble(\"");
             _builder_3.append(fieldName);
             _builder_3.append("\")");
             return _builder_3.toString();
           } else {
-            if ((typeName.equals("Blob") || typeName.equals("blob"))) {
+            if ((typeName.equals("Long") || typeName.equals("long"))) {
               StringConcatenation _builder_4 = new StringConcatenation();
-              _builder_4.append("resultSet.getBlob(\"");
+              _builder_4.append("resultSet.getLong(\"");
               _builder_4.append(fieldName);
               _builder_4.append("\")");
               return _builder_4.toString();
             } else {
-              if ((typeName.equals("Clob") || typeName.equals("clob"))) {
+              if ((typeName.equals("Blob") || typeName.equals("blob"))) {
                 StringConcatenation _builder_5 = new StringConcatenation();
-                _builder_5.append("resultSet.getClob(\"");
+                _builder_5.append("resultSet.getBlob(\"");
                 _builder_5.append(fieldName);
                 _builder_5.append("\")");
                 return _builder_5.toString();
               } else {
-                if ((typeName.equals("Integer") || typeName.equals("int"))) {
+                if ((typeName.equals("Clob") || typeName.equals("clob"))) {
                   StringConcatenation _builder_6 = new StringConcatenation();
-                  _builder_6.append("resultSet.getInt(\"");
+                  _builder_6.append("resultSet.getClob(\"");
                   _builder_6.append(fieldName);
                   _builder_6.append("\")");
                   return _builder_6.toString();
+                } else {
+                  if ((typeName.equals("Integer") || typeName.equals("int"))) {
+                    StringConcatenation _builder_7 = new StringConcatenation();
+                    _builder_7.append("resultSet.getInt(\"");
+                    _builder_7.append(fieldName);
+                    _builder_7.append("\")");
+                    return _builder_7.toString();
+                  }
                 }
               }
             }

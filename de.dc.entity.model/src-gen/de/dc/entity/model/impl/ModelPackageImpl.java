@@ -375,8 +375,18 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 	 * @generated
 	 */
 	@Override
+	public EAttribute getField_IsClob() {
+		return (EAttribute) fieldEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EReference getField_Datatype() {
-		return (EReference) fieldEClass.getEStructuralFeatures().get(4);
+		return (EReference) fieldEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -386,7 +396,7 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 	 */
 	@Override
 	public EReference getField_Control() {
-		return (EReference) fieldEClass.getEStructuralFeatures().get(5);
+		return (EReference) fieldEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -525,6 +535,7 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 		createEAttribute(fieldEClass, FIELD__REQUIRED);
 		createEAttribute(fieldEClass, FIELD__USE_BY_TABLE_VIEW);
 		createEAttribute(fieldEClass, FIELD__USE_BY_REPOSITORY);
+		createEAttribute(fieldEClass, FIELD__IS_CLOB);
 		createEReference(fieldEClass, FIELD__DATATYPE);
 		createEReference(fieldEClass, FIELD__CONTROL);
 
@@ -639,6 +650,9 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 		initEAttribute(getField_UseByRepository(), theEcorePackage.getEBoolean(), "useByRepository", "true", 0, 1,
 				Field.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE,
 				!IS_DERIVED, IS_ORDERED);
+		initEAttribute(getField_IsClob(), theEcorePackage.getEBoolean(), "isClob", "false", 0, 1, Field.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
 		initEReference(getField_Datatype(), theTypesPackage.getJvmTypeReference(), null, "datatype", null, 0, 1,
 				Field.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

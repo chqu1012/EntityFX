@@ -19,6 +19,7 @@ import org.eclipse.xtext.common.types.JvmTypeReference;
  *   <li>{@link de.dc.entity.model.Field#isRequired <em>Required</em>}</li>
  *   <li>{@link de.dc.entity.model.Field#isUseByTableView <em>Use By Table View</em>}</li>
  *   <li>{@link de.dc.entity.model.Field#isUseByRepository <em>Use By Repository</em>}</li>
+ *   <li>{@link de.dc.entity.model.Field#isIsClob <em>Is Clob</em>}</li>
  *   <li>{@link de.dc.entity.model.Field#getDatatype <em>Datatype</em>}</li>
  *   <li>{@link de.dc.entity.model.Field#getControl <em>Control</em>}</li>
  * </ul>
@@ -118,6 +119,29 @@ public interface Field extends EObject {
 	 * @generated
 	 */
 	void setUseByRepository(boolean value);
+
+	/**
+	 * Returns the value of the '<em><b>Is Clob</b></em>' attribute.
+	 * The default value is <code>"false"</code>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Is Clob</em>' attribute.
+	 * @see #setIsClob(boolean)
+	 * @see de.dc.entity.model.ModelPackage#getField_IsClob()
+	 * @model default="false" unique="false"
+	 * @generated
+	 */
+	boolean isIsClob();
+
+	/**
+	 * Sets the value of the '{@link de.dc.entity.model.Field#isIsClob <em>Is Clob</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Is Clob</em>' attribute.
+	 * @see #isIsClob()
+	 * @generated
+	 */
+	void setIsClob(boolean value);
 
 	/**
 	 * Returns the value of the '<em><b>Datatype</b></em>' containment reference.

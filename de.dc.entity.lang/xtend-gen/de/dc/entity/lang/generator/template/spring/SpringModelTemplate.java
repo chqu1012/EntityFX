@@ -35,7 +35,6 @@ public class SpringModelTemplate implements IGenerator<Entity> {
     _builder.newLine();
     _builder.append("import org.apache.commons.lang.builder.ToStringBuilder;");
     _builder.newLine();
-    _builder.newLine();
     _builder.append("import javax.persistence.*;");
     _builder.newLine();
     _builder.newLine();
@@ -65,6 +64,14 @@ public class SpringModelTemplate implements IGenerator<Entity> {
         {
           boolean _isUseByRepository = field.isUseByRepository();
           if (_isUseByRepository) {
+            _builder.append("\t");
+            {
+              boolean _isIsClob = field.isIsClob();
+              if (_isIsClob) {
+                _builder.append("@Lob");
+              }
+            }
+            _builder.newLineIfNotEmpty();
             _builder.append("\t");
             _builder.append("@Column(nullable = ");
             boolean _isRequired = field.isRequired();

@@ -35,6 +35,7 @@ Field returns Field:
 	'('
 		('name:' name=EString (',')?)?
 		('datatype:' datatype=JvmTypeReference (',')?)?
+		('isClob:' isClob=EBoolean (',')?)?
 		('required:' required=EBoolean (',')?)?
 		('useByTableView:' useByTableView=EBoolean (',')?)?
 		('useByRepository:' useByRepository=EBoolean)?

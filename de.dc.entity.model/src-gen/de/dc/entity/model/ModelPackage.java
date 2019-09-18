@@ -324,13 +324,22 @@ public interface ModelPackage extends EPackage {
 	int FIELD__USE_BY_REPOSITORY = 3;
 
 	/**
+	 * The feature id for the '<em><b>Is Clob</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIELD__IS_CLOB = 4;
+
+	/**
 	 * The feature id for the '<em><b>Datatype</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FIELD__DATATYPE = 4;
+	int FIELD__DATATYPE = 5;
 
 	/**
 	 * The feature id for the '<em><b>Control</b></em>' containment reference.
@@ -339,7 +348,7 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FIELD__CONTROL = 5;
+	int FIELD__CONTROL = 6;
 
 	/**
 	 * The number of structural features of the '<em>Field</em>' class.
@@ -348,7 +357,7 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FIELD_FEATURE_COUNT = 6;
+	int FIELD_FEATURE_COUNT = 7;
 
 	/**
 	 * The number of operations of the '<em>Field</em>' class.
@@ -701,6 +710,17 @@ public interface ModelPackage extends EPackage {
 	EAttribute getField_UseByRepository();
 
 	/**
+	 * Returns the meta object for the attribute '{@link de.dc.entity.model.Field#isIsClob <em>Is Clob</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Is Clob</em>'.
+	 * @see de.dc.entity.model.Field#isIsClob()
+	 * @see #getField()
+	 * @generated
+	 */
+	EAttribute getField_IsClob();
+
+	/**
 	 * Returns the meta object for the containment reference '{@link de.dc.entity.model.Field#getDatatype <em>Datatype</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1022,6 +1042,14 @@ public interface ModelPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute FIELD__USE_BY_REPOSITORY = eINSTANCE.getField_UseByRepository();
+
+		/**
+		 * The meta object literal for the '<em><b>Is Clob</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FIELD__IS_CLOB = eINSTANCE.getField_IsClob();
 
 		/**
 		 * The meta object literal for the '<em><b>Datatype</b></em>' containment reference feature.

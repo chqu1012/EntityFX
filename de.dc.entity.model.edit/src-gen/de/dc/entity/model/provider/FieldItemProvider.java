@@ -64,6 +64,7 @@ public class FieldItemProvider extends ItemProviderAdapter
 			addRequiredPropertyDescriptor(object);
 			addUseByTableViewPropertyDescriptor(object);
 			addUseByRepositoryPropertyDescriptor(object);
+			addIsClobPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -127,6 +128,21 @@ public class FieldItemProvider extends ItemProviderAdapter
 						getString("_UI_PropertyDescriptor_description", "_UI_Field_useByRepository_feature",
 								"_UI_Field_type"),
 						ModelPackage.Literals.FIELD__USE_BY_REPOSITORY, true, false, false,
+						ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Is Clob feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addIsClobPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Field_isClob_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Field_isClob_feature", "_UI_Field_type"),
+						ModelPackage.Literals.FIELD__IS_CLOB, true, false, false,
 						ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE, null, null));
 	}
 
@@ -241,6 +257,7 @@ public class FieldItemProvider extends ItemProviderAdapter
 		case ModelPackage.FIELD__REQUIRED:
 		case ModelPackage.FIELD__USE_BY_TABLE_VIEW:
 		case ModelPackage.FIELD__USE_BY_REPOSITORY:
+		case ModelPackage.FIELD__IS_CLOB:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		case ModelPackage.FIELD__DATATYPE:

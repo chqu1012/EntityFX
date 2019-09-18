@@ -42,6 +42,7 @@ class Field{
 	boolean required = 'false'
 	boolean useByTableView = 'true'
 	boolean useByRepository = 'true'
+	boolean isClob = 'false'
 	contains JvmTypeReference datatype
 	contains FXControl control
 }
