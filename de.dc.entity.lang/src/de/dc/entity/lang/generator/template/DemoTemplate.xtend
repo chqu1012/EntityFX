@@ -21,9 +21,10 @@ class DemoTemplate implements IGenerator<Entity>{
 	
 		@Override
 		public void start(Stage stage) throws Exception {
-			南ame蓉ableView 南ame.toFirstLower蓉ableView = 南ame與latform.getInstance(南ame蓉ableView.class);
+			// 南ame蓉ableView 南ame.toFirstLower蓉ableView = 南ame與latform.getInstance(南ame蓉ableView.class);
 			南ame肇ormular 南ame.toFirstLower肇ormular = 南ame與latform.getInstance(南ame肇ormular.class);
-	
+			Filtered南ame蓉ableView 南ame.toFirstLower蓉ableView = 南ame與latform.getInstance(Filtered南ame蓉ableView.class);
+			
 			BorderPane root = new BorderPane();
 			root.setCenter(南ame.toFirstLower蓉ableView);
 			root.setRight(南ame.toFirstLower肇ormular);

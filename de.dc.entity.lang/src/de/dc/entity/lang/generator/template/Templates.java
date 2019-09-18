@@ -6,6 +6,7 @@ public enum Templates {
 	BaseRepository(new BaseRepositoryTemplates(), "/repository/"),
 	ModelRepository(new ModelRepositoryTemplate(), "/repository/"),
 	TableView(new TableViewTemplate(), "/control/"),
+	FilteredTableView(new FilteredTableViewTemplate(), "/control/"),
 	Formular(new FormularTemplate(), "/control/"),
 	Model(new ModelTemplate(), "/model/"),
 	ModelFX(new ModelFXTemplate(), "/model/"),
