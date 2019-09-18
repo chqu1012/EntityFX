@@ -26,14 +26,21 @@ class FilteredTableViewTemplate implements IGenerator<Entity> {
 	import javafx.scene.layout.VBox;
 	import javafx.scene.control.ButtonType;
 	import javafx.util.Pair;
-	import javafx.scene.control.Label;
 	import javafx.scene.layout.GridPane;
+	import javafx.scene.control.*;
 	
 	public class Filtered«t.name»TableView extends VBox{
 	
 		private TextField textSearch = new TextField();
 		private «t.name»FX context;
 		private «t.name»TableView tableView;
+		
+		private Menu menuExport = new Menu("Export");
+		private MenuItem menuItemText = new MenuItem("Text");
+		private MenuItem menuItemExcel = new MenuItem("Excel");
+		private MenuItem menuItemHtml = new MenuItem("Html");
+		
+		private «t.name»Exporter «t.name.toFirstLower»Exporter = new «t.name»Exporter();
 		
 		@Inject
 		public Filtered«t.name»TableView(«t.name»FX context, «t.name»TableView tableView) {
@@ -51,6 +58,37 @@ class FilteredTableViewTemplate implements IGenerator<Entity> {
 			
 			tableView.getSelectionModel().selectedItemProperty().addListener(this::onTableSelectionChanged);
 			tableView.setOnMouseClicked(this::openDialog);
+			
+			menuItemHtml.setOnAction(this::onMenuItemAction);
+			menuExport.getItems().addAll(menuItemText, menuItemExcel, menuItemHtml);
+			
+			ContextMenu menu = new ContextMenu();
+			menu.getItems().add(menuExport);
+			tableView.setContextMenu(menu);
+		}
+		
+		public void onMenuItemAction(ActionEvent e) {
+			Object source = e.getSource();
+			if (source == menuItemHtml) {
+				export(EventLogExporter.Type.HTML);
+			}else if (source == menuItemExcel) {
+				export(EventLogExporter.Type.EXCEL);
+			}else if (source == menuItemText) {
+				export(EventLogExporter.Type.TEXT);
+			}
+		}
+	
+		private void export(«t.name»Exporter.Type type) {
+			FileChooser chooser = new FileChooser();
+			chooser.setTitle(type.name()+" Export");
+			File file = chooser.showSaveDialog(new Stage());
+			if (file!=null) {
+				try {
+					«t.name.toFirstLower»Exporter.export(type, tableView, file);
+				} catch (IOException e1) {
+					e1.printStackTrace();
+				}
+			}
 		}
 		
 		private void openDialog(MouseEvent e) {
