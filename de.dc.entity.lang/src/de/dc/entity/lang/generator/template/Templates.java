@@ -18,6 +18,7 @@ public enum Templates {
 	SearchContent(new SearchContentTemplate(), "/filter/"),
 	SearchType(new SearchTypeTemplate(), "/filter/"),
 	SearchPane(new SearchPaneTemplate(),"/filter/"),
+	Exporter(new ExporterTemplate(), "/util/")
 	;
 	
 	private IGenerator<Entity> template;
