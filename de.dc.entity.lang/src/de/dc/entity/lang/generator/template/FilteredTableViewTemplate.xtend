@@ -46,6 +46,7 @@ class FilteredTableViewTemplate implements IGenerator<Entity> {
 		private MenuItem menuItemText = new MenuItem("Text");
 		private MenuItem menuItemExcel = new MenuItem("Excel");
 		private MenuItem menuItemHtml = new MenuItem("Html");
+		private MenuItem menuItemOpenDetails = new MenuItem("Open Details");
 		
 		private 쳓.name틿xporter 쳓.name.toFirstLower틿xporter = new 쳓.name틿xporter();
 		
@@ -67,27 +68,35 @@ class FilteredTableViewTemplate implements IGenerator<Entity> {
 			tableView.setOnMouseClicked(this::openDialog);
 			
 			menuItemHtml.setOnAction(this::onMenuItemAction);
+			menuItemExcel.setOnAction(this::onMenuItemAction);
+			menuItemHtml.setOnAction(this::onMenuItemAction);
+			menuItemOpenDetails.setOnAction(this::onMenuItemAction);
+					
 			menuExport.getItems().addAll(menuItemText, menuItemExcel, menuItemHtml);
 			
 			ContextMenu menu = new ContextMenu();
 			menu.getItems().add(menuExport);
+			menu.getItems().add(menuItemOpenDetails);
 			tableView.setContextMenu(menu);
 		}
 		
 		public void onMenuItemAction(ActionEvent e) {
 			Object source = e.getSource();
 			if (source == menuItemHtml) {
-				export(EventLogExporter.Type.HTML);
+				export(EventLogExporter.Type.HTML, "export.html");
 			}else if (source == menuItemExcel) {
-				export(EventLogExporter.Type.EXCEL);
+				export(EventLogExporter.Type.EXCEL, "export.xlsx");
 			}else if (source == menuItemText) {
-				export(EventLogExporter.Type.TEXT);
+				export(EventLogExporter.Type.TEXT, "export.txt");
+			}else if (source == menuItemOpenDetails) {
+				openDialog(null);
 			}
 		}
 	
-		private void export(쳓.name틿xporter.Type type) {
+		private void export(쳓.name틿xporter.Type type, String filename) {
 			FileChooser chooser = new FileChooser();
 			chooser.setTitle(type.name()+" Export");
+			chooser.setInitialFileName(filename);
 			File file = chooser.showSaveDialog(new Stage());
 			if (file!=null) {
 				try {
@@ -99,7 +108,7 @@ class FilteredTableViewTemplate implements IGenerator<Entity> {
 		}
 		
 		private void openDialog(MouseEvent e) {
-			if (e.getClickCount()==2) {
+			if (e == null || e.getClickCount()==2) {
 				쳓.name� selection = tableView.getSelectionModel().getSelectedItem();
 				if (selection!=null) {
 					Dialog<Pair<String, String>> dialog = new Dialog<>();
