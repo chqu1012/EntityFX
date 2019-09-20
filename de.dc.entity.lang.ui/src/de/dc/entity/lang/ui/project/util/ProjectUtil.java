@@ -11,6 +11,8 @@ import org.eclipse.jdt.core.IJavaProject;
 import org.eclipse.jdt.core.JavaCore;
 import org.eclipse.xtext.util.StringInputStream;
 
+import de.dc.entity.lang.ui.project.model.NewProjectModel;
+import de.dc.entity.lang.ui.project.templates.EntityTemplate;
 import de.dc.entity.lang.ui.project.templates.Templates;
 
 public class ProjectUtil {
@@ -29,22 +31,27 @@ public class ProjectUtil {
 		return project;
 	}
 	
-	public static IJavaProject createForJava(String projectName) {
-		IProject project = create(projectName);
+	public static IJavaProject createForJava(NewProjectModel model) {
+		IProject project = create(model.getName());
 		initJavaDescriptor(project);
 		IJavaProject javaProject = JavaCore.create(project);
 		createFolder(project, "bin");
 		IFolder srcFolder = createFolder(project, "src");
 		IFolder mainFolder = createFolder(srcFolder.getFolder("main"));
 		createFolder(mainFolder.getFolder("java"));
-		createFolder(mainFolder.getFolder("resources"));
+		IFolder resource = createFolder(mainFolder.getFolder("resources"));
+		IFolder xentityFolder = createFolder(resource.getFolder("xentity"));
 		createFolder(project, "src-gen");
 		createFolder(project, "data");
 		
 		try {
 			project.getFile(".classpath").create(new StringInputStream(Templates.genClasspathXml()), true, null);
 			project.getFile("build.gradle").create(new StringInputStream(Templates.genBuildGradle()), true, null);
-			project.getFile(".project").create(new StringInputStream(Templates.genProjectFile(projectName)), true, null);
+			xentityFolder.getFile(model.getEntityName()+".xentity").create(new StringInputStream(EntityTemplate.gen(model)), true, null);
+			if (project.getFile(".project").exists()) {
+				project.getFile(".project").delete(true, null);
+			}
+			project.getFile(".project").create(new StringInputStream(Templates.genProjectFile(model.getName())), true, null);
 		} catch (CoreException e) {
 			LOG.error("Failed to create file", e);
 		}
@@ -80,4 +87,5 @@ public class ProjectUtil {
 		}
 		return folder;
 	}
+
 }

@@ -1,30 +1,28 @@
 package de.dc.entity.lang.ui.project;
 
+import org.eclipse.core.databinding.DataBindingContext;
+import org.eclipse.core.databinding.beans.BeanProperties;
+import org.eclipse.core.databinding.observable.value.IObservableValue;
+import org.eclipse.jface.databinding.swt.WidgetProperties;
 import org.eclipse.jface.wizard.WizardPage;
 import org.eclipse.swt.SWT;
-import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
+import org.eclipse.swt.widgets.Button;
+import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Text;
 
 import de.dc.entity.lang.ui.project.model.NewProjectModel;
 
-import org.eclipse.swt.layout.GridData;
-import org.eclipse.swt.widgets.Button;
-import org.eclipse.core.databinding.DataBindingContext;
-import org.eclipse.core.databinding.observable.value.IObservableValue;
-import org.eclipse.jface.databinding.swt.WidgetProperties;
-import org.eclipse.core.databinding.beans.PojoProperties;
-
 public class EntityFXWizardPage extends WizardPage {
 	private DataBindingContext m_bindingContext;
-	
-	private Text textPackage;
 	private Text textEntityName;
 	private NewProjectModel model;
 	private Button btnUseSpring;
 	private Button btnShowDetailsView;
 	private Button btnUseSearchDialog;
+	private Button btnGenerateDemoApplication;
 
 	public EntityFXWizardPage(NewProjectModel model) {
 		super("wizardPage");
@@ -40,15 +38,6 @@ public class EntityFXWizardPage extends WizardPage {
 		setControl(container);
 		container.setLayout(new GridLayout(2, false));
 		
-		Label lblEntityName = new Label(container, SWT.NONE);
-		lblEntityName.setLayoutData(new GridData(SWT.RIGHT, SWT.CENTER, false, false, 1, 1));
-		lblEntityName.setText("Package:");
-		
-		WizardNewProjectCreationPage page1 = (WizardNewProjectCreationPage) getWizard().getPages()[0];
-		
-		textPackage = new Text(container, SWT.BORDER);
-		textPackage.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false, 1, 1));
-		textPackage.setText(page1.getProjectName());
 		Label label = new Label(container, SWT.NONE);
 		label.setLayoutData(new GridData(SWT.RIGHT, SWT.CENTER, false, false, 1, 1));
 		label.setText("Entity Name:");
@@ -62,35 +51,46 @@ public class EntityFXWizardPage extends WizardPage {
 		new Label(container, SWT.NONE);
 		
 		btnShowDetailsView = new Button(container, SWT.CHECK);
+		btnShowDetailsView.setSelection(true);
 		btnShowDetailsView.setText("Use Details Dialog");
 		new Label(container, SWT.NONE);
 		
 		btnUseSearchDialog = new Button(container, SWT.CHECK);
+		btnUseSearchDialog.setSelection(true);
 		btnUseSearchDialog.setText("Use Search Dialog");
+		new Label(container, SWT.NONE);
+		
+		btnGenerateDemoApplication = new Button(container, SWT.CHECK);
+		btnGenerateDemoApplication.setSelection(true);
+		btnGenerateDemoApplication.setText("Generate Demo Application");
 		m_bindingContext = initDataBindings();
 	}
 	protected DataBindingContext initDataBindings() {
 		DataBindingContext bindingContext = new DataBindingContext();
 		//
-		IObservableValue observeTextTextPackageObserveWidget = WidgetProperties.text(SWT.Modify).observe(textPackage);
-		IObservableValue packagePathModelObserveValue = PojoProperties.value("packagePath").observe(model);
-		bindingContext.bindValue(observeTextTextPackageObserveWidget, packagePathModelObserveValue, null, null);
-		//
 		IObservableValue observeTextTextEntityNameObserveWidget = WidgetProperties.text(SWT.Modify).observe(textEntityName);
-		IObservableValue nameModelObserveValue = PojoProperties.value("name").observe(model);
+		IObservableValue nameModelObserveValue = BeanProperties.value("name").observe(model);
 		bindingContext.bindValue(observeTextTextEntityNameObserveWidget, nameModelObserveValue, null, null);
 		//
 		IObservableValue observeSelectionBtnUseSpringObserveWidget = WidgetProperties.selection().observe(btnUseSpring);
-		IObservableValue useSpringModelObserveValue = PojoProperties.value("useSpring").observe(model);
+		IObservableValue useSpringModelObserveValue = BeanProperties.value("useSpring").observe(model);
 		bindingContext.bindValue(observeSelectionBtnUseSpringObserveWidget, useSpringModelObserveValue, null, null);
 		//
 		IObservableValue observeSelectionBtnShowDetailsViewObserveWidget = WidgetProperties.selection().observe(btnShowDetailsView);
-		IObservableValue showDetailsPaneModelObserveValue = PojoProperties.value("showDetailsPane").observe(model);
+		IObservableValue showDetailsPaneModelObserveValue = BeanProperties.value("showDetailsPane").observe(model);
 		bindingContext.bindValue(observeSelectionBtnShowDetailsViewObserveWidget, showDetailsPaneModelObserveValue, null, null);
 		//
 		IObservableValue observeSelectionBtnUseSearchDialogObserveWidget = WidgetProperties.selection().observe(btnUseSearchDialog);
-		IObservableValue useSearchPaneModelObserveValue = PojoProperties.value("useSearchPane").observe(model);
+		IObservableValue useSearchPaneModelObserveValue = BeanProperties.value("useSearchPane").observe(model);
 		bindingContext.bindValue(observeSelectionBtnUseSearchDialogObserveWidget, useSearchPaneModelObserveValue, null, null);
+		//
+		IObservableValue observeSelectionBtnGenerateDemoApplicationObserveWidget = WidgetProperties.selection().observe(btnGenerateDemoApplication);
+		IObservableValue generateDemoModelObserveValue = BeanProperties.value("generateDemo").observe(model);
+		bindingContext.bindValue(observeSelectionBtnGenerateDemoApplicationObserveWidget, generateDemoModelObserveValue, null, null);
+		//
+		IObservableValue observeTextTextEntityNameObserveWidget_1 = WidgetProperties.text(SWT.Modify).observe(textEntityName);
+		IObservableValue entityNameModelObserveValue = BeanProperties.value("entityName").observe(model);
+		bindingContext.bindValue(observeTextTextEntityNameObserveWidget_1, entityNameModelObserveValue, null, null);
 		//
 		return bindingContext;
 	}

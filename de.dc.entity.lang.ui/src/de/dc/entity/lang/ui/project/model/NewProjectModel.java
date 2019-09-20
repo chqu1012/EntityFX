@@ -2,14 +2,23 @@ package de.dc.entity.lang.ui.project.model;
 
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
-public class NewProjectModel extends ModelObject{
+public class NewProjectModel extends ModelObject {
 
 	private String name;
-	private String packagePath;
-	private boolean useSpring;
-	private boolean showDetailsPane;
-	private boolean useSearchPane;
-	
+	private String entityName;
+	private boolean useSpring = true;
+	private boolean showDetailsPane = true;
+	private boolean useSearchPane = true;
+	private boolean generateDemo = true;
+
+	public boolean isGenerateDemo() {
+		return generateDemo;
+	}
+
+	public void setGenerateDemo(boolean generateDemo) {
+		firePropertyChange("generateDemo", this.generateDemo, this.generateDemo = generateDemo);
+	}
+
 	public boolean isUseSpring() {
 		return useSpring;
 	}
@@ -42,14 +51,14 @@ public class NewProjectModel extends ModelObject{
 		firePropertyChange("name", this.name, this.name = name);
 	}
 
-	public String getPackagePath() {
-		return packagePath;
+	public String getEntityName() {
+		return entityName;
 	}
 
-	public void setPackagePath(String packagePath) {
-		firePropertyChange("packagePath", this.packagePath, this.packagePath = packagePath);
+	public void setEntityName(String entityName) {
+		firePropertyChange("entityName", this.entityName, this.entityName = entityName);
 	}
-	
+
 	@Override
 	public String toString() {
 		return ToStringBuilder.reflectionToString(this);

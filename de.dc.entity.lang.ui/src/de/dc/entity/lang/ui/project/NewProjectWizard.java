@@ -6,6 +6,7 @@ import org.eclipse.ui.INewWizard;
 import org.eclipse.ui.IWorkbench;
 
 import de.dc.entity.lang.ui.project.model.NewProjectModel;
+import de.dc.entity.lang.ui.project.util.ProjectUtil;
 
 public class NewProjectWizard extends Wizard implements INewWizard {
 
@@ -31,8 +32,7 @@ public class NewProjectWizard extends Wizard implements INewWizard {
 
 	@Override
 	public boolean performFinish() {
-//		ProjectUtil.createForJava(_pageOne.getProjectName());
-		System.out.println(model);
+		ProjectUtil.createForJava(model);
 		return true;
 	}
 
