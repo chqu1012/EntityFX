@@ -20,6 +20,7 @@ class FilteredTableViewTemplate implements IGenerator<Entity> {
 	import «t.packagePath».util.*;
 	import «t.packagePath».repository.*;
 	import «t.packagePath».dialog.*;
+	import «t.packagePath».filter.*;
 	import javafx.beans.value.ChangeListener;
 	import javafx.beans.value.ObservableValue;
 	import javafx.geometry.Insets;
@@ -48,6 +49,7 @@ class FilteredTableViewTemplate implements IGenerator<Entity> {
 		protected MenuItem menuItemExcel = new MenuItem("Excel");
 		protected MenuItem menuItemHtml = new MenuItem("Html");
 		protected MenuItem menuItemOpenDetails = new MenuItem("Open Details");
+		protected MenuItem menuItemOpenSearchPanel = new MenuItem("Open Search Panel");
 		
 		protected «t.name»Exporter «t.name.toFirstLower»Exporter = new «t.name»Exporter();
 		
@@ -72,12 +74,14 @@ class FilteredTableViewTemplate implements IGenerator<Entity> {
 			menuItemExcel.setOnAction(this::onMenuItemAction);
 			menuItemHtml.setOnAction(this::onMenuItemAction);
 			menuItemOpenDetails.setOnAction(this::onMenuItemAction);
+			menuItemOpenSearchPanel.setOnAction(this::onMenuItemAction);
 					
 			menuExport.getItems().addAll(menuItemText, menuItemExcel, menuItemHtml);
 			
 			ContextMenu menu = new ContextMenu();
 			menu.getItems().add(menuExport);
 			menu.getItems().add(menuItemOpenDetails);
+			menu.getItems().add(menuItemOpenSearchPanel);
 			tableView.setContextMenu(menu);
 		}
 		
@@ -91,7 +95,19 @@ class FilteredTableViewTemplate implements IGenerator<Entity> {
 				export(EventLogExporter.Type.TEXT, "export.txt");
 			}else if (source == menuItemOpenDetails) {
 				openDialog(null);
+			}else if (source == menuItemOpenSearchPanel){
+				openSearchPanel)=;
 			}
+		}
+	
+		private void openSearchPanel() {
+			Dialog<Pair<String, String>> dialog = new Dialog<>();
+			dialog.setTitle("«t.name» Dialog");
+	
+			«t.name»SearchPane searchPane = «t.name»Platform.getInstance(«t.name»SearchPane.class);		
+			
+			dialog.getDialogPane().setContent(searchPane);
+			dialog.showAndWait();
 		}
 	
 		private void export(«t.name»Exporter.Type type, String filename) {
