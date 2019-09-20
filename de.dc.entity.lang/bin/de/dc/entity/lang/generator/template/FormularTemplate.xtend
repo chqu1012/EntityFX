@@ -68,9 +68,10 @@ class FormularTemplate implements IGenerator<Entity>{
 		}
 	
 		public void onButtonSubmit(MouseEvent e) {
-			EventLog eventLog = context.getEventLog ();
-			eventLogRepository.save(eventLog);
-			context.getMasterData().add(eventLog);
+			«t.name» «t.name.toFirstLower».get«t.name»();
+			long id = «t.name.toFirstLower»Repository.save(«t.name.toFirstLower»);
+			«t.name.toFirstLower».setId(id);
+			context.getMasterData().add(«t.name.toFirstLower»);
 			context.clear();
 		}
 	}
