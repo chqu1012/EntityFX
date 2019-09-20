@@ -18,10 +18,8 @@ class FormularTemplate implements IGenerator<Entity>{
 	import «t.packagePath».model.*;
 	import «t.packagePath».repository.*;
 	import javafx.geometry.Insets;
-	import javafx.scene.control.Button;
-	import javafx.scene.control.Label;
-	import javafx.scene.control.TextField;
-	import javafx.scene.layout.VBox;
+	import javafx.scene.control.*;
+	import javafx.scene.layout.*;
 	import javafx.scene.input.MouseEvent;
 	
 	«val name = t.name.toFirstUpper»
@@ -52,16 +50,27 @@ class FormularTemplate implements IGenerator<Entity>{
 			«ENDIF»
 			«ENDFOR»
 			
+			Button clearButton = new Button("Reset");
+			clearButton.setOnMouseClicked(this::onButtonReset);
+			clearButton.disableProperty().bind(context.getEnabledSubmitProperty().not());
+			
 			Button submitButton = new Button("Submit");
 			submitButton.setOnMouseClicked(this::onButtonSubmit);
 			submitButton.disableProperty().bind(context.getEnabledSubmitProperty().not());
-			getChildren().add(submitButton);
+	
+			HBox hbox = new HBox(5);
+			hbox.getChildren().addAll(clearButton, submitButton);
+			getChildren().addAll(hbox);
 		}
 		
+		public void onButtonReset(MouseEvent e) {
+			context.clear();
+		}
+	
 		public void onButtonSubmit(MouseEvent e) {
-			«name» «name.toFirstLower» = context.get«name» ();
-			«name.toFirstLower»Repository.save(«name.toFirstLower»);
-			context.getMasterData().add(«name.toFirstLower»);
+			EventLog eventLog = context.getEventLog ();
+			eventLogRepository.save(eventLog);
+			context.getMasterData().add(eventLog);
 			context.clear();
 		}
 	}
