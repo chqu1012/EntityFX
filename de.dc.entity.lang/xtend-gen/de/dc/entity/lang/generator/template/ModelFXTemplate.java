@@ -247,8 +247,7 @@ public class ModelFXTemplate implements IGenerator<Entity> {
     _builder.append("\t");
     _builder.append("});");
     _builder.newLine();
-    _builder.newLine();
-    _builder.append("    ");
+    _builder.append("\t");
     final Function1<Field, Boolean> _function = (Field it) -> {
       return Boolean.valueOf(it.isUseByRepository());
     };
@@ -256,6 +255,9 @@ public class ModelFXTemplate implements IGenerator<Entity> {
       String _simpleName = it.getDatatype().getSimpleName();
       return Boolean.valueOf(Objects.equal(_simpleName, "String"));
     };
+    final Iterable<Field> filteredFields = IterableExtensions.<Field>filter(IterableExtensions.<Field>filter(t.getField(), _function), _function_1);
+    _builder.newLineIfNotEmpty();
+    _builder.append("    ");
     final Function1<Field, String> _function_2 = (Field it) -> {
       String _firstLower_12 = StringExtensions.toFirstLower(it.getName());
       return (_firstLower_12 + "Property.isNotEmpty()");
@@ -263,16 +265,22 @@ public class ModelFXTemplate implements IGenerator<Entity> {
     final Function2<String, String, String> _function_3 = (String p1, String p2) -> {
       return (((p1 + ".and(") + p2) + ")");
     };
-    final String fields = IterableExtensions.<String>reduce(IterableExtensions.<Field, String>map(IterableExtensions.<Field>filter(IterableExtensions.<Field>filter(t.getField(), _function), _function_1), _function_2), _function_3);
+    final String fields = IterableExtensions.<String>reduce(IterableExtensions.<Field, String>map(filteredFields, _function_2), _function_3);
     _builder.newLineIfNotEmpty();
-    _builder.append("    ");
-    _builder.append("BooleanBinding isEnabled = ");
-    _builder.append(fields, "    ");
-    _builder.append(";");
-    _builder.newLineIfNotEmpty();
-    _builder.append("    ");
-    _builder.append("this.enableSubmitProperty.bind(isEnabled);");
-    _builder.newLine();
+    {
+      boolean _isEmpty = IterableExtensions.isEmpty(filteredFields);
+      boolean _not = (!_isEmpty);
+      if (_not) {
+        _builder.append("    ");
+        _builder.append("BooleanBinding isEnabled = ");
+        _builder.append(fields, "    ");
+        _builder.append(";");
+        _builder.newLineIfNotEmpty();
+        _builder.append("    ");
+        _builder.append("this.enableSubmitProperty.bind(isEnabled);");
+        _builder.newLine();
+      }
+    }
     _builder.append("  ");
     _builder.append("}");
     _builder.newLine();

@@ -65,10 +65,12 @@ class ModelFXTemplate implements IGenerator<Entity>{
 				«ENDFOR»
 			}
 		});
-	
-	    «val fields = t.field.filter[useByRepository].filter[datatype.simpleName=='String'].map[it.name.toFirstLower+'Property.isNotEmpty()'].reduce[p1, p2|p1+'.and('+p2+')']»
+		«val filteredFields = t.field.filter[useByRepository].filter[datatype.simpleName=='String']»
+	    «val fields = filteredFields.map[it.name.toFirstLower+'Property.isNotEmpty()'].reduce[p1, p2|p1+'.and('+p2+')']»
+	    «IF !filteredFields.isEmpty»
 	    BooleanBinding isEnabled = «fields»;
 	    this.enableSubmitProperty.bind(isEnabled);
+	    «ENDIF»
 	  }
 	
 	  public ObjectProperty<«name»> get«name»Property() {

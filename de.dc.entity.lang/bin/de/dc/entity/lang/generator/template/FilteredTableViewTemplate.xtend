@@ -88,15 +88,15 @@ class FilteredTableViewTemplate implements IGenerator<Entity> {
 		public void onMenuItemAction(ActionEvent e) {
 			Object source = e.getSource();
 			if (source == menuItemHtml) {
-				export(EventLogExporter.Type.HTML, "export.html");
+				export(«t.name»Exporter.Type.HTML, "export.html");
 			}else if (source == menuItemExcel) {
-				export(EventLogExporter.Type.EXCEL, "export.xlsx");
+				export(«t.name»Exporter.Type.EXCEL, "export.xlsx");
 			}else if (source == menuItemText) {
-				export(EventLogExporter.Type.TEXT, "export.txt");
+				export(«t.name»Exporter.Type.TEXT, "export.txt");
 			}else if (source == menuItemOpenDetails) {
 				openDialog(null);
 			}else if (source == menuItemOpenSearchPanel){
-				openSearchPanel)=;
+				openSearchPanel();
 			}
 		}
 	

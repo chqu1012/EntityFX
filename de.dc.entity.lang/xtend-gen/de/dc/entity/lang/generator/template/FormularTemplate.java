@@ -255,7 +255,7 @@ public class FormularTemplate implements IGenerator<Entity> {
     _builder.append(" ");
     String _firstLower_9 = StringExtensions.toFirstLower(t.getName());
     _builder.append(_firstLower_9, "\t\t");
-    _builder.append(".get");
+    _builder.append(" = context.get");
     String _name_7 = t.getName();
     _builder.append(_name_7, "\t\t");
     _builder.append("();");
