@@ -43,15 +43,6 @@ public class EntityTemplate {
     _builder.append("  \t");
     _builder.newLine();
     _builder.append("\t");
-    _builder.append("Field(name: Id, datatype:Long, required: true, useByTableView: true, useByRepository: true)[ ");
-    _builder.newLine();
-    _builder.append("\t\t");
-    _builder.append("control: javafx.scene.control.TextField");
-    _builder.newLine();
-    _builder.append("\t");
-    _builder.append("] ");
-    _builder.newLine();
-    _builder.append("\t");
     _builder.append("Field(name: Status, datatype:Integer, required: true, useByTableView: true, useByRepository: true)[ ");
     _builder.newLine();
     _builder.append("\t\t");

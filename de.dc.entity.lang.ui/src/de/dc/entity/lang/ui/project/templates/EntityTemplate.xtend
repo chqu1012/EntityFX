@@ -14,9 +14,6 @@ class EntityTemplate {
 	  	
 	  	generateDemo: «model.generateDemo»
 	  	
-		Field(name: Id, datatype:Long, required: true, useByTableView: true, useByRepository: true)[ 
-			control: javafx.scene.control.TextField
-		] 
 		Field(name: Status, datatype:Integer, required: true, useByTableView: true, useByRepository: true)[ 
 			control: javafx.scene.control.TextField
 		]

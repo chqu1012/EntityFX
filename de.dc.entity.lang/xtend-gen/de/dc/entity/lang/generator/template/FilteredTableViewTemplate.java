@@ -65,6 +65,11 @@ public class FilteredTableViewTemplate implements IGenerator<Entity> {
     _builder.append(_packagePath_6);
     _builder.append(".util.*;");
     _builder.newLineIfNotEmpty();
+    _builder.append("import ");
+    String _packagePath_7 = t.getPackagePath();
+    _builder.append(_packagePath_7);
+    _builder.append(".*;");
+    _builder.newLineIfNotEmpty();
     _builder.append("import javafx.beans.value.*;");
     _builder.newLine();
     _builder.append("import javafx.geometry.*;");
