@@ -19,6 +19,7 @@ class FilteredTableViewTemplate implements IGenerator<Entity> {
 	import «t.packagePath».model.*;
 	import «t.packagePath».util.*;
 	import «t.packagePath».repository.*;
+	import «t.packagePath».dialog.*;
 	import javafx.beans.value.ChangeListener;
 	import javafx.beans.value.ObservableValue;
 	import javafx.geometry.Insets;
@@ -109,25 +110,8 @@ class FilteredTableViewTemplate implements IGenerator<Entity> {
 		
 		private void openDialog(MouseEvent e) {
 			if (e == null || e.getClickCount()==2) {
-				«t.name» selection = tableView.getSelectionModel().getSelectedItem();
-				if (selection!=null) {
-					Dialog<Pair<String, String>> dialog = new Dialog<>();
-					dialog.setTitle("«t.name» Dialog");
-		
-					dialog.getDialogPane().getButtonTypes().addAll(ButtonType.OK, ButtonType.CANCEL);
-		
-					GridPane grid = new GridPane();
-					grid.setHgap(10);
-					grid.setVgap(10);
-					grid.setPadding(new Insets(20, 150, 10, 10));
-		
-					«FOR i : 0..(t.field.size-1)»
-					grid.add(new Label("«t.field.get(i).name»:"), 0, «i»);
-					TextField «t.field.get(i).name.toLowerCase»Text = new TextField();
-					«t.field.get(i).name.toLowerCase»Text.setText(String.valueOf(context.get«t.field.get(i).name»Property().get()));
-					grid.add(«t.field.get(i).name.toLowerCase»Text, 1, «i»);
-					«ENDFOR»
-					dialog.getDialogPane().setContent(grid);
+				if (tableView.getSelectionModel().getSelectedItem()!=null) {
+					«t.name»Dialog dialog = «t.name»Platform.getInstance(«t.name»Dialog.class);
 					dialog.showAndWait();
 				}
 			}

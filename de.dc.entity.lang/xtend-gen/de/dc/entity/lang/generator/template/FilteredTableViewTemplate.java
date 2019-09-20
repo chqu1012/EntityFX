@@ -7,7 +7,6 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.xtend2.lib.StringConcatenation;
 import org.eclipse.xtext.xbase.lib.Functions.Function1;
 import org.eclipse.xtext.xbase.lib.Functions.Function2;
-import org.eclipse.xtext.xbase.lib.IntegerRange;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
 import org.eclipse.xtext.xbase.lib.StringExtensions;
 
@@ -50,6 +49,11 @@ public class FilteredTableViewTemplate implements IGenerator<Entity> {
     String _packagePath_3 = t.getPackagePath();
     _builder.append(_packagePath_3);
     _builder.append(".repository.*;");
+    _builder.newLineIfNotEmpty();
+    _builder.append("import ");
+    String _packagePath_4 = t.getPackagePath();
+    _builder.append(_packagePath_4);
+    _builder.append(".dialog.*;");
     _builder.newLineIfNotEmpty();
     _builder.append("import javafx.beans.value.ChangeListener;");
     _builder.newLine();
@@ -319,83 +323,19 @@ public class FilteredTableViewTemplate implements IGenerator<Entity> {
     _builder.append("if (e == null || e.getClickCount()==2) {");
     _builder.newLine();
     _builder.append("\t\t\t");
+    _builder.append("if (tableView.getSelectionModel().getSelectedItem()!=null) {");
+    _builder.newLine();
+    _builder.append("\t\t\t\t");
     String _name_9 = t.getName();
-    _builder.append(_name_9, "\t\t\t");
-    _builder.append(" selection = tableView.getSelectionModel().getSelectedItem();");
-    _builder.newLineIfNotEmpty();
-    _builder.append("\t\t\t");
-    _builder.append("if (selection!=null) {");
-    _builder.newLine();
-    _builder.append("\t\t\t\t");
-    _builder.append("Dialog<Pair<String, String>> dialog = new Dialog<>();");
-    _builder.newLine();
-    _builder.append("\t\t\t\t");
-    _builder.append("dialog.setTitle(\"");
+    _builder.append(_name_9, "\t\t\t\t");
+    _builder.append("Dialog dialog = ");
     String _name_10 = t.getName();
     _builder.append(_name_10, "\t\t\t\t");
-    _builder.append(" Dialog\");");
+    _builder.append("Platform.getInstance(");
+    String _name_11 = t.getName();
+    _builder.append(_name_11, "\t\t\t\t");
+    _builder.append("Dialog.class);");
     _builder.newLineIfNotEmpty();
-    _builder.append("\t");
-    _builder.newLine();
-    _builder.append("\t\t\t\t");
-    _builder.append("dialog.getDialogPane().getButtonTypes().addAll(ButtonType.OK, ButtonType.CANCEL);");
-    _builder.newLine();
-    _builder.append("\t");
-    _builder.newLine();
-    _builder.append("\t\t\t\t");
-    _builder.append("GridPane grid = new GridPane();");
-    _builder.newLine();
-    _builder.append("\t\t\t\t");
-    _builder.append("grid.setHgap(10);");
-    _builder.newLine();
-    _builder.append("\t\t\t\t");
-    _builder.append("grid.setVgap(10);");
-    _builder.newLine();
-    _builder.append("\t\t\t\t");
-    _builder.append("grid.setPadding(new Insets(20, 150, 10, 10));");
-    _builder.newLine();
-    _builder.append("\t");
-    _builder.newLine();
-    {
-      int _size = t.getField().size();
-      int _minus = (_size - 1);
-      IntegerRange _upTo = new IntegerRange(0, _minus);
-      for(final Integer i : _upTo) {
-        _builder.append("\t\t\t\t");
-        _builder.append("grid.add(new Label(\"");
-        String _name_11 = t.getField().get((i).intValue()).getName();
-        _builder.append(_name_11, "\t\t\t\t");
-        _builder.append(":\"), 0, ");
-        _builder.append(i, "\t\t\t\t");
-        _builder.append(");");
-        _builder.newLineIfNotEmpty();
-        _builder.append("\t\t\t\t");
-        _builder.append("TextField ");
-        String _lowerCase = t.getField().get((i).intValue()).getName().toLowerCase();
-        _builder.append(_lowerCase, "\t\t\t\t");
-        _builder.append("Text = new TextField();");
-        _builder.newLineIfNotEmpty();
-        _builder.append("\t\t\t\t");
-        String _lowerCase_1 = t.getField().get((i).intValue()).getName().toLowerCase();
-        _builder.append(_lowerCase_1, "\t\t\t\t");
-        _builder.append("Text.setText(String.valueOf(context.get");
-        String _name_12 = t.getField().get((i).intValue()).getName();
-        _builder.append(_name_12, "\t\t\t\t");
-        _builder.append("Property().get()));");
-        _builder.newLineIfNotEmpty();
-        _builder.append("\t\t\t\t");
-        _builder.append("grid.add(");
-        String _lowerCase_2 = t.getField().get((i).intValue()).getName().toLowerCase();
-        _builder.append(_lowerCase_2, "\t\t\t\t");
-        _builder.append("Text, 1, ");
-        _builder.append(i, "\t\t\t\t");
-        _builder.append(");");
-        _builder.newLineIfNotEmpty();
-      }
-    }
-    _builder.append("\t\t\t\t");
-    _builder.append("dialog.getDialogPane().setContent(grid);");
-    _builder.newLine();
     _builder.append("\t\t\t\t");
     _builder.append("dialog.showAndWait();");
     _builder.newLine();
@@ -412,14 +352,14 @@ public class FilteredTableViewTemplate implements IGenerator<Entity> {
     _builder.newLine();
     _builder.append("\t");
     _builder.append("public void onTableSelectionChanged(ObservableValue<? extends ");
+    String _name_12 = t.getName();
+    _builder.append(_name_12, "\t");
+    _builder.append("> observable, ");
     String _name_13 = t.getName();
     _builder.append(_name_13, "\t");
-    _builder.append("> observable, ");
+    _builder.append(" oldValue, ");
     String _name_14 = t.getName();
     _builder.append(_name_14, "\t");
-    _builder.append(" oldValue, ");
-    String _name_15 = t.getName();
-    _builder.append(_name_15, "\t");
     _builder.append(" newValue) {");
     _builder.newLineIfNotEmpty();
     _builder.append("\t\t");
@@ -430,11 +370,11 @@ public class FilteredTableViewTemplate implements IGenerator<Entity> {
       for(final Field field : _field) {
         _builder.append("\t\t\t");
         _builder.append("context.get");
+        String _name_15 = field.getName();
+        _builder.append(_name_15, "\t\t\t");
+        _builder.append("Property().set(newValue.get");
         String _name_16 = field.getName();
         _builder.append(_name_16, "\t\t\t");
-        _builder.append("Property().set(newValue.get");
-        String _name_17 = field.getName();
-        _builder.append(_name_17, "\t\t\t");
         _builder.append("());");
         _builder.newLineIfNotEmpty();
       }
@@ -464,11 +404,11 @@ public class FilteredTableViewTemplate implements IGenerator<Entity> {
           if (_isRequired) {
             _builder.append("\t\t\t");
             _builder.append("boolean contains");
+            String _name_17 = field_1.getName();
+            _builder.append(_name_17, "\t\t\t");
+            _builder.append(" = String.valueOf(p.get");
             String _name_18 = field_1.getName();
             _builder.append(_name_18, "\t\t\t");
-            _builder.append(" = String.valueOf(p.get");
-            String _name_19 = field_1.getName();
-            _builder.append(_name_19, "\t\t\t");
             _builder.append("()).toLowerCase().contains(newValue.toLowerCase());");
             _builder.newLineIfNotEmpty();
           }
@@ -480,8 +420,8 @@ public class FilteredTableViewTemplate implements IGenerator<Entity> {
       return Boolean.valueOf(it.isRequired());
     };
     final Function1<Field, String> _function_1 = (Field it) -> {
-      String _name_20 = it.getName();
-      return ("contains" + _name_20);
+      String _name_19 = it.getName();
+      return ("contains" + _name_19);
     };
     final Function2<String, String, String> _function_2 = (String p1, String p2) -> {
       return ((p1 + " || ") + p2);
@@ -494,8 +434,8 @@ public class FilteredTableViewTemplate implements IGenerator<Entity> {
       final Function1<Field, Boolean> _function_3 = (Field it) -> {
         return Boolean.valueOf(it.isRequired());
       };
-      int _size_1 = IterableExtensions.size(IterableExtensions.<Field>filter(t.getField(), _function_3));
-      boolean _greaterThan = (_size_1 > 0);
+      int _size = IterableExtensions.size(IterableExtensions.<Field>filter(t.getField(), _function_3));
+      boolean _greaterThan = (_size > 0);
       if (_greaterThan) {
         _builder.append("||");
       }
