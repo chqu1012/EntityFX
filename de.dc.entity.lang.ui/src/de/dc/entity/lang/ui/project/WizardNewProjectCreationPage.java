@@ -34,6 +34,8 @@ import org.eclipse.core.databinding.DataBindingContext;
 import org.eclipse.core.databinding.observable.value.IObservableValue;
 import org.eclipse.jface.databinding.swt.WidgetProperties;
 import org.eclipse.core.databinding.beans.PojoProperties;
+import org.eclipse.swt.widgets.Button;
+import org.eclipse.core.databinding.beans.BeanProperties;
 
 /**
  * Standard main page for a wizard that is creates a project resource.
@@ -74,6 +76,7 @@ public class WizardNewProjectCreationPage extends WizardPage {
     private static final int SIZING_TEXT_FIELD_WIDTH = 250;
 
 	private NewProjectModel model;
+	private Button btnUseGradleBuild;
 
     /**
      * Creates a new project creation wizard page.
@@ -116,6 +119,9 @@ public class WizardNewProjectCreationPage extends WizardPage {
         setMessage(null);
         setControl(composite);
         Dialog.applyDialogFont(composite);
+        
+        btnUseGradleBuild = new Button(composite, SWT.CHECK);
+        btnUseGradleBuild.setText("Use Gradle Build File");
         
         m_bindingContext = initDataBindings();
     }
@@ -384,8 +390,12 @@ public class WizardNewProjectCreationPage extends WizardPage {
 		DataBindingContext bindingContext = new DataBindingContext();
 		//
 		IObservableValue observeTextProjectNameFieldObserveWidget = WidgetProperties.text(SWT.Modify).observe(projectNameField);
-		IObservableValue nameModelObserveValue = PojoProperties.value("name").observe(model);
+		IObservableValue nameModelObserveValue = BeanProperties.value("name").observe(model);
 		bindingContext.bindValue(observeTextProjectNameFieldObserveWidget, nameModelObserveValue, null, null);
+		//
+		IObservableValue observeSelectionBtnUseGradleBuildObserveWidget = WidgetProperties.selection().observe(btnUseGradleBuild);
+		IObservableValue useGradleModelObserveValue = BeanProperties.value("useGradle").observe(model);
+		bindingContext.bindValue(observeSelectionBtnUseGradleBuildObserveWidget, useGradleModelObserveValue, null, null);
 		//
 		return bindingContext;
 	}

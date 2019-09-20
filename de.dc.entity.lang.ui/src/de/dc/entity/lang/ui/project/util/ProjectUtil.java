@@ -37,21 +37,32 @@ public class ProjectUtil {
 		IJavaProject javaProject = JavaCore.create(project);
 		createFolder(project, "bin");
 		IFolder srcFolder = createFolder(project, "src");
-		IFolder mainFolder = createFolder(srcFolder.getFolder("main"));
-		createFolder(mainFolder.getFolder("java"));
-		IFolder resource = createFolder(mainFolder.getFolder("resources"));
-		IFolder xentityFolder = createFolder(resource.getFolder("xentity"));
+		IFolder xentityFolder;
+		if (model.isUseGradle()) {
+			IFolder mainFolder = createFolder(srcFolder.getFolder("main"));
+			createFolder(mainFolder.getFolder("java"));
+			IFolder resource = createFolder(mainFolder.getFolder("resources"));
+			xentityFolder = createFolder(resource.getFolder("xentity"));
+		}else {
+			createFolder(project.getFolder("resources"));
+			xentityFolder = createFolder(srcFolder.getFolder("xentity"));
+		}
 		createFolder(project, "src-gen");
 		createFolder(project, "data");
+		IFolder metaInfFolder = createFolder(project, "META-INF");
 		
 		try {
-			project.getFile(".classpath").create(new StringInputStream(Templates.genClasspathXml()), true, null);
-			project.getFile("build.gradle").create(new StringInputStream(Templates.genBuildGradle()), true, null);
+				project.getFile(".classpath").create(new StringInputStream(Templates.genClasspathXml(model.isUseGradle())), true, null);
+			if(model.isUseGradle()) {
+				project.getFile("build.gradle").create(new StringInputStream(Templates.genBuildGradle()), true, null);
+			}
 			xentityFolder.getFile(model.getEntityName()+".xentity").create(new StringInputStream(EntityTemplate.gen(model)), true, null);
 			if (project.getFile(".project").exists()) {
 				project.getFile(".project").delete(true, null);
 			}
-			project.getFile(".project").create(new StringInputStream(Templates.genProjectFile(model.getName())), true, null);
+			project.getFile(".project").create(new StringInputStream(Templates.genProjectFile(model.getName(), model.isUseGradle())), true, null);
+			metaInfFolder.getFile("MANIFEST.MF").create(new StringInputStream(Templates.genMetaInfXml(model.getName())), true, null);
+			project.getFile("build.properties").create(new StringInputStream(Templates.genBuildProperties()), true, null);
 		} catch (CoreException e) {
 			LOG.error("Failed to create file", e);
 		}

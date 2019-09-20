@@ -4,7 +4,45 @@ import org.eclipse.xtend2.lib.StringConcatenation;
 
 @SuppressWarnings("all")
 public class Templates {
-  public static String genProjectFile(final String projectName) {
+  public static String genBuildProperties() {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("source.. = src/main/java/");
+    _builder.newLine();
+    _builder.append("output.. = bin/main/java/");
+    _builder.newLine();
+    _builder.append("bin.includes = META-INF/,\\");
+    _builder.newLine();
+    _builder.append("               ");
+    _builder.append(".");
+    _builder.newLine();
+    _builder.newLine();
+    return _builder.toString();
+  }
+  
+  public static String genMetaInfXml(final String projectName) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("Manifest-Version: 1.0");
+    _builder.newLine();
+    _builder.append("Bundle-ManifestVersion: 2");
+    _builder.newLine();
+    _builder.append("Bundle-Name: ");
+    _builder.append(projectName);
+    _builder.newLineIfNotEmpty();
+    _builder.append("Bundle-SymbolicName: ");
+    _builder.append(projectName);
+    _builder.newLineIfNotEmpty();
+    _builder.append("Bundle-Version: 1.0.0.qualifier");
+    _builder.newLine();
+    _builder.append("Automatic-Module-Name: ");
+    _builder.append(projectName);
+    _builder.newLineIfNotEmpty();
+    _builder.append("Bundle-RequiredExecutionEnvironment: JavaSE-1.8");
+    _builder.newLine();
+    _builder.newLine();
+    return _builder.toString();
+  }
+  
+  public static String genProjectFile(final String projectName, final boolean useGradle) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("<?xml version=\"1.0\" encoding=\"UTF-8\"?>");
     _builder.newLine();
@@ -48,7 +86,7 @@ public class Templates {
     _builder.append("<buildCommand>");
     _builder.newLine();
     _builder.append("\t\t\t");
-    _builder.append("<name>org.eclipse.buildship.core.gradleprojectbuilder</name>");
+    _builder.append("<name>org.eclipse.pde.ManifestBuilder</name>");
     _builder.newLine();
     _builder.append("\t\t\t");
     _builder.append("<arguments>");
@@ -59,6 +97,43 @@ public class Templates {
     _builder.append("\t\t");
     _builder.append("</buildCommand>");
     _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append("<buildCommand>");
+    _builder.newLine();
+    _builder.append("\t\t\t");
+    _builder.append("<name>org.eclipse.pde.SchemaBuilder</name>");
+    _builder.newLine();
+    _builder.append("\t\t\t");
+    _builder.append("<arguments>");
+    _builder.newLine();
+    _builder.append("\t\t\t");
+    _builder.append("</arguments>");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append("</buildCommand>");
+    _builder.newLine();
+    {
+      if (useGradle) {
+        _builder.append("\t\t");
+        _builder.append("<buildCommand>");
+        _builder.newLine();
+        _builder.append("\t\t");
+        _builder.append("\t");
+        _builder.append("<name>org.eclipse.buildship.core.gradleprojectbuilder</name>");
+        _builder.newLine();
+        _builder.append("\t\t");
+        _builder.append("\t");
+        _builder.append("<arguments>");
+        _builder.newLine();
+        _builder.append("\t\t");
+        _builder.append("\t");
+        _builder.append("</arguments>");
+        _builder.newLine();
+        _builder.append("\t\t");
+        _builder.append("</buildCommand>");
+        _builder.newLine();
+      }
+    }
     _builder.append("\t");
     _builder.append("</buildSpec>");
     _builder.newLine();
@@ -68,12 +143,16 @@ public class Templates {
     _builder.append("\t\t");
     _builder.append("<nature>org.eclipse.jdt.core.javanature</nature>");
     _builder.newLine();
-    _builder.append("\t\t");
-    _builder.append("<nature>org.eclipse.buildship.core.gradleprojectnature</nature>");
-    _builder.newLine();
     _builder.append("\t \t");
     _builder.append("<nature>org.eclipse.pde.PluginNature</nature>");
     _builder.newLine();
+    {
+      if (useGradle) {
+        _builder.append("\t \t");
+        _builder.append("<nature>org.eclipse.buildship.core.gradleprojectnature</nature>");
+        _builder.newLine();
+      }
+    }
     _builder.append("\t");
     _builder.append("</natures>");
     _builder.newLine();
@@ -208,65 +287,87 @@ public class Templates {
     return _builder.toString();
   }
   
-  public static String genClasspathXml() {
+  public static String genClasspathXml(final boolean useGradle) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("<?xml version=\"1.0\" encoding=\"UTF-8\"?>");
     _builder.newLine();
     _builder.append("<classpath>");
     _builder.newLine();
-    _builder.append("\t");
-    _builder.append("<classpathentry kind=\"src\" output=\"bin/main\" path=\"src/main/java\">");
-    _builder.newLine();
-    _builder.append("\t\t");
-    _builder.append("<attributes>");
-    _builder.newLine();
-    _builder.append("\t\t\t");
-    _builder.append("<attribute name=\"gradle_scope\" value=\"main\"/>");
-    _builder.newLine();
-    _builder.append("\t\t\t");
-    _builder.append("<attribute name=\"gradle_used_by_scope\" value=\"main,test\"/>");
-    _builder.newLine();
-    _builder.append("\t\t");
-    _builder.append("</attributes>");
-    _builder.newLine();
-    _builder.append("\t");
-    _builder.append("</classpathentry>");
-    _builder.newLine();
-    _builder.append("\t");
-    _builder.append("<classpathentry kind=\"src\" output=\"bin/main\" path=\"src/main/resources\">");
-    _builder.newLine();
-    _builder.append("\t\t");
-    _builder.append("<attributes>");
-    _builder.newLine();
-    _builder.append("\t\t\t");
-    _builder.append("<attribute name=\"gradle_scope\" value=\"main\"/>");
-    _builder.newLine();
-    _builder.append("\t\t\t");
-    _builder.append("<attribute name=\"gradle_used_by_scope\" value=\"main,test\"/>");
-    _builder.newLine();
-    _builder.append("\t\t");
-    _builder.append("</attributes>");
-    _builder.newLine();
-    _builder.append("\t");
-    _builder.append("</classpathentry>");
-    _builder.newLine();
-    _builder.append("\t");
-    _builder.append("<classpathentry kind=\"src\" path=\"src/main/java\"/>");
-    _builder.newLine();
+    {
+      if (useGradle) {
+        _builder.append("\t");
+        _builder.append("<classpathentry kind=\"src\" output=\"bin/main\" path=\"src/main/java\">");
+        _builder.newLine();
+        _builder.append("\t");
+        _builder.append("\t");
+        _builder.append("<attributes>");
+        _builder.newLine();
+        _builder.append("\t");
+        _builder.append("\t\t");
+        _builder.append("<attribute name=\"gradle_scope\" value=\"main\"/>");
+        _builder.newLine();
+        _builder.append("\t");
+        _builder.append("\t\t");
+        _builder.append("<attribute name=\"gradle_used_by_scope\" value=\"main,test\"/>");
+        _builder.newLine();
+        _builder.append("\t");
+        _builder.append("\t");
+        _builder.append("</attributes>");
+        _builder.newLine();
+        _builder.append("\t");
+        _builder.append("</classpathentry>");
+        _builder.newLine();
+        _builder.append("\t");
+        _builder.append("<classpathentry kind=\"src\" output=\"bin/main\" path=\"src/main/resources\">");
+        _builder.newLine();
+        _builder.append("\t");
+        _builder.append("\t");
+        _builder.append("<attributes>");
+        _builder.newLine();
+        _builder.append("\t");
+        _builder.append("\t\t");
+        _builder.append("<attribute name=\"gradle_scope\" value=\"main\"/>");
+        _builder.newLine();
+        _builder.append("\t");
+        _builder.append("\t\t");
+        _builder.append("<attribute name=\"gradle_used_by_scope\" value=\"main,test\"/>");
+        _builder.newLine();
+        _builder.append("\t");
+        _builder.append("\t");
+        _builder.append("</attributes>");
+        _builder.newLine();
+        _builder.append("\t");
+        _builder.append("</classpathentry>");
+        _builder.newLine();
+        _builder.append("\t");
+        _builder.append("<classpathentry kind=\"src\" path=\"src/main/java\"/>");
+        _builder.newLine();
+        _builder.append("\t");
+        _builder.append("<classpathentry kind=\"src\" path=\"src/main/resources\"/>");
+        _builder.newLine();
+        _builder.append("\t");
+        _builder.append("<classpathentry kind=\"output\" path=\"bin/default\"/>");
+        _builder.newLine();
+      } else {
+        _builder.append("\t");
+        _builder.append("<classpathentry kind=\"src\" path=\"src/\"/>");
+        _builder.newLine();
+        _builder.append("\t");
+        _builder.append("<classpathentry kind=\"src\" path=\"resources\"/>");
+        _builder.newLine();
+      }
+    }
     _builder.append("\t");
     _builder.append("<classpathentry kind=\"src\" path=\"src-gen\"/>");
     _builder.newLine();
     _builder.append("\t");
-    _builder.append("<classpathentry kind=\"src\" path=\"src/main/resources\"/>");
+    _builder.append("<classpathentry kind=\"con\" path=\"org.eclipse.pde.core.requiredPlugins\"/>");
     _builder.newLine();
     _builder.append("\t");
     _builder.append("<classpathentry kind=\"con\" path=\"org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8/\"/>");
     _builder.newLine();
     _builder.append("\t");
     _builder.append("<classpathentry kind=\"con\" path=\"org.eclipse.buildship.core.gradleclasspathcontainer\"/>");
-    _builder.newLine();
-    _builder.append("\t");
-    _builder.append("<classpathentry kind=\"output\" path=\"bin/default\"/>");
     _builder.newLine();
     _builder.append("</classpath>");
     _builder.newLine();

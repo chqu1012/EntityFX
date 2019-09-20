@@ -10,6 +10,15 @@ public class NewProjectModel extends ModelObject {
 	private boolean showDetailsPane = true;
 	private boolean useSearchPane = true;
 	private boolean generateDemo = true;
+	private boolean useGradle = false;
+	
+	public boolean isUseGradle() {
+		return useGradle;
+	}
+
+	public void setUseGradle(boolean useGradle) {
+		firePropertyChange("useGradle", this.useGradle, this.useGradle = useGradle);
+	}
 
 	public boolean isGenerateDemo() {
 		return generateDemo;
