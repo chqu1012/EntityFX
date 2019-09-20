@@ -590,4 +590,18 @@
 			type="text">
 		</fileTypes>
 	</extension>
+ <extension
+       point="org.eclipse.ui.newWizards">
+    <category
+          id="de.dc.entity.lang.ui.category.EntityFX"
+          name="EntityFX Project">
+    </category>
+    <wizard
+          category="de.dc.entity.lang.ui.category.EntityFX"
+          class="de.dc.entity.lang.ui.project.NewProjectWizard"
+          id="de.dc.entity.lang.ui.wizard.NewEntityFXWizard"
+          name="EntityFX Project Wizard"
+          project="true">
+    </wizard>
+ </extension>
 </plugin>

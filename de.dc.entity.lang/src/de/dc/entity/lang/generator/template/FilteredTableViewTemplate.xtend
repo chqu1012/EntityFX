@@ -14,27 +14,22 @@ class FilteredTableViewTemplate implements IGenerator<Entity> {
 	
 	import com.google.inject.Inject;
 	
-	import javafx.scene.input.MouseEvent;
-	import javafx.scene.control.Dialog;
+	import javafx.scene.input.*;
+	import javafx.scene.control.*;
 	import «t.packagePath».model.*;
 	import «t.packagePath».util.*;
 	import «t.packagePath».repository.*;
 	import «t.packagePath».dialog.*;
 	import «t.packagePath».filter.*;
 	import «t.packagePath».util.*;
-	import javafx.beans.value.ChangeListener;
-	import javafx.beans.value.ObservableValue;
-	import javafx.geometry.Insets;
-	import javafx.scene.control.TextField;
-	import javafx.scene.layout.Priority;
-	import javafx.scene.layout.VBox;
-	import javafx.scene.control.ButtonType;
-	import javafx.util.Pair;
-	import javafx.scene.layout.GridPane;
+	import javafx.beans.value.*;
+	import javafx.geometry.*;
 	import javafx.scene.control.*;
-	import javafx.event.ActionEvent;
-	import javafx.stage.FileChooser;
-	import javafx.stage.Stage;
+	import javafx.scene.layout.*;
+	import javafx.util.*;
+	import javafx.scene.control.*;
+	import javafx.event.*;
+	import javafx.stage.*;
 	
 	import java.io.File;
 	import java.io.IOException;
