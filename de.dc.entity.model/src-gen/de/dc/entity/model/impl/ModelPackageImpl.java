@@ -215,7 +215,7 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getEntity_GenerateDemo() {
+	public EAttribute getEntity_ShowDetailsPanel() {
 		return (EAttribute) entityEClass.getEStructuralFeatures().get(6);
 	}
 
@@ -225,8 +225,28 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 	 * @generated
 	 */
 	@Override
+	public EAttribute getEntity_ShowSearchPanel() {
+		return (EAttribute) entityEClass.getEStructuralFeatures().get(7);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getEntity_GenerateDemo() {
+		return (EAttribute) entityEClass.getEStructuralFeatures().get(8);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EReference getEntity_Field() {
-		return (EReference) entityEClass.getEStructuralFeatures().get(7);
+		return (EReference) entityEClass.getEStructuralFeatures().get(9);
 	}
 
 	/**
@@ -236,7 +256,7 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 	 */
 	@Override
 	public EReference getEntity_Repository() {
-		return (EReference) entityEClass.getEStructuralFeatures().get(8);
+		return (EReference) entityEClass.getEStructuralFeatures().get(10);
 	}
 
 	/**
@@ -516,6 +536,8 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 		createEAttribute(entityEClass, ENTITY__USE_HISTORY);
 		createEAttribute(entityEClass, ENTITY__USE_FORMULAR);
 		createEAttribute(entityEClass, ENTITY__USE_TABLE_VIEW);
+		createEAttribute(entityEClass, ENTITY__SHOW_DETAILS_PANEL);
+		createEAttribute(entityEClass, ENTITY__SHOW_SEARCH_PANEL);
 		createEAttribute(entityEClass, ENTITY__GENERATE_DEMO);
 		createEReference(entityEClass, ENTITY__FIELD);
 		createEReference(entityEClass, ENTITY__REPOSITORY);
@@ -602,6 +624,12 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 				Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE,
 				!IS_DERIVED, IS_ORDERED);
 		initEAttribute(getEntity_UseTableView(), theEcorePackage.getEBoolean(), "useTableView", "true", 0, 1,
+				Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEntity_ShowDetailsPanel(), theEcorePackage.getEBoolean(), "showDetailsPanel", "true", 0, 1,
+				Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEntity_ShowSearchPanel(), theEcorePackage.getEBoolean(), "showSearchPanel", "true", 0, 1,
 				Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE,
 				!IS_DERIVED, IS_ORDERED);
 		initEAttribute(getEntity_GenerateDemo(), theEcorePackage.getEBoolean(), "generateDemo", "true", 0, 1,

@@ -35,8 +35,8 @@ class ModelFXTemplate implements IGenerator<Entity>{
 	  private BooleanProperty enableSubmitProperty = new SimpleBooleanProperty(false);
 	  
 	  // UI configurations
-	  private BooleanProperty showSearchPanelMenu = new SimpleBooleanProperty(true);
-	  private BooleanProperty showDetailsPanelMenu = new SimpleBooleanProperty(true);
+	  private BooleanProperty showSearchPanelMenu = new SimpleBooleanProperty(«t.showSearchPanel»);
+	  private BooleanProperty showDetailsPanelMenu = new SimpleBooleanProperty(«t.showDetailsPanel»);
 
 	  «FOR field : t.field»
 	  «IF field.useByRepository»

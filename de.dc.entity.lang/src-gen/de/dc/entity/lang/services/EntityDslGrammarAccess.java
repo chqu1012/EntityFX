@@ -45,30 +45,40 @@ public class EntityDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cUseHistoryAssignment_6_1 = (Assignment)cGroup_6.eContents().get(1);
 		private final RuleCall cUseHistoryEBooleanParserRuleCall_6_1_0 = (RuleCall)cUseHistoryAssignment_6_1.eContents().get(0);
 		private final Group cGroup_7 = (Group)cGroup.eContents().get(7);
-		private final Keyword cGenerateDemoKeyword_7_0 = (Keyword)cGroup_7.eContents().get(0);
-		private final Assignment cGenerateDemoAssignment_7_1 = (Assignment)cGroup_7.eContents().get(1);
-		private final RuleCall cGenerateDemoEBooleanParserRuleCall_7_1_0 = (RuleCall)cGenerateDemoAssignment_7_1.eContents().get(0);
+		private final Keyword cShowDetailsPanelKeyword_7_0 = (Keyword)cGroup_7.eContents().get(0);
+		private final Assignment cShowDetailsPanelAssignment_7_1 = (Assignment)cGroup_7.eContents().get(1);
+		private final RuleCall cShowDetailsPanelEBooleanParserRuleCall_7_1_0 = (RuleCall)cShowDetailsPanelAssignment_7_1.eContents().get(0);
 		private final Group cGroup_8 = (Group)cGroup.eContents().get(8);
-		private final Assignment cFieldAssignment_8_0 = (Assignment)cGroup_8.eContents().get(0);
-		private final RuleCall cFieldFieldParserRuleCall_8_0_0 = (RuleCall)cFieldAssignment_8_0.eContents().get(0);
-		private final Assignment cFieldAssignment_8_1 = (Assignment)cGroup_8.eContents().get(1);
-		private final RuleCall cFieldFieldParserRuleCall_8_1_0 = (RuleCall)cFieldAssignment_8_1.eContents().get(0);
-		private final Assignment cRepositoryAssignment_9 = (Assignment)cGroup.eContents().get(9);
-		private final RuleCall cRepositoryRepositoryParserRuleCall_9_0 = (RuleCall)cRepositoryAssignment_9.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_10 = (Keyword)cGroup.eContents().get(10);
+		private final Keyword cShowSearchPanelKeyword_8_0 = (Keyword)cGroup_8.eContents().get(0);
+		private final Assignment cShowSearchPanelAssignment_8_1 = (Assignment)cGroup_8.eContents().get(1);
+		private final RuleCall cShowSearchPanelEBooleanParserRuleCall_8_1_0 = (RuleCall)cShowSearchPanelAssignment_8_1.eContents().get(0);
+		private final Group cGroup_9 = (Group)cGroup.eContents().get(9);
+		private final Keyword cGenerateDemoKeyword_9_0 = (Keyword)cGroup_9.eContents().get(0);
+		private final Assignment cGenerateDemoAssignment_9_1 = (Assignment)cGroup_9.eContents().get(1);
+		private final RuleCall cGenerateDemoEBooleanParserRuleCall_9_1_0 = (RuleCall)cGenerateDemoAssignment_9_1.eContents().get(0);
+		private final Group cGroup_10 = (Group)cGroup.eContents().get(10);
+		private final Assignment cFieldAssignment_10_0 = (Assignment)cGroup_10.eContents().get(0);
+		private final RuleCall cFieldFieldParserRuleCall_10_0_0 = (RuleCall)cFieldAssignment_10_0.eContents().get(0);
+		private final Assignment cFieldAssignment_10_1 = (Assignment)cGroup_10.eContents().get(1);
+		private final RuleCall cFieldFieldParserRuleCall_10_1_0 = (RuleCall)cFieldAssignment_10_1.eContents().get(0);
+		private final Assignment cRepositoryAssignment_11 = (Assignment)cGroup.eContents().get(11);
+		private final RuleCall cRepositoryRepositoryParserRuleCall_11_0 = (RuleCall)cRepositoryAssignment_11.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_12 = (Keyword)cGroup.eContents().get(12);
 		
 		//Entity:
 		//	{Entity} ('packagePath' packagePath=QualifiedName)?
 		//	'Entity'
 		//	name=EString
-		//	'{' ('useSpring:' useSpring=EBoolean)? ('useHistory:' useHistory=EBoolean)? ('generateDemo:' generateDemo=EBoolean)?
+		//	'{' ('useSpring:' useSpring=EBoolean)? ('useHistory:' useHistory=EBoolean)? ('showDetailsPanel:'
+		//	showDetailsPanel=EBoolean)? ('showSearchPanel:' showSearchPanel=EBoolean)? ('generateDemo:' generateDemo=EBoolean)?
 		//	(field+=Field field+=Field*)?
 		//	repository=Repository?
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//{Entity} ('packagePath' packagePath=QualifiedName)? 'Entity' name=EString '{' ('useSpring:' useSpring=EBoolean)?
-		//('useHistory:' useHistory=EBoolean)? ('generateDemo:' generateDemo=EBoolean)? (field+=Field field+=Field*)?
+		//('useHistory:' useHistory=EBoolean)? ('showDetailsPanel:' showDetailsPanel=EBoolean)? ('showSearchPanel:'
+		//showSearchPanel=EBoolean)? ('generateDemo:' generateDemo=EBoolean)? (field+=Field field+=Field*)?
 		//repository=Repository? '}'
 		public Group getGroup() { return cGroup; }
 		
@@ -123,41 +133,65 @@ public class EntityDslGrammarAccess extends AbstractGrammarElementFinder {
 		//EBoolean
 		public RuleCall getUseHistoryEBooleanParserRuleCall_6_1_0() { return cUseHistoryEBooleanParserRuleCall_6_1_0; }
 		
-		//('generateDemo:' generateDemo=EBoolean)?
+		//('showDetailsPanel:' showDetailsPanel=EBoolean)?
 		public Group getGroup_7() { return cGroup_7; }
 		
-		//'generateDemo:'
-		public Keyword getGenerateDemoKeyword_7_0() { return cGenerateDemoKeyword_7_0; }
+		//'showDetailsPanel:'
+		public Keyword getShowDetailsPanelKeyword_7_0() { return cShowDetailsPanelKeyword_7_0; }
 		
-		//generateDemo=EBoolean
-		public Assignment getGenerateDemoAssignment_7_1() { return cGenerateDemoAssignment_7_1; }
+		//showDetailsPanel=EBoolean
+		public Assignment getShowDetailsPanelAssignment_7_1() { return cShowDetailsPanelAssignment_7_1; }
 		
 		//EBoolean
-		public RuleCall getGenerateDemoEBooleanParserRuleCall_7_1_0() { return cGenerateDemoEBooleanParserRuleCall_7_1_0; }
+		public RuleCall getShowDetailsPanelEBooleanParserRuleCall_7_1_0() { return cShowDetailsPanelEBooleanParserRuleCall_7_1_0; }
 		
-		//(field+=Field field+=Field*)?
+		//('showSearchPanel:' showSearchPanel=EBoolean)?
 		public Group getGroup_8() { return cGroup_8; }
 		
+		//'showSearchPanel:'
+		public Keyword getShowSearchPanelKeyword_8_0() { return cShowSearchPanelKeyword_8_0; }
+		
+		//showSearchPanel=EBoolean
+		public Assignment getShowSearchPanelAssignment_8_1() { return cShowSearchPanelAssignment_8_1; }
+		
+		//EBoolean
+		public RuleCall getShowSearchPanelEBooleanParserRuleCall_8_1_0() { return cShowSearchPanelEBooleanParserRuleCall_8_1_0; }
+		
+		//('generateDemo:' generateDemo=EBoolean)?
+		public Group getGroup_9() { return cGroup_9; }
+		
+		//'generateDemo:'
+		public Keyword getGenerateDemoKeyword_9_0() { return cGenerateDemoKeyword_9_0; }
+		
+		//generateDemo=EBoolean
+		public Assignment getGenerateDemoAssignment_9_1() { return cGenerateDemoAssignment_9_1; }
+		
+		//EBoolean
+		public RuleCall getGenerateDemoEBooleanParserRuleCall_9_1_0() { return cGenerateDemoEBooleanParserRuleCall_9_1_0; }
+		
+		//(field+=Field field+=Field*)?
+		public Group getGroup_10() { return cGroup_10; }
+		
 		//field+=Field
-		public Assignment getFieldAssignment_8_0() { return cFieldAssignment_8_0; }
+		public Assignment getFieldAssignment_10_0() { return cFieldAssignment_10_0; }
 		
 		//Field
-		public RuleCall getFieldFieldParserRuleCall_8_0_0() { return cFieldFieldParserRuleCall_8_0_0; }
+		public RuleCall getFieldFieldParserRuleCall_10_0_0() { return cFieldFieldParserRuleCall_10_0_0; }
 		
 		//field+=Field*
-		public Assignment getFieldAssignment_8_1() { return cFieldAssignment_8_1; }
+		public Assignment getFieldAssignment_10_1() { return cFieldAssignment_10_1; }
 		
 		//Field
-		public RuleCall getFieldFieldParserRuleCall_8_1_0() { return cFieldFieldParserRuleCall_8_1_0; }
+		public RuleCall getFieldFieldParserRuleCall_10_1_0() { return cFieldFieldParserRuleCall_10_1_0; }
 		
 		//repository=Repository?
-		public Assignment getRepositoryAssignment_9() { return cRepositoryAssignment_9; }
+		public Assignment getRepositoryAssignment_11() { return cRepositoryAssignment_11; }
 		
 		//Repository
-		public RuleCall getRepositoryRepositoryParserRuleCall_9_0() { return cRepositoryRepositoryParserRuleCall_9_0; }
+		public RuleCall getRepositoryRepositoryParserRuleCall_11_0() { return cRepositoryRepositoryParserRuleCall_11_0; }
 		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_10() { return cRightCurlyBracketKeyword_10; }
+		public Keyword getRightCurlyBracketKeyword_12() { return cRightCurlyBracketKeyword_12; }
 	}
 	public class EStringElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.dc.entity.lang.EntityDsl.EString");
@@ -241,35 +275,41 @@ public class EntityDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cDatatypeJvmTypeReferenceParserRuleCall_4_1_0 = (RuleCall)cDatatypeAssignment_4_1.eContents().get(0);
 		private final Keyword cCommaKeyword_4_2 = (Keyword)cGroup_4.eContents().get(2);
 		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
-		private final Keyword cRequiredKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
-		private final Assignment cRequiredAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
-		private final RuleCall cRequiredEBooleanParserRuleCall_5_1_0 = (RuleCall)cRequiredAssignment_5_1.eContents().get(0);
+		private final Keyword cIsClobKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
+		private final Assignment cIsClobAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
+		private final RuleCall cIsClobEBooleanParserRuleCall_5_1_0 = (RuleCall)cIsClobAssignment_5_1.eContents().get(0);
 		private final Keyword cCommaKeyword_5_2 = (Keyword)cGroup_5.eContents().get(2);
 		private final Group cGroup_6 = (Group)cGroup.eContents().get(6);
-		private final Keyword cUseByTableViewKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
-		private final Assignment cUseByTableViewAssignment_6_1 = (Assignment)cGroup_6.eContents().get(1);
-		private final RuleCall cUseByTableViewEBooleanParserRuleCall_6_1_0 = (RuleCall)cUseByTableViewAssignment_6_1.eContents().get(0);
+		private final Keyword cRequiredKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
+		private final Assignment cRequiredAssignment_6_1 = (Assignment)cGroup_6.eContents().get(1);
+		private final RuleCall cRequiredEBooleanParserRuleCall_6_1_0 = (RuleCall)cRequiredAssignment_6_1.eContents().get(0);
 		private final Keyword cCommaKeyword_6_2 = (Keyword)cGroup_6.eContents().get(2);
 		private final Group cGroup_7 = (Group)cGroup.eContents().get(7);
-		private final Keyword cUseByRepositoryKeyword_7_0 = (Keyword)cGroup_7.eContents().get(0);
-		private final Assignment cUseByRepositoryAssignment_7_1 = (Assignment)cGroup_7.eContents().get(1);
-		private final RuleCall cUseByRepositoryEBooleanParserRuleCall_7_1_0 = (RuleCall)cUseByRepositoryAssignment_7_1.eContents().get(0);
-		private final Keyword cRightParenthesisKeyword_8 = (Keyword)cGroup.eContents().get(8);
-		private final Assignment cControlAssignment_9 = (Assignment)cGroup.eContents().get(9);
-		private final RuleCall cControlFXControlParserRuleCall_9_0 = (RuleCall)cControlAssignment_9.eContents().get(0);
+		private final Keyword cUseByTableViewKeyword_7_0 = (Keyword)cGroup_7.eContents().get(0);
+		private final Assignment cUseByTableViewAssignment_7_1 = (Assignment)cGroup_7.eContents().get(1);
+		private final RuleCall cUseByTableViewEBooleanParserRuleCall_7_1_0 = (RuleCall)cUseByTableViewAssignment_7_1.eContents().get(0);
+		private final Keyword cCommaKeyword_7_2 = (Keyword)cGroup_7.eContents().get(2);
+		private final Group cGroup_8 = (Group)cGroup.eContents().get(8);
+		private final Keyword cUseByRepositoryKeyword_8_0 = (Keyword)cGroup_8.eContents().get(0);
+		private final Assignment cUseByRepositoryAssignment_8_1 = (Assignment)cGroup_8.eContents().get(1);
+		private final RuleCall cUseByRepositoryEBooleanParserRuleCall_8_1_0 = (RuleCall)cUseByRepositoryAssignment_8_1.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_9 = (Keyword)cGroup.eContents().get(9);
+		private final Assignment cControlAssignment_10 = (Assignment)cGroup.eContents().get(10);
+		private final RuleCall cControlFXControlParserRuleCall_10_0 = (RuleCall)cControlAssignment_10.eContents().get(0);
 		
 		//Field:
 		//	{Field}
 		//	'Field'
-		//	'(' ('name:' name=EString ','?)? ('datatype:' datatype=JvmTypeReference ','?)? ('required:' required=EBoolean ','?)?
-		//	('useByTableView:' useByTableView=EBoolean ','?)? ('useByRepository:' useByRepository=EBoolean)?
+		//	'(' ('name:' name=EString ','?)? ('datatype:' datatype=JvmTypeReference ','?)? ('isClob:' isClob=EBoolean ','?)?
+		//	('required:' required=EBoolean ','?)? ('useByTableView:' useByTableView=EBoolean ','?)? ('useByRepository:'
+		//	useByRepository=EBoolean)?
 		//	')'
 		//	control=FXControl?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{Field} 'Field' '(' ('name:' name=EString ','?)? ('datatype:' datatype=JvmTypeReference ','?)? ('required:'
-		//required=EBoolean ','?)? ('useByTableView:' useByTableView=EBoolean ','?)? ('useByRepository:'
-		//useByRepository=EBoolean)? ')' control=FXControl?
+		//{Field} 'Field' '(' ('name:' name=EString ','?)? ('datatype:' datatype=JvmTypeReference ','?)? ('isClob:'
+		//isClob=EBoolean ','?)? ('required:' required=EBoolean ','?)? ('useByTableView:' useByTableView=EBoolean ','?)?
+		//('useByRepository:' useByRepository=EBoolean)? ')' control=FXControl?
 		public Group getGroup() { return cGroup; }
 		
 		//{Field}
@@ -311,56 +351,71 @@ public class EntityDslGrammarAccess extends AbstractGrammarElementFinder {
 		//','?
 		public Keyword getCommaKeyword_4_2() { return cCommaKeyword_4_2; }
 		
-		//('required:' required=EBoolean ','?)?
+		//('isClob:' isClob=EBoolean ','?)?
 		public Group getGroup_5() { return cGroup_5; }
 		
-		//'required:'
-		public Keyword getRequiredKeyword_5_0() { return cRequiredKeyword_5_0; }
+		//'isClob:'
+		public Keyword getIsClobKeyword_5_0() { return cIsClobKeyword_5_0; }
 		
-		//required=EBoolean
-		public Assignment getRequiredAssignment_5_1() { return cRequiredAssignment_5_1; }
+		//isClob=EBoolean
+		public Assignment getIsClobAssignment_5_1() { return cIsClobAssignment_5_1; }
 		
 		//EBoolean
-		public RuleCall getRequiredEBooleanParserRuleCall_5_1_0() { return cRequiredEBooleanParserRuleCall_5_1_0; }
+		public RuleCall getIsClobEBooleanParserRuleCall_5_1_0() { return cIsClobEBooleanParserRuleCall_5_1_0; }
 		
 		//','?
 		public Keyword getCommaKeyword_5_2() { return cCommaKeyword_5_2; }
 		
-		//('useByTableView:' useByTableView=EBoolean ','?)?
+		//('required:' required=EBoolean ','?)?
 		public Group getGroup_6() { return cGroup_6; }
 		
-		//'useByTableView:'
-		public Keyword getUseByTableViewKeyword_6_0() { return cUseByTableViewKeyword_6_0; }
+		//'required:'
+		public Keyword getRequiredKeyword_6_0() { return cRequiredKeyword_6_0; }
 		
-		//useByTableView=EBoolean
-		public Assignment getUseByTableViewAssignment_6_1() { return cUseByTableViewAssignment_6_1; }
+		//required=EBoolean
+		public Assignment getRequiredAssignment_6_1() { return cRequiredAssignment_6_1; }
 		
 		//EBoolean
-		public RuleCall getUseByTableViewEBooleanParserRuleCall_6_1_0() { return cUseByTableViewEBooleanParserRuleCall_6_1_0; }
+		public RuleCall getRequiredEBooleanParserRuleCall_6_1_0() { return cRequiredEBooleanParserRuleCall_6_1_0; }
 		
 		//','?
 		public Keyword getCommaKeyword_6_2() { return cCommaKeyword_6_2; }
 		
-		//('useByRepository:' useByRepository=EBoolean)?
+		//('useByTableView:' useByTableView=EBoolean ','?)?
 		public Group getGroup_7() { return cGroup_7; }
 		
-		//'useByRepository:'
-		public Keyword getUseByRepositoryKeyword_7_0() { return cUseByRepositoryKeyword_7_0; }
+		//'useByTableView:'
+		public Keyword getUseByTableViewKeyword_7_0() { return cUseByTableViewKeyword_7_0; }
 		
-		//useByRepository=EBoolean
-		public Assignment getUseByRepositoryAssignment_7_1() { return cUseByRepositoryAssignment_7_1; }
+		//useByTableView=EBoolean
+		public Assignment getUseByTableViewAssignment_7_1() { return cUseByTableViewAssignment_7_1; }
 		
 		//EBoolean
-		public RuleCall getUseByRepositoryEBooleanParserRuleCall_7_1_0() { return cUseByRepositoryEBooleanParserRuleCall_7_1_0; }
+		public RuleCall getUseByTableViewEBooleanParserRuleCall_7_1_0() { return cUseByTableViewEBooleanParserRuleCall_7_1_0; }
+		
+		//','?
+		public Keyword getCommaKeyword_7_2() { return cCommaKeyword_7_2; }
+		
+		//('useByRepository:' useByRepository=EBoolean)?
+		public Group getGroup_8() { return cGroup_8; }
+		
+		//'useByRepository:'
+		public Keyword getUseByRepositoryKeyword_8_0() { return cUseByRepositoryKeyword_8_0; }
+		
+		//useByRepository=EBoolean
+		public Assignment getUseByRepositoryAssignment_8_1() { return cUseByRepositoryAssignment_8_1; }
+		
+		//EBoolean
+		public RuleCall getUseByRepositoryEBooleanParserRuleCall_8_1_0() { return cUseByRepositoryEBooleanParserRuleCall_8_1_0; }
 		
 		//')'
-		public Keyword getRightParenthesisKeyword_8() { return cRightParenthesisKeyword_8; }
+		public Keyword getRightParenthesisKeyword_9() { return cRightParenthesisKeyword_9; }
 		
 		//control=FXControl?
-		public Assignment getControlAssignment_9() { return cControlAssignment_9; }
+		public Assignment getControlAssignment_10() { return cControlAssignment_10; }
 		
 		//FXControl
-		public RuleCall getControlFXControlParserRuleCall_9_0() { return cControlFXControlParserRuleCall_9_0; }
+		public RuleCall getControlFXControlParserRuleCall_10_0() { return cControlFXControlParserRuleCall_10_0; }
 	}
 	public class FXControlElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.dc.entity.lang.EntityDsl.FXControl");
@@ -783,7 +838,8 @@ public class EntityDslGrammarAccess extends AbstractGrammarElementFinder {
 	//	{Entity} ('packagePath' packagePath=QualifiedName)?
 	//	'Entity'
 	//	name=EString
-	//	'{' ('useSpring:' useSpring=EBoolean)? ('useHistory:' useHistory=EBoolean)? ('generateDemo:' generateDemo=EBoolean)?
+	//	'{' ('useSpring:' useSpring=EBoolean)? ('useHistory:' useHistory=EBoolean)? ('showDetailsPanel:'
+	//	showDetailsPanel=EBoolean)? ('showSearchPanel:' showSearchPanel=EBoolean)? ('generateDemo:' generateDemo=EBoolean)?
 	//	(field+=Field field+=Field*)?
 	//	repository=Repository?
 	//	'}';
@@ -828,8 +884,9 @@ public class EntityDslGrammarAccess extends AbstractGrammarElementFinder {
 	//Field:
 	//	{Field}
 	//	'Field'
-	//	'(' ('name:' name=EString ','?)? ('datatype:' datatype=JvmTypeReference ','?)? ('required:' required=EBoolean ','?)?
-	//	('useByTableView:' useByTableView=EBoolean ','?)? ('useByRepository:' useByRepository=EBoolean)?
+	//	'(' ('name:' name=EString ','?)? ('datatype:' datatype=JvmTypeReference ','?)? ('isClob:' isClob=EBoolean ','?)?
+	//	('required:' required=EBoolean ','?)? ('useByTableView:' useByTableView=EBoolean ','?)? ('useByRepository:'
+	//	useByRepository=EBoolean)?
 	//	')'
 	//	control=FXControl?;
 	public FieldElements getFieldAccess() {

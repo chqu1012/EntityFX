@@ -186,16 +186,66 @@ ruleEntity returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_10='generateDemo:'
+			otherlv_10='showDetailsPanel:'
 			{
-				newLeafNode(otherlv_10, grammarAccess.getEntityAccess().getGenerateDemoKeyword_7_0());
+				newLeafNode(otherlv_10, grammarAccess.getEntityAccess().getShowDetailsPanelKeyword_7_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getEntityAccess().getGenerateDemoEBooleanParserRuleCall_7_1_0());
+						newCompositeNode(grammarAccess.getEntityAccess().getShowDetailsPanelEBooleanParserRuleCall_7_1_0());
 					}
-					lv_generateDemo_11_0=ruleEBoolean
+					lv_showDetailsPanel_11_0=ruleEBoolean
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getEntityRule());
+						}
+						set(
+							$current,
+							"showDetailsPanel",
+							lv_showDetailsPanel_11_0,
+							"de.dc.entity.lang.EntityDsl.EBoolean");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+		)?
+		(
+			otherlv_12='showSearchPanel:'
+			{
+				newLeafNode(otherlv_12, grammarAccess.getEntityAccess().getShowSearchPanelKeyword_8_0());
+			}
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getEntityAccess().getShowSearchPanelEBooleanParserRuleCall_8_1_0());
+					}
+					lv_showSearchPanel_13_0=ruleEBoolean
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getEntityRule());
+						}
+						set(
+							$current,
+							"showSearchPanel",
+							lv_showSearchPanel_13_0,
+							"de.dc.entity.lang.EntityDsl.EBoolean");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+		)?
+		(
+			otherlv_14='generateDemo:'
+			{
+				newLeafNode(otherlv_14, grammarAccess.getEntityAccess().getGenerateDemoKeyword_9_0());
+			}
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getEntityAccess().getGenerateDemoEBooleanParserRuleCall_9_1_0());
+					}
+					lv_generateDemo_15_0=ruleEBoolean
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getEntityRule());
@@ -203,7 +253,7 @@ ruleEntity returns [EObject current=null]
 						set(
 							$current,
 							"generateDemo",
-							lv_generateDemo_11_0,
+							lv_generateDemo_15_0,
 							"de.dc.entity.lang.EntityDsl.EBoolean");
 						afterParserOrEnumRuleCall();
 					}
@@ -214,9 +264,9 @@ ruleEntity returns [EObject current=null]
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getEntityAccess().getFieldFieldParserRuleCall_8_0_0());
+						newCompositeNode(grammarAccess.getEntityAccess().getFieldFieldParserRuleCall_10_0_0());
 					}
-					lv_field_12_0=ruleField
+					lv_field_16_0=ruleField
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getEntityRule());
@@ -224,7 +274,7 @@ ruleEntity returns [EObject current=null]
 						add(
 							$current,
 							"field",
-							lv_field_12_0,
+							lv_field_16_0,
 							"de.dc.entity.lang.EntityDsl.Field");
 						afterParserOrEnumRuleCall();
 					}
@@ -233,9 +283,9 @@ ruleEntity returns [EObject current=null]
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getEntityAccess().getFieldFieldParserRuleCall_8_1_0());
+						newCompositeNode(grammarAccess.getEntityAccess().getFieldFieldParserRuleCall_10_1_0());
 					}
-					lv_field_13_0=ruleField
+					lv_field_17_0=ruleField
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getEntityRule());
@@ -243,7 +293,7 @@ ruleEntity returns [EObject current=null]
 						add(
 							$current,
 							"field",
-							lv_field_13_0,
+							lv_field_17_0,
 							"de.dc.entity.lang.EntityDsl.Field");
 						afterParserOrEnumRuleCall();
 					}
@@ -253,9 +303,9 @@ ruleEntity returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getEntityAccess().getRepositoryRepositoryParserRuleCall_9_0());
+					newCompositeNode(grammarAccess.getEntityAccess().getRepositoryRepositoryParserRuleCall_11_0());
 				}
-				lv_repository_14_0=ruleRepository
+				lv_repository_18_0=ruleRepository
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getEntityRule());
@@ -263,15 +313,15 @@ ruleEntity returns [EObject current=null]
 					set(
 						$current,
 						"repository",
-						lv_repository_14_0,
+						lv_repository_18_0,
 						"de.dc.entity.lang.EntityDsl.Repository");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)?
-		otherlv_15='}'
+		otherlv_19='}'
 		{
-			newLeafNode(otherlv_15, grammarAccess.getEntityAccess().getRightCurlyBracketKeyword_10());
+			newLeafNode(otherlv_19, grammarAccess.getEntityAccess().getRightCurlyBracketKeyword_12());
 		}
 	)
 ;
@@ -474,24 +524,24 @@ ruleField returns [EObject current=null]
 			)?
 		)?
 		(
-			otherlv_9='required:'
+			otherlv_9='isClob:'
 			{
-				newLeafNode(otherlv_9, grammarAccess.getFieldAccess().getRequiredKeyword_5_0());
+				newLeafNode(otherlv_9, grammarAccess.getFieldAccess().getIsClobKeyword_5_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getFieldAccess().getRequiredEBooleanParserRuleCall_5_1_0());
+						newCompositeNode(grammarAccess.getFieldAccess().getIsClobEBooleanParserRuleCall_5_1_0());
 					}
-					lv_required_10_0=ruleEBoolean
+					lv_isClob_10_0=ruleEBoolean
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getFieldRule());
 						}
 						set(
 							$current,
-							"required",
-							lv_required_10_0,
+							"isClob",
+							lv_isClob_10_0,
 							"de.dc.entity.lang.EntityDsl.EBoolean");
 						afterParserOrEnumRuleCall();
 					}
@@ -505,24 +555,24 @@ ruleField returns [EObject current=null]
 			)?
 		)?
 		(
-			otherlv_12='useByTableView:'
+			otherlv_12='required:'
 			{
-				newLeafNode(otherlv_12, grammarAccess.getFieldAccess().getUseByTableViewKeyword_6_0());
+				newLeafNode(otherlv_12, grammarAccess.getFieldAccess().getRequiredKeyword_6_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getFieldAccess().getUseByTableViewEBooleanParserRuleCall_6_1_0());
+						newCompositeNode(grammarAccess.getFieldAccess().getRequiredEBooleanParserRuleCall_6_1_0());
 					}
-					lv_useByTableView_13_0=ruleEBoolean
+					lv_required_13_0=ruleEBoolean
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getFieldRule());
 						}
 						set(
 							$current,
-							"useByTableView",
-							lv_useByTableView_13_0,
+							"required",
+							lv_required_13_0,
 							"de.dc.entity.lang.EntityDsl.EBoolean");
 						afterParserOrEnumRuleCall();
 					}
@@ -536,16 +586,47 @@ ruleField returns [EObject current=null]
 			)?
 		)?
 		(
-			otherlv_15='useByRepository:'
+			otherlv_15='useByTableView:'
 			{
-				newLeafNode(otherlv_15, grammarAccess.getFieldAccess().getUseByRepositoryKeyword_7_0());
+				newLeafNode(otherlv_15, grammarAccess.getFieldAccess().getUseByTableViewKeyword_7_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getFieldAccess().getUseByRepositoryEBooleanParserRuleCall_7_1_0());
+						newCompositeNode(grammarAccess.getFieldAccess().getUseByTableViewEBooleanParserRuleCall_7_1_0());
 					}
-					lv_useByRepository_16_0=ruleEBoolean
+					lv_useByTableView_16_0=ruleEBoolean
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getFieldRule());
+						}
+						set(
+							$current,
+							"useByTableView",
+							lv_useByTableView_16_0,
+							"de.dc.entity.lang.EntityDsl.EBoolean");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+			(
+				otherlv_17=','
+				{
+					newLeafNode(otherlv_17, grammarAccess.getFieldAccess().getCommaKeyword_7_2());
+				}
+			)?
+		)?
+		(
+			otherlv_18='useByRepository:'
+			{
+				newLeafNode(otherlv_18, grammarAccess.getFieldAccess().getUseByRepositoryKeyword_8_0());
+			}
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getFieldAccess().getUseByRepositoryEBooleanParserRuleCall_8_1_0());
+					}
+					lv_useByRepository_19_0=ruleEBoolean
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getFieldRule());
@@ -553,23 +634,23 @@ ruleField returns [EObject current=null]
 						set(
 							$current,
 							"useByRepository",
-							lv_useByRepository_16_0,
+							lv_useByRepository_19_0,
 							"de.dc.entity.lang.EntityDsl.EBoolean");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 		)?
-		otherlv_17=')'
+		otherlv_20=')'
 		{
-			newLeafNode(otherlv_17, grammarAccess.getFieldAccess().getRightParenthesisKeyword_8());
+			newLeafNode(otherlv_20, grammarAccess.getFieldAccess().getRightParenthesisKeyword_9());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getFieldAccess().getControlFXControlParserRuleCall_9_0());
+					newCompositeNode(grammarAccess.getFieldAccess().getControlFXControlParserRuleCall_10_0());
 				}
-				lv_control_18_0=ruleFXControl
+				lv_control_21_0=ruleFXControl
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getFieldRule());
@@ -577,7 +658,7 @@ ruleField returns [EObject current=null]
 					set(
 						$current,
 						"control",
-						lv_control_18_0,
+						lv_control_21_0,
 						"de.dc.entity.lang.EntityDsl.FXControl");
 					afterParserOrEnumRuleCall();
 				}

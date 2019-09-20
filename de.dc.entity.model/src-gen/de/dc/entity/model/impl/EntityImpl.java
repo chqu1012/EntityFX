@@ -37,6 +37,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link de.dc.entity.model.impl.EntityImpl#isUseHistory <em>Use History</em>}</li>
  *   <li>{@link de.dc.entity.model.impl.EntityImpl#isUseFormular <em>Use Formular</em>}</li>
  *   <li>{@link de.dc.entity.model.impl.EntityImpl#isUseTableView <em>Use Table View</em>}</li>
+ *   <li>{@link de.dc.entity.model.impl.EntityImpl#isShowDetailsPanel <em>Show Details Panel</em>}</li>
+ *   <li>{@link de.dc.entity.model.impl.EntityImpl#isShowSearchPanel <em>Show Search Panel</em>}</li>
  *   <li>{@link de.dc.entity.model.impl.EntityImpl#isGenerateDemo <em>Generate Demo</em>}</li>
  *   <li>{@link de.dc.entity.model.impl.EntityImpl#getField <em>Field</em>}</li>
  *   <li>{@link de.dc.entity.model.impl.EntityImpl#getRepository <em>Repository</em>}</li>
@@ -164,6 +166,46 @@ public class EntityImpl extends MinimalEObjectImpl.Container implements Entity {
 	 * @ordered
 	 */
 	protected boolean useTableView = USE_TABLE_VIEW_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #isShowDetailsPanel() <em>Show Details Panel</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isShowDetailsPanel()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean SHOW_DETAILS_PANEL_EDEFAULT = true;
+
+	/**
+	 * The cached value of the '{@link #isShowDetailsPanel() <em>Show Details Panel</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isShowDetailsPanel()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean showDetailsPanel = SHOW_DETAILS_PANEL_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #isShowSearchPanel() <em>Show Search Panel</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isShowSearchPanel()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean SHOW_SEARCH_PANEL_EDEFAULT = true;
+
+	/**
+	 * The cached value of the '{@link #isShowSearchPanel() <em>Show Search Panel</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isShowSearchPanel()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean showSearchPanel = SHOW_SEARCH_PANEL_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #isGenerateDemo() <em>Generate Demo</em>}' attribute.
@@ -373,6 +415,54 @@ public class EntityImpl extends MinimalEObjectImpl.Container implements Entity {
 	 * @generated
 	 */
 	@Override
+	public boolean isShowDetailsPanel() {
+		return showDetailsPanel;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setShowDetailsPanel(boolean newShowDetailsPanel) {
+		boolean oldShowDetailsPanel = showDetailsPanel;
+		showDetailsPanel = newShowDetailsPanel;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ModelPackage.ENTITY__SHOW_DETAILS_PANEL,
+					oldShowDetailsPanel, showDetailsPanel));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean isShowSearchPanel() {
+		return showSearchPanel;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setShowSearchPanel(boolean newShowSearchPanel) {
+		boolean oldShowSearchPanel = showSearchPanel;
+		showSearchPanel = newShowSearchPanel;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ModelPackage.ENTITY__SHOW_SEARCH_PANEL,
+					oldShowSearchPanel, showSearchPanel));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public boolean isGenerateDemo() {
 		return generateDemo;
 	}
@@ -492,6 +582,10 @@ public class EntityImpl extends MinimalEObjectImpl.Container implements Entity {
 			return isUseFormular();
 		case ModelPackage.ENTITY__USE_TABLE_VIEW:
 			return isUseTableView();
+		case ModelPackage.ENTITY__SHOW_DETAILS_PANEL:
+			return isShowDetailsPanel();
+		case ModelPackage.ENTITY__SHOW_SEARCH_PANEL:
+			return isShowSearchPanel();
 		case ModelPackage.ENTITY__GENERATE_DEMO:
 			return isGenerateDemo();
 		case ModelPackage.ENTITY__FIELD:
@@ -528,6 +622,12 @@ public class EntityImpl extends MinimalEObjectImpl.Container implements Entity {
 			return;
 		case ModelPackage.ENTITY__USE_TABLE_VIEW:
 			setUseTableView((Boolean) newValue);
+			return;
+		case ModelPackage.ENTITY__SHOW_DETAILS_PANEL:
+			setShowDetailsPanel((Boolean) newValue);
+			return;
+		case ModelPackage.ENTITY__SHOW_SEARCH_PANEL:
+			setShowSearchPanel((Boolean) newValue);
 			return;
 		case ModelPackage.ENTITY__GENERATE_DEMO:
 			setGenerateDemo((Boolean) newValue);
@@ -569,6 +669,12 @@ public class EntityImpl extends MinimalEObjectImpl.Container implements Entity {
 		case ModelPackage.ENTITY__USE_TABLE_VIEW:
 			setUseTableView(USE_TABLE_VIEW_EDEFAULT);
 			return;
+		case ModelPackage.ENTITY__SHOW_DETAILS_PANEL:
+			setShowDetailsPanel(SHOW_DETAILS_PANEL_EDEFAULT);
+			return;
+		case ModelPackage.ENTITY__SHOW_SEARCH_PANEL:
+			setShowSearchPanel(SHOW_SEARCH_PANEL_EDEFAULT);
+			return;
 		case ModelPackage.ENTITY__GENERATE_DEMO:
 			setGenerateDemo(GENERATE_DEMO_EDEFAULT);
 			return;
@@ -602,6 +708,10 @@ public class EntityImpl extends MinimalEObjectImpl.Container implements Entity {
 			return useFormular != USE_FORMULAR_EDEFAULT;
 		case ModelPackage.ENTITY__USE_TABLE_VIEW:
 			return useTableView != USE_TABLE_VIEW_EDEFAULT;
+		case ModelPackage.ENTITY__SHOW_DETAILS_PANEL:
+			return showDetailsPanel != SHOW_DETAILS_PANEL_EDEFAULT;
+		case ModelPackage.ENTITY__SHOW_SEARCH_PANEL:
+			return showSearchPanel != SHOW_SEARCH_PANEL_EDEFAULT;
 		case ModelPackage.ENTITY__GENERATE_DEMO:
 			return generateDemo != GENERATE_DEMO_EDEFAULT;
 		case ModelPackage.ENTITY__FIELD:
@@ -635,6 +745,10 @@ public class EntityImpl extends MinimalEObjectImpl.Container implements Entity {
 		result.append(useFormular);
 		result.append(", useTableView: ");
 		result.append(useTableView);
+		result.append(", showDetailsPanel: ");
+		result.append(showDetailsPanel);
+		result.append(", showSearchPanel: ");
+		result.append(showSearchPanel);
 		result.append(", generateDemo: ");
 		result.append(generateDemo);
 		result.append(')');

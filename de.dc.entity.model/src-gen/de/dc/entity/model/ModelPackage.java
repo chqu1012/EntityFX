@@ -123,13 +123,31 @@ public interface ModelPackage extends EPackage {
 	int ENTITY__USE_TABLE_VIEW = 5;
 
 	/**
+	 * The feature id for the '<em><b>Show Details Panel</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY__SHOW_DETAILS_PANEL = 6;
+
+	/**
+	 * The feature id for the '<em><b>Show Search Panel</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY__SHOW_SEARCH_PANEL = 7;
+
+	/**
 	 * The feature id for the '<em><b>Generate Demo</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY__GENERATE_DEMO = 6;
+	int ENTITY__GENERATE_DEMO = 8;
 
 	/**
 	 * The feature id for the '<em><b>Field</b></em>' containment reference list.
@@ -138,7 +156,7 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY__FIELD = 7;
+	int ENTITY__FIELD = 9;
 
 	/**
 	 * The feature id for the '<em><b>Repository</b></em>' containment reference.
@@ -147,7 +165,7 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY__REPOSITORY = 8;
+	int ENTITY__REPOSITORY = 10;
 
 	/**
 	 * The number of structural features of the '<em>Entity</em>' class.
@@ -156,7 +174,7 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_FEATURE_COUNT = 9;
+	int ENTITY_FEATURE_COUNT = 11;
 
 	/**
 	 * The number of operations of the '<em>Entity</em>' class.
@@ -537,6 +555,28 @@ public interface ModelPackage extends EPackage {
 	EAttribute getEntity_UseTableView();
 
 	/**
+	 * Returns the meta object for the attribute '{@link de.dc.entity.model.Entity#isShowDetailsPanel <em>Show Details Panel</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Show Details Panel</em>'.
+	 * @see de.dc.entity.model.Entity#isShowDetailsPanel()
+	 * @see #getEntity()
+	 * @generated
+	 */
+	EAttribute getEntity_ShowDetailsPanel();
+
+	/**
+	 * Returns the meta object for the attribute '{@link de.dc.entity.model.Entity#isShowSearchPanel <em>Show Search Panel</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Show Search Panel</em>'.
+	 * @see de.dc.entity.model.Entity#isShowSearchPanel()
+	 * @see #getEntity()
+	 * @generated
+	 */
+	EAttribute getEntity_ShowSearchPanel();
+
+	/**
 	 * Returns the meta object for the attribute '{@link de.dc.entity.model.Entity#isGenerateDemo <em>Generate Demo</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -908,6 +948,22 @@ public interface ModelPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute ENTITY__USE_TABLE_VIEW = eINSTANCE.getEntity_UseTableView();
+
+		/**
+		 * The meta object literal for the '<em><b>Show Details Panel</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ENTITY__SHOW_DETAILS_PANEL = eINSTANCE.getEntity_ShowDetailsPanel();
+
+		/**
+		 * The meta object literal for the '<em><b>Show Search Panel</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ENTITY__SHOW_SEARCH_PANEL = eINSTANCE.getEntity_ShowSearchPanel();
 
 		/**
 		 * The meta object literal for the '<em><b>Generate Demo</b></em>' attribute feature.

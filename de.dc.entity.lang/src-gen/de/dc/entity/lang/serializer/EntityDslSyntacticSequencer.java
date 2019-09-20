@@ -29,6 +29,7 @@ public class EntityDslSyntacticSequencer extends AbstractSyntacticSequencer {
 	protected AbstractElementAlias match_Field_CommaKeyword_4_2_q;
 	protected AbstractElementAlias match_Field_CommaKeyword_5_2_q;
 	protected AbstractElementAlias match_Field_CommaKeyword_6_2_q;
+	protected AbstractElementAlias match_Field_CommaKeyword_7_2_q;
 	protected AbstractElementAlias match_Repository_CommaKeyword_3_2_q;
 	protected AbstractElementAlias match_Repository_CommaKeyword_4_2_q;
 	protected AbstractElementAlias match_SQLStatement_CommaKeyword_3_2_q;
@@ -51,6 +52,7 @@ public class EntityDslSyntacticSequencer extends AbstractSyntacticSequencer {
 		match_Field_CommaKeyword_4_2_q = new TokenAlias(false, true, grammarAccess.getFieldAccess().getCommaKeyword_4_2());
 		match_Field_CommaKeyword_5_2_q = new TokenAlias(false, true, grammarAccess.getFieldAccess().getCommaKeyword_5_2());
 		match_Field_CommaKeyword_6_2_q = new TokenAlias(false, true, grammarAccess.getFieldAccess().getCommaKeyword_6_2());
+		match_Field_CommaKeyword_7_2_q = new TokenAlias(false, true, grammarAccess.getFieldAccess().getCommaKeyword_7_2());
 		match_Repository_CommaKeyword_3_2_q = new TokenAlias(false, true, grammarAccess.getRepositoryAccess().getCommaKeyword_3_2());
 		match_Repository_CommaKeyword_4_2_q = new TokenAlias(false, true, grammarAccess.getRepositoryAccess().getCommaKeyword_4_2());
 		match_SQLStatement_CommaKeyword_3_2_q = new TokenAlias(false, true, grammarAccess.getSQLStatementAccess().getCommaKeyword_3_2());
@@ -116,6 +118,8 @@ public class EntityDslSyntacticSequencer extends AbstractSyntacticSequencer {
 				emit_Field_CommaKeyword_5_2_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Field_CommaKeyword_6_2_q.equals(syntax))
 				emit_Field_CommaKeyword_6_2_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Field_CommaKeyword_7_2_q.equals(syntax))
+				emit_Field_CommaKeyword_7_2_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Repository_CommaKeyword_3_2_q.equals(syntax))
 				emit_Repository_CommaKeyword_3_2_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Repository_CommaKeyword_4_2_q.equals(syntax))
@@ -206,6 +210,7 @@ public class EntityDslSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     name=EString (ambiguity) ')' (rule end)
 	 *     name=EString (ambiguity) ')' control=FXControl
 	 *     name=EString (ambiguity) 'datatype:' datatype=JvmTypeReference
+	 *     name=EString (ambiguity) 'isClob:' isClob=EBoolean
 	 *     name=EString (ambiguity) 'required:' required=EBoolean
 	 *     name=EString (ambiguity) 'useByRepository:' useByRepository=EBoolean
 	 *     name=EString (ambiguity) 'useByTableView:' useByTableView=EBoolean
@@ -221,6 +226,7 @@ public class EntityDslSyntacticSequencer extends AbstractSyntacticSequencer {
 	 * This ambiguous syntax occurs at:
 	 *     datatype=JvmTypeReference (ambiguity) ')' (rule end)
 	 *     datatype=JvmTypeReference (ambiguity) ')' control=FXControl
+	 *     datatype=JvmTypeReference (ambiguity) 'isClob:' isClob=EBoolean
 	 *     datatype=JvmTypeReference (ambiguity) 'required:' required=EBoolean
 	 *     datatype=JvmTypeReference (ambiguity) 'useByRepository:' useByRepository=EBoolean
 	 *     datatype=JvmTypeReference (ambiguity) 'useByTableView:' useByTableView=EBoolean
@@ -234,12 +240,27 @@ public class EntityDslSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     ','?
 	 *
 	 * This ambiguous syntax occurs at:
+	 *     isClob=EBoolean (ambiguity) ')' (rule end)
+	 *     isClob=EBoolean (ambiguity) ')' control=FXControl
+	 *     isClob=EBoolean (ambiguity) 'required:' required=EBoolean
+	 *     isClob=EBoolean (ambiguity) 'useByRepository:' useByRepository=EBoolean
+	 *     isClob=EBoolean (ambiguity) 'useByTableView:' useByTableView=EBoolean
+	 */
+	protected void emit_Field_CommaKeyword_5_2_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     ','?
+	 *
+	 * This ambiguous syntax occurs at:
 	 *     required=EBoolean (ambiguity) ')' (rule end)
 	 *     required=EBoolean (ambiguity) ')' control=FXControl
 	 *     required=EBoolean (ambiguity) 'useByRepository:' useByRepository=EBoolean
 	 *     required=EBoolean (ambiguity) 'useByTableView:' useByTableView=EBoolean
 	 */
-	protected void emit_Field_CommaKeyword_5_2_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_Field_CommaKeyword_6_2_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -252,7 +273,7 @@ public class EntityDslSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     useByTableView=EBoolean (ambiguity) ')' control=FXControl
 	 *     useByTableView=EBoolean (ambiguity) 'useByRepository:' useByRepository=EBoolean
 	 */
-	protected void emit_Field_CommaKeyword_6_2_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_Field_CommaKeyword_7_2_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

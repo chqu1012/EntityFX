@@ -111,11 +111,17 @@ public class ModelFXTemplate implements IGenerator<Entity> {
     _builder.append("// UI configurations");
     _builder.newLine();
     _builder.append("  ");
-    _builder.append("private BooleanProperty showSearchPanelMenu = new SimpleBooleanProperty(true);");
-    _builder.newLine();
+    _builder.append("private BooleanProperty showSearchPanelMenu = new SimpleBooleanProperty(");
+    boolean _isShowSearchPanel = t.isShowSearchPanel();
+    _builder.append(_isShowSearchPanel, "  ");
+    _builder.append(");");
+    _builder.newLineIfNotEmpty();
     _builder.append("  ");
-    _builder.append("private BooleanProperty showDetailsPanelMenu = new SimpleBooleanProperty(true);");
-    _builder.newLine();
+    _builder.append("private BooleanProperty showDetailsPanelMenu = new SimpleBooleanProperty(");
+    boolean _isShowDetailsPanel = t.isShowDetailsPanel();
+    _builder.append(_isShowDetailsPanel, "  ");
+    _builder.append(");");
+    _builder.newLineIfNotEmpty();
     _builder.newLine();
     {
       EList<Field> _field_1 = t.getField();

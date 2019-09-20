@@ -21,6 +21,8 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link de.dc.entity.model.Entity#isUseHistory <em>Use History</em>}</li>
  *   <li>{@link de.dc.entity.model.Entity#isUseFormular <em>Use Formular</em>}</li>
  *   <li>{@link de.dc.entity.model.Entity#isUseTableView <em>Use Table View</em>}</li>
+ *   <li>{@link de.dc.entity.model.Entity#isShowDetailsPanel <em>Show Details Panel</em>}</li>
+ *   <li>{@link de.dc.entity.model.Entity#isShowSearchPanel <em>Show Search Panel</em>}</li>
  *   <li>{@link de.dc.entity.model.Entity#isGenerateDemo <em>Generate Demo</em>}</li>
  *   <li>{@link de.dc.entity.model.Entity#getField <em>Field</em>}</li>
  *   <li>{@link de.dc.entity.model.Entity#getRepository <em>Repository</em>}</li>
@@ -166,6 +168,52 @@ public interface Entity extends EObject {
 	 * @generated
 	 */
 	void setUseTableView(boolean value);
+
+	/**
+	 * Returns the value of the '<em><b>Show Details Panel</b></em>' attribute.
+	 * The default value is <code>"true"</code>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Show Details Panel</em>' attribute.
+	 * @see #setShowDetailsPanel(boolean)
+	 * @see de.dc.entity.model.ModelPackage#getEntity_ShowDetailsPanel()
+	 * @model default="true" unique="false"
+	 * @generated
+	 */
+	boolean isShowDetailsPanel();
+
+	/**
+	 * Sets the value of the '{@link de.dc.entity.model.Entity#isShowDetailsPanel <em>Show Details Panel</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Show Details Panel</em>' attribute.
+	 * @see #isShowDetailsPanel()
+	 * @generated
+	 */
+	void setShowDetailsPanel(boolean value);
+
+	/**
+	 * Returns the value of the '<em><b>Show Search Panel</b></em>' attribute.
+	 * The default value is <code>"true"</code>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Show Search Panel</em>' attribute.
+	 * @see #setShowSearchPanel(boolean)
+	 * @see de.dc.entity.model.ModelPackage#getEntity_ShowSearchPanel()
+	 * @model default="true" unique="false"
+	 * @generated
+	 */
+	boolean isShowSearchPanel();
+
+	/**
+	 * Sets the value of the '{@link de.dc.entity.model.Entity#isShowSearchPanel <em>Show Search Panel</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Show Search Panel</em>' attribute.
+	 * @see #isShowSearchPanel()
+	 * @generated
+	 */
+	void setShowSearchPanel(boolean value);
 
 	/**
 	 * Returns the value of the '<em><b>Generate Demo</b></em>' attribute.
