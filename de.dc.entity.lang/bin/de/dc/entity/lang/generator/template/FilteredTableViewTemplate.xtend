@@ -21,6 +21,7 @@ class FilteredTableViewTemplate implements IGenerator<Entity> {
 	import «t.packagePath».repository.*;
 	import «t.packagePath».dialog.*;
 	import «t.packagePath».filter.*;
+	import «t.packagePath».util.*;
 	import javafx.beans.value.ChangeListener;
 	import javafx.beans.value.ObservableValue;
 	import javafx.geometry.Insets;
