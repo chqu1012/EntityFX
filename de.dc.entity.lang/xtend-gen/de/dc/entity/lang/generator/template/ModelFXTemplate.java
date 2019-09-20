@@ -107,6 +107,16 @@ public class ModelFXTemplate implements IGenerator<Entity> {
     _builder.newLine();
     _builder.append("  ");
     _builder.newLine();
+    _builder.append("  ");
+    _builder.append("// UI configurations");
+    _builder.newLine();
+    _builder.append("  ");
+    _builder.append("private BooleanProperty showSearchPanelMenu = new SimpleBooleanProperty(true);");
+    _builder.newLine();
+    _builder.append("  ");
+    _builder.append("private BooleanProperty showDetailsPanelMenu = new SimpleBooleanProperty(true);");
+    _builder.newLine();
+    _builder.newLine();
     {
       EList<Field> _field_1 = t.getField();
       for(final Field field_1 : _field_1) {
@@ -439,6 +449,46 @@ public class ModelFXTemplate implements IGenerator<Entity> {
         }
       }
     }
+    _builder.newLine();
+    _builder.append("  ");
+    _builder.append("public BooleanProperty getShowSearchPanelMenu() {");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("return showSearchPanelMenu;");
+    _builder.newLine();
+    _builder.append("  ");
+    _builder.append("}");
+    _builder.newLine();
+    _builder.newLine();
+    _builder.append("  ");
+    _builder.append("public void setShowSearchPanelMenu(BooleanProperty showSearchPanelMenu) {");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("this.showSearchPanelMenu = showSearchPanelMenu;");
+    _builder.newLine();
+    _builder.append("  ");
+    _builder.append("}");
+    _builder.newLine();
+    _builder.newLine();
+    _builder.append("  ");
+    _builder.append("public BooleanProperty getShowDetailsPanelMenu() {");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("return showDetailsPanelMenu;");
+    _builder.newLine();
+    _builder.append("  ");
+    _builder.append("}");
+    _builder.newLine();
+    _builder.newLine();
+    _builder.append("  ");
+    _builder.append("public void setShowDetailsPanelMenu(BooleanProperty showDetailsPanelMenu) {");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("this.showDetailsPanelMenu = showDetailsPanelMenu;");
+    _builder.newLine();
+    _builder.append("  ");
+    _builder.append("}");
+    _builder.newLine();
     _builder.newLine();
     _builder.append("  ");
     _builder.append("public void clear() {");

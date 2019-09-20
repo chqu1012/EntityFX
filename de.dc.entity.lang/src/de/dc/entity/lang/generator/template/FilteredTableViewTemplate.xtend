@@ -80,8 +80,12 @@ class FilteredTableViewTemplate implements IGenerator<Entity> {
 			
 			ContextMenu menu = new ContextMenu();
 			menu.getItems().add(menuExport);
-			menu.getItems().add(menuItemOpenDetails);
-			menu.getItems().add(menuItemOpenSearchPanel);
+			if (context.getShowDetailsPanelMenu().not().get()) {
+				menu.getItems().add(menuItemOpenDetails);
+			}
+			if (context.getShowSearchPanelMenu().not().get()) {
+				menu.getItems().add(menuItemOpenSearchPanel);
+			}
 			tableView.setContextMenu(menu);
 		}
 		

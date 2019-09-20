@@ -34,6 +34,10 @@ class ModelFXTemplate implements IGenerator<Entity>{
 	  private LongProperty idProperty = new SimpleLongProperty();
 	  private BooleanProperty enableSubmitProperty = new SimpleBooleanProperty(false);
 	  
+	  // UI configurations
+	  private BooleanProperty showSearchPanelMenu = new SimpleBooleanProperty(true);
+	  private BooleanProperty showDetailsPanelMenu = new SimpleBooleanProperty(true);
+
 	  «FOR field : t.field»
 	  «IF field.useByRepository»
 	  private «field.declaredProperty» «field.name.toFirstLower»Property = new «field.instanceProperty»();
@@ -112,6 +116,22 @@ class ModelFXTemplate implements IGenerator<Entity>{
 	  }
 	  «ENDIF»
   	  «ENDFOR»
+	
+	  public BooleanProperty getShowSearchPanelMenu() {
+		return showSearchPanelMenu;
+	  }
+
+	  public void setShowSearchPanelMenu(BooleanProperty showSearchPanelMenu) {
+		this.showSearchPanelMenu = showSearchPanelMenu;
+	  }
+
+	  public BooleanProperty getShowDetailsPanelMenu() {
+		return showDetailsPanelMenu;
+	  }
+
+	  public void setShowDetailsPanelMenu(BooleanProperty showDetailsPanelMenu) {
+		this.showDetailsPanelMenu = showDetailsPanelMenu;
+	  }
 	
 	  public void clear() {
 	  	  «FOR field : t.field»
