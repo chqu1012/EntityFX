@@ -4,13 +4,14 @@
 	<extension
 		point="org.eclipse.ui.editors">
 		<editor
-			class="de.dc.entity.lang.ui.EntityDslExecutableExtensionFactory:org.eclipse.xtext.ui.editor.XtextEditor"
-			contributorClass="org.eclipse.ui.editors.text.TextEditorActionContributor"
-			default="true"
-			extensions="xentity"
-			id="de.dc.entity.lang.EntityDsl"
-			matchingStrategy="de.dc.entity.lang.ui.EntityDslExecutableExtensionFactory:org.eclipse.xtext.xbase.ui.editor.JavaEditorInputMatcher"
-			name="EntityDsl Editor">
+        class="de.dc.entity.lang.ui.EntityDslExecutableExtensionFactory:org.eclipse.xtext.ui.editor.XtextEditor"
+        contributorClass="org.eclipse.ui.editors.text.TextEditorActionContributor"
+        default="true"
+        extensions="xentity"
+        icon="icons/icons8-tabelle-16.png"
+        id="de.dc.entity.lang.EntityDsl"
+        matchingStrategy="de.dc.entity.lang.ui.EntityDslExecutableExtensionFactory:org.eclipse.xtext.xbase.ui.editor.JavaEditorInputMatcher"
+        name="EntityFX Editor">
 		</editor>
 	</extension>
 	<extension
@@ -599,6 +600,7 @@
     <wizard
           category="de.dc.entity.lang.ui.category.EntityFX"
           class="de.dc.entity.lang.ui.project.NewProjectWizard"
+          icon="icons/icons8-tabelle-16.png"
           id="de.dc.entity.lang.ui.wizard.NewEntityFXWizard"
           name="EntityFX Project Wizard"
           project="true">
