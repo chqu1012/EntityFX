@@ -4,18 +4,38 @@ import org.eclipse.xtend2.lib.StringConcatenation;
 
 @SuppressWarnings("all")
 public class Templates {
-  public static String genBuildProperties() {
+  public static String genBuildProperties(final boolean useGradle) {
     StringConcatenation _builder = new StringConcatenation();
-    _builder.append("source.. = src/main/java/");
-    _builder.newLine();
-    _builder.append("output.. = bin/main/java/");
-    _builder.newLine();
-    _builder.append("bin.includes = META-INF/,\\");
-    _builder.newLine();
-    _builder.append("               ");
-    _builder.append(".");
-    _builder.newLine();
-    _builder.newLine();
+    {
+      if (useGradle) {
+        _builder.append("source.. = src/main/java/");
+        _builder.newLine();
+        _builder.append("output.. = bin/main/java/");
+        _builder.newLine();
+        _builder.append("bin.includes = META-INF/,\\");
+        _builder.newLine();
+        _builder.append("               ");
+        _builder.append(".");
+        _builder.newLine();
+        _builder.append("               ");
+        _builder.newLine();
+      } else {
+        _builder.append("source.. = resources/,\\");
+        _builder.newLine();
+        _builder.append("           ");
+        _builder.append("src-gen/,\\");
+        _builder.newLine();
+        _builder.append("           ");
+        _builder.append("src/");
+        _builder.newLine();
+        _builder.append("bin.includes = META-INF/,\\");
+        _builder.newLine();
+        _builder.append("               ");
+        _builder.append(".");
+        _builder.newLine();
+        _builder.newLine();
+      }
+    }
     return _builder.toString();
   }
   
@@ -25,18 +45,26 @@ public class Templates {
     _builder.newLine();
     _builder.append("Bundle-ManifestVersion: 2");
     _builder.newLine();
-    _builder.append("Bundle-Name: ");
-    _builder.append(projectName);
-    _builder.newLineIfNotEmpty();
-    _builder.append("Bundle-SymbolicName: ");
-    _builder.append(projectName);
-    _builder.newLineIfNotEmpty();
+    _builder.append("Bundle-Name: de.dc.adbook");
+    _builder.newLine();
+    _builder.append("Bundle-SymbolicName: de.dc.adbook");
+    _builder.newLine();
     _builder.append("Bundle-Version: 1.0.0.qualifier");
     _builder.newLine();
-    _builder.append("Automatic-Module-Name: ");
-    _builder.append(projectName);
-    _builder.newLineIfNotEmpty();
+    _builder.append("Automatic-Module-Name: de.dc.adbook");
+    _builder.newLine();
     _builder.append("Bundle-RequiredExecutionEnvironment: JavaSE-1.8");
+    _builder.newLine();
+    _builder.append("Require-Bundle: com.google.inject,");
+    _builder.newLine();
+    _builder.append(" ");
+    _builder.append("org.apache.commons.lang,");
+    _builder.newLine();
+    _builder.append(" ");
+    _builder.append("javax.inject,");
+    _builder.newLine();
+    _builder.append(" ");
+    _builder.append("org.apache.commons.io");
     _builder.newLine();
     _builder.newLine();
     return _builder.toString();

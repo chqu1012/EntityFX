@@ -68,10 +68,6 @@ public class EntityFXWizardPage extends WizardPage {
 	protected DataBindingContext initDataBindings() {
 		DataBindingContext bindingContext = new DataBindingContext();
 		//
-		IObservableValue observeTextTextEntityNameObserveWidget = WidgetProperties.text(SWT.Modify).observe(textEntityName);
-		IObservableValue nameModelObserveValue = BeanProperties.value("name").observe(model);
-		bindingContext.bindValue(observeTextTextEntityNameObserveWidget, nameModelObserveValue, null, null);
-		//
 		IObservableValue observeSelectionBtnUseSpringObserveWidget = WidgetProperties.selection().observe(btnUseSpring);
 		IObservableValue useSpringModelObserveValue = BeanProperties.value("useSpring").observe(model);
 		bindingContext.bindValue(observeSelectionBtnUseSpringObserveWidget, useSpringModelObserveValue, null, null);
@@ -88,9 +84,9 @@ public class EntityFXWizardPage extends WizardPage {
 		IObservableValue generateDemoModelObserveValue = BeanProperties.value("generateDemo").observe(model);
 		bindingContext.bindValue(observeSelectionBtnGenerateDemoApplicationObserveWidget, generateDemoModelObserveValue, null, null);
 		//
-		IObservableValue observeTextTextEntityNameObserveWidget_1 = WidgetProperties.text(SWT.Modify).observe(textEntityName);
+		IObservableValue observeTextTextEntityNameObserveWidget = WidgetProperties.text(SWT.Modify).observe(textEntityName);
 		IObservableValue entityNameModelObserveValue = BeanProperties.value("entityName").observe(model);
-		bindingContext.bindValue(observeTextTextEntityNameObserveWidget_1, entityNameModelObserveValue, null, null);
+		bindingContext.bindValue(observeTextTextEntityNameObserveWidget, entityNameModelObserveValue, null, null);
 		//
 		return bindingContext;
 	}

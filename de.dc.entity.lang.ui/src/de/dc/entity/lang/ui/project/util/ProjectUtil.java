@@ -62,7 +62,7 @@ public class ProjectUtil {
 			}
 			project.getFile(".project").create(new StringInputStream(Templates.genProjectFile(model.getName(), model.isUseGradle())), true, null);
 			metaInfFolder.getFile("MANIFEST.MF").create(new StringInputStream(Templates.genMetaInfXml(model.getName())), true, null);
-			project.getFile("build.properties").create(new StringInputStream(Templates.genBuildProperties()), true, null);
+			project.getFile("build.properties").create(new StringInputStream(Templates.genBuildProperties(model.isUseGradle())), true, null);
 		} catch (CoreException e) {
 			LOG.error("Failed to create file", e);
 		}

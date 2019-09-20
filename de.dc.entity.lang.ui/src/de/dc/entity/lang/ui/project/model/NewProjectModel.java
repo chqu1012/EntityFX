@@ -6,7 +6,7 @@ public class NewProjectModel extends ModelObject {
 
 	private String name;
 	private String entityName;
-	private boolean useSpring = true;
+	private boolean useSpring = false;
 	private boolean showDetailsPane = true;
 	private boolean useSearchPane = true;
 	private boolean generateDemo = true;

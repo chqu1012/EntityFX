@@ -2,22 +2,35 @@ package de.dc.entity.lang.ui.project.templates
 
 class Templates {
 	
-	def static String genBuildProperties()'''
+	def static String genBuildProperties(boolean useGradle)'''
+	«IF useGradle»
 	source.. = src/main/java/
 	output.. = bin/main/java/
 	bin.includes = META-INF/,\
 	               .
+	               
+	«ELSE»
+	source.. = resources/,\
+	           src-gen/,\
+	           src/
+	bin.includes = META-INF/,\
+	               .
 	
+	«ENDIF»
 	'''
 	
 	def static String genMetaInfXml(String projectName)'''
 	Manifest-Version: 1.0
 	Bundle-ManifestVersion: 2
-	Bundle-Name: «projectName»
-	Bundle-SymbolicName: «projectName»
+	Bundle-Name: de.dc.adbook
+	Bundle-SymbolicName: de.dc.adbook
 	Bundle-Version: 1.0.0.qualifier
-	Automatic-Module-Name: «projectName»
+	Automatic-Module-Name: de.dc.adbook
 	Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+	Require-Bundle: com.google.inject,
+	 org.apache.commons.lang,
+	 javax.inject,
+	 org.apache.commons.io
 	
 	'''
 	
