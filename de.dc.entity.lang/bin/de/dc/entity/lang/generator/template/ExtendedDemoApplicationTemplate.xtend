@@ -19,7 +19,7 @@ class ExtendedDemoApplicationTemplate implements IGenerator<Entity>{
 	
 		@Override
 		public void start(Stage primaryStage) throws Exception {
-			Parent root = new Extended«t.name»ApplicationPane();
+			Parent root = «t.name»Platform.getInstance(Extended«t.name»ApplicationPane.class);
 			Scene scene = new Scene(root , 800, 600);
 			primaryStage.setScene(scene);
 			primaryStage.show();

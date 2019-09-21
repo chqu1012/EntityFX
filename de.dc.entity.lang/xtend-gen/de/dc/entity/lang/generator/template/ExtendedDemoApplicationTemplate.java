@@ -55,10 +55,13 @@ public class ExtendedDemoApplicationTemplate implements IGenerator<Entity> {
     _builder.append("public void start(Stage primaryStage) throws Exception {");
     _builder.newLine();
     _builder.append("\t\t");
-    _builder.append("Parent root = new Extended");
+    _builder.append("Parent root = ");
     String _name_1 = t.getName();
     _builder.append(_name_1, "\t\t");
-    _builder.append("ApplicationPane();");
+    _builder.append("Platform.getInstance(Extended");
+    String _name_2 = t.getName();
+    _builder.append(_name_2, "\t\t");
+    _builder.append("ApplicationPane.class);");
     _builder.newLineIfNotEmpty();
     _builder.append("\t\t");
     _builder.append("Scene scene = new Scene(root , 800, 600);");
@@ -77,8 +80,8 @@ public class ExtendedDemoApplicationTemplate implements IGenerator<Entity> {
     _builder.append("public static void main(String[] args) {");
     _builder.newLine();
     _builder.append("\t\t");
-    String _name_2 = t.getName();
-    _builder.append(_name_2, "\t\t");
+    String _name_3 = t.getName();
+    _builder.append(_name_3, "\t\t");
     _builder.append("Platform.init();");
     _builder.newLineIfNotEmpty();
     _builder.append("\t\t");
