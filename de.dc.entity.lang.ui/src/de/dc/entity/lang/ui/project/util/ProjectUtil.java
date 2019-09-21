@@ -56,6 +56,9 @@ public class ProjectUtil {
 				project.getFile("build.gradle").create(new StringInputStream(Templates.genBuildGradle()), true, null);
 			}
 			xentityFolder.getFile(model.getEntityName()+".xentity").create(new StringInputStream(EntityTemplate.gen(model)), true, null);
+			if (model.isUseHistory()) {
+				xentityFolder.getFile(model.getEntityName()+"History.xentity").create(new StringInputStream(EntityTemplate.gen(model)), true, null);
+			}
 			if (project.getFile(".project").exists()) {
 				project.getFile(".project").delete(true, null);
 			}

@@ -90,4 +90,64 @@ public class EntityTemplate {
     _builder.newLine();
     return _builder.toString();
   }
+  
+  public static String genHistory(final NewProjectModel model) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("packagePath ");
+    String _name = model.getName();
+    _builder.append(_name);
+    _builder.append(".history");
+    _builder.newLineIfNotEmpty();
+    _builder.newLine();
+    _builder.append("Entity ");
+    String _entityName = model.getEntityName();
+    _builder.append(_entityName);
+    _builder.append("History{");
+    _builder.newLineIfNotEmpty();
+    _builder.append("\t");
+    _builder.append("useSpring: ");
+    boolean _isUseSpring = model.isUseSpring();
+    _builder.append(_isUseSpring, "\t");
+    _builder.append(" ");
+    _builder.newLineIfNotEmpty();
+    _builder.append("  \t");
+    _builder.append("showDetailsPanel: false");
+    _builder.newLine();
+    _builder.append("  \t");
+    _builder.append("showSearchPanel: false");
+    _builder.newLine();
+    _builder.append("  \t");
+    _builder.newLine();
+    _builder.append("  \t");
+    _builder.append("generateDemo: false");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("Field(name: CreatedOn, datatype:java.time.LocalDateTime, required: true, useByTableView: true, useByRepository: true)[ ");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append("control: jfxtras.scene.control.LocalDateTimeTextField");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append("binding: localDateTimeProperty");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("]");
+    _builder.newLine();
+    _builder.append("\t\t\t");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("Repository{");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append("jdbcUrl: \"jdbc:h2:file:./data/Repository;DB_CLOSE_ON_EXIT=true;\"");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("}");
+    _builder.newLine();
+    _builder.append("}");
+    _builder.newLine();
+    return _builder.toString();
+  }
 }

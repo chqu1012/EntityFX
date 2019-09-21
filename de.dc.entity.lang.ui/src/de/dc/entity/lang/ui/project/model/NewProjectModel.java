@@ -7,6 +7,7 @@ public class NewProjectModel extends ModelObject {
 	private String name;
 	private String entityName;
 	private boolean useSpring = false;
+	private boolean useHistory = false;
 	private boolean showDetailsPane = true;
 	private boolean useSearchPane = true;
 	private boolean generateDemo = true;
@@ -71,6 +72,14 @@ public class NewProjectModel extends ModelObject {
 	@Override
 	public String toString() {
 		return ToStringBuilder.reflectionToString(this);
+	}
+
+	public boolean isUseHistory() {
+		return useHistory;
+	}
+
+	public void setUseHistory(boolean useHistory) {
+		firePropertyChange("useHistory", this.useHistory, this.useHistory = useHistory);
 	}
 
 }
