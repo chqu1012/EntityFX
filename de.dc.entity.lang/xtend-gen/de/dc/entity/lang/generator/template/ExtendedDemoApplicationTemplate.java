@@ -12,7 +12,7 @@ public class ExtendedDemoApplicationTemplate implements IGenerator<Entity> {
     _builder.append("Extended");
     String _name = t.getName();
     _builder.append(_name);
-    _builder.append("Application");
+    _builder.append("Demo");
     return _builder.toString();
   }
   
@@ -40,7 +40,7 @@ public class ExtendedDemoApplicationTemplate implements IGenerator<Entity> {
     _builder.append("public class Extended");
     String _name = t.getName();
     _builder.append(_name);
-    _builder.append("Application extends Application{");
+    _builder.append("Demo extends Application{");
     _builder.newLineIfNotEmpty();
     _builder.newLine();
     _builder.append("\t");

@@ -4,7 +4,7 @@ import de.dc.entity.model.Entity
 
 class ExtendedDemoApplicationTemplate implements IGenerator<Entity>{
 	
-	override filename(Entity t)'''Extended«t.name»Application'''
+	override filename(Entity t)'''Extended«t.name»Demo'''
 	
 	override gen(Entity t)'''
 	package «t.packagePath»;
@@ -14,7 +14,7 @@ class ExtendedDemoApplicationTemplate implements IGenerator<Entity>{
 	import javafx.scene.*;
 	import javafx.stage.Stage;
 	
-	public class Extended«t.name»Application extends Application{
+	public class Extended«t.name»Demo extends Application{
 	
 		@Override
 		public void start(Stage primaryStage) throws Exception {

@@ -63,7 +63,7 @@ public class ExtendedDemoApplicationPaneTemplate implements IGenerator<Entity> {
     _builder.append("private static final String FXML = \"/");
     String _replace = t.getPackagePath().replace(".", "/");
     _builder.append(_replace, "\t");
-    _builder.append("/Extended");
+    _builder.append("/extended/Extended");
     String _name_3 = t.getName();
     _builder.append(_name_3, "\t");
     _builder.append("ApplicationPane.fxml\";");

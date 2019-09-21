@@ -22,7 +22,7 @@ class ExtendedDemoApplicationPaneTemplate implements IGenerator<Entity>{
 	
 		private Logger log = Logger.getLogger(getClass());
 		
-		private static final String FXML = "/«t.packagePath.replace('.', '/')»/Extended«t.name»ApplicationPane.fxml";
+		private static final String FXML = "/«t.packagePath.replace('.', '/')»/extended/Extended«t.name»ApplicationPane.fxml";
 		
 		public Extended«t.name»ApplicationPane() {
 			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(FXML));

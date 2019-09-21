@@ -20,7 +20,7 @@ public enum Templates {
 	SearchPane(new SearchPaneTemplate(),"/filter/"),
 	Exporter(new ExporterTemplate(), "/util/"),
 	DetailsDialog(new DetailsDialogTemplate(), "/dialog/"),
-	ExtendedDemoBaseApplicationPane(new ExtendedDemoBaseApplicationPaneTemplate(), "/extended"),
+	ExtendedDemoBaseApplicationPane(new ExtendedDemoBaseApplicationPaneTemplate(), "/extended/"),
 	ExtendedDemoApplicationPane(new ExtendedDemoApplicationPaneTemplate(), "/extended/"),
 	ExtendedDemoApplication(new ExtendedDemoApplicationTemplate(), "/")
 	;
