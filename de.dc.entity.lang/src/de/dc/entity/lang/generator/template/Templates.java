@@ -19,7 +19,10 @@ public enum Templates {
 	SearchType(new SearchTypeTemplate(), "/filter/"),
 	SearchPane(new SearchPaneTemplate(),"/filter/"),
 	Exporter(new ExporterTemplate(), "/util/"),
-	DetailsDialog(new DetailsDialogTemplate(), "/dialog/")
+	DetailsDialog(new DetailsDialogTemplate(), "/dialog/"),
+	ExtendedDemoBaseApplicationPane(new ExtendedDemoBaseApplicationPaneTemplate(), "/extended"),
+	ExtendedDemoApplicationPane(new ExtendedDemoApplicationPaneTemplate(), "/extended/"),
+	ExtendedDemoApplication(new ExtendedDemoApplicationTemplate(), "/")
 	;
 	
 	private IGenerator<Entity> template;
