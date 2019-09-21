@@ -64,7 +64,10 @@ public class Templates {
     _builder.append("javax.inject,");
     _builder.newLine();
     _builder.append(" ");
-    _builder.append("org.apache.commons.io");
+    _builder.append("org.apache.commons.io,");
+    _builder.newLine();
+    _builder.append(" ");
+    _builder.append("org.apache.log4j");
     _builder.newLine();
     _builder.newLine();
     return _builder.toString();

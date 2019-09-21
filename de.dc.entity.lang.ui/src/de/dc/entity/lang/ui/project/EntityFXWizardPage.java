@@ -14,6 +14,8 @@ import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Text;
 
 import de.dc.entity.lang.ui.project.model.NewProjectModel;
+import org.eclipse.swt.events.SelectionAdapter;
+import org.eclipse.swt.events.SelectionEvent;
 
 public class EntityFXWizardPage extends WizardPage {
 	private DataBindingContext m_bindingContext;
@@ -23,6 +25,7 @@ public class EntityFXWizardPage extends WizardPage {
 	private Button btnShowDetailsView;
 	private Button btnUseSearchDialog;
 	private Button btnGenerateDemoApplication;
+	private Button btnUseHistory;
 
 	public EntityFXWizardPage(NewProjectModel model) {
 		super("wizardPage");
@@ -63,6 +66,11 @@ public class EntityFXWizardPage extends WizardPage {
 		btnGenerateDemoApplication = new Button(container, SWT.CHECK);
 		btnGenerateDemoApplication.setSelection(true);
 		btnGenerateDemoApplication.setText("Generate Demo Application");
+		new Label(container, SWT.NONE);
+		
+		btnUseHistory = new Button(container, SWT.CHECK);
+		btnUseHistory.setText("Use History");
+		btnUseHistory.setSelection(true);
 		m_bindingContext = initDataBindings();
 	}
 	protected DataBindingContext initDataBindings() {
@@ -87,6 +95,10 @@ public class EntityFXWizardPage extends WizardPage {
 		IObservableValue observeTextTextEntityNameObserveWidget = WidgetProperties.text(SWT.Modify).observe(textEntityName);
 		IObservableValue entityNameModelObserveValue = BeanProperties.value("entityName").observe(model);
 		bindingContext.bindValue(observeTextTextEntityNameObserveWidget, entityNameModelObserveValue, null, null);
+		//
+		IObservableValue observeSelectionBtnUseHistoryObserveWidget = WidgetProperties.selection().observe(btnUseHistory);
+		IObservableValue useHistoryModelObserveValue = BeanProperties.value("useHistory").observe(model);
+		bindingContext.bindValue(observeSelectionBtnUseHistoryObserveWidget, useHistoryModelObserveValue, null, null);
 		//
 		return bindingContext;
 	}

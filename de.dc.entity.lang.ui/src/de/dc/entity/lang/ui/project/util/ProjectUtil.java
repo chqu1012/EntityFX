@@ -57,7 +57,7 @@ public class ProjectUtil {
 			}
 			xentityFolder.getFile(model.getEntityName()+".xentity").create(new StringInputStream(EntityTemplate.gen(model)), true, null);
 			if (model.isUseHistory()) {
-				xentityFolder.getFile(model.getEntityName()+"History.xentity").create(new StringInputStream(EntityTemplate.gen(model)), true, null);
+				xentityFolder.getFile(model.getEntityName()+"History.xentity").create(new StringInputStream(EntityTemplate.genHistory(model)), true, null);
 			}
 			if (project.getFile(".project").exists()) {
 				project.getFile(".project").delete(true, null);

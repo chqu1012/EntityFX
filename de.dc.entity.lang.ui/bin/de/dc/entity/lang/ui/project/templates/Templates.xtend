@@ -30,7 +30,8 @@ class Templates {
 	Require-Bundle: com.google.inject,
 	 org.apache.commons.lang,
 	 javax.inject,
-	 org.apache.commons.io
+	 org.apache.commons.io,
+	 org.apache.log4j
 	
 	'''
 	
