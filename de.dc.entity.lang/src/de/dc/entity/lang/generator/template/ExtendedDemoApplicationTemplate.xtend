@@ -10,7 +10,7 @@ class ExtendedDemoApplicationTemplate implements IGenerator<Entity>{
 	package «t.packagePath»;
 	
 	import «t.packagePath».extended.*;
-	import «t.packagePath».*;
+	import «t.packagePath».di.*;
 	import javafx.application.Application;
 	import javafx.scene.*;
 	import javafx.stage.Stage;

@@ -36,12 +36,26 @@ public class ExtendedDemoApplicationPaneTemplate implements IGenerator<Entity> {
     _builder.newLine();
     _builder.append("import org.apache.log4j.Logger;");
     _builder.newLine();
-    _builder.newLine();
     _builder.append("import ");
     String _packagePath_1 = t.getPackagePath();
     _builder.append(_packagePath_1);
+    _builder.append(".repository.*;");
+    _builder.newLineIfNotEmpty();
+    _builder.append("import ");
+    String _packagePath_2 = t.getPackagePath();
+    _builder.append(_packagePath_2);
     _builder.append(".model.*;");
     _builder.newLineIfNotEmpty();
+    _builder.append("import ");
+    String _packagePath_3 = t.getPackagePath();
+    _builder.append(_packagePath_3);
+    _builder.append(".di.*;");
+    _builder.newLineIfNotEmpty();
+    _builder.append("import javafx.beans.property.*;");
+    _builder.newLine();
+    _builder.append("import javafx.beans.value.*;");
+    _builder.newLine();
+    _builder.append("import javafx.collections.transformation.*;");
     _builder.newLine();
     _builder.append("import javafx.event.ActionEvent;");
     _builder.newLine();
@@ -147,6 +161,20 @@ public class ExtendedDemoApplicationPaneTemplate implements IGenerator<Entity> {
     _builder.append(_name_10, "\t\t");
     _builder.append("FX.class);");
     _builder.newLineIfNotEmpty();
+    _builder.append("\t\t");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append("context.getMasterData().addAll(personRepository.findAll());");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append("SortedList<Person> sortedData = new SortedList<>(context.getFilteredMasterData());");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append("sortedData.comparatorProperty().bind(tableView.comparatorProperty());");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append("tableView.setItems(sortedData);");
+    _builder.newLine();
     _builder.append("\t");
     _builder.append("}");
     _builder.newLine();
@@ -158,6 +186,20 @@ public class ExtendedDemoApplicationPaneTemplate implements IGenerator<Entity> {
     _builder.append("\t\t");
     _builder.append("textFieldSearch.textProperty().addListener(this::onSearchTextChanged);");
     _builder.newLine();
+    {
+      EList<Field> _field = t.getField();
+      for(final Field field : _field) {
+        _builder.append("\t\t");
+        _builder.append("setupCellValueFactory(column");
+        String _firstUpper = StringExtensions.toFirstUpper(field.getName());
+        _builder.append(_firstUpper, "\t\t");
+        _builder.append(", e-> new SimpleObjectProperty(e.get");
+        String _firstUpper_1 = StringExtensions.toFirstUpper(field.getName());
+        _builder.append(_firstUpper_1, "\t\t");
+        _builder.append("()));");
+        _builder.newLineIfNotEmpty();
+      }
+    }
     _builder.append("\t");
     _builder.append("}");
     _builder.newLine();
@@ -173,17 +215,17 @@ public class ExtendedDemoApplicationPaneTemplate implements IGenerator<Entity> {
     _builder.append("boolean isEmpty = newValue==null || newValue.isEmpty();");
     _builder.newLine();
     {
-      EList<Field> _field = t.getField();
-      for(final Field field : _field) {
+      EList<Field> _field_1 = t.getField();
+      for(final Field field_1 : _field_1) {
         {
-          boolean _isRequired = field.isRequired();
+          boolean _isRequired = field_1.isRequired();
           if (_isRequired) {
             _builder.append("\t\t\t");
             _builder.append("boolean contains");
-            String _name_11 = field.getName();
+            String _name_11 = field_1.getName();
             _builder.append(_name_11, "\t\t\t");
             _builder.append(" = String.valueOf(p.get");
-            String _name_12 = field.getName();
+            String _name_12 = field_1.getName();
             _builder.append(_name_12, "\t\t\t");
             _builder.append("()).toLowerCase().contains(newValue.toLowerCase());");
             _builder.newLineIfNotEmpty();

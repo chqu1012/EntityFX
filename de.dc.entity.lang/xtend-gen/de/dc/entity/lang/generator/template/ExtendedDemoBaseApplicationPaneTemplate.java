@@ -2,7 +2,10 @@ package de.dc.entity.lang.generator.template;
 
 import de.dc.entity.lang.generator.template.IGenerator;
 import de.dc.entity.model.Entity;
+import de.dc.entity.model.Field;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.xtend2.lib.StringConcatenation;
+import org.eclipse.xtext.xbase.lib.StringExtensions;
 
 @SuppressWarnings("all")
 public class ExtendedDemoBaseApplicationPaneTemplate implements IGenerator<Entity> {
@@ -25,11 +28,18 @@ public class ExtendedDemoBaseApplicationPaneTemplate implements IGenerator<Entit
     _builder.append(".extended;");
     _builder.newLineIfNotEmpty();
     _builder.newLine();
+    _builder.append("import java.util.function.Function;");
+    _builder.newLine();
+    _builder.newLine();
+    _builder.append("import javafx.beans.value.ObservableValue;");
+    _builder.newLine();
     _builder.append("import javafx.event.*;");
     _builder.newLine();
     _builder.append("import javafx.fxml.FXML;");
     _builder.newLine();
     _builder.append("import javafx.scene.control.*;");
+    _builder.newLine();
+    _builder.append("import javafx.scene.control.TableColumn.CellDataFeatures;");
     _builder.newLine();
     _builder.append("import javafx.scene.layout.*;");
     _builder.newLine();
@@ -53,6 +63,23 @@ public class ExtendedDemoBaseApplicationPaneTemplate implements IGenerator<Entit
     _builder.append("    ");
     _builder.append("protected TableView<T> tableView;");
     _builder.newLine();
+    _builder.append("\t");
+    _builder.newLine();
+    {
+      EList<Field> _field = t.getField();
+      for(final Field field : _field) {
+        _builder.append("\t");
+        _builder.append("@FXML");
+        _builder.newLine();
+        _builder.append("\t");
+        _builder.append("protected TableColumn<T, String> column");
+        String _firstUpper = StringExtensions.toFirstUpper(field.getName());
+        _builder.append(_firstUpper, "\t");
+        _builder.append(";");
+        _builder.newLineIfNotEmpty();
+      }
+    }
+    _builder.append(" \t");
     _builder.newLine();
     _builder.append("    ");
     _builder.append("@FXML");
@@ -136,6 +163,17 @@ public class ExtendedDemoBaseApplicationPaneTemplate implements IGenerator<Entit
     _builder.newLine();
     _builder.append("    ");
     _builder.append("protected abstract void onMenuItemAction(ActionEvent event);");
+    _builder.newLine();
+    _builder.append("    ");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("protected <T, U> void setupCellValueFactory(TableColumn<T, U> column, Function<T, ObservableValue<U>> mapper) {");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append("column.setCellValueFactory((CellDataFeatures<T, U> c) -> mapper.apply(c.getValue()));");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("}");
     _builder.newLine();
     _builder.append("}");
     _builder.newLine();

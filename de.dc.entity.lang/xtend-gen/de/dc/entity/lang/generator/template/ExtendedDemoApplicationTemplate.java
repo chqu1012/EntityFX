@@ -33,7 +33,7 @@ public class ExtendedDemoApplicationTemplate implements IGenerator<Entity> {
     _builder.append("import ");
     String _packagePath_2 = t.getPackagePath();
     _builder.append(_packagePath_2);
-    _builder.append(".*;");
+    _builder.append(".di.*;");
     _builder.newLineIfNotEmpty();
     _builder.append("import javafx.application.Application;");
     _builder.newLine();

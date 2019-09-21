@@ -12,9 +12,12 @@ class ExtendedDemoApplicationPaneTemplate implements IGenerator<Entity>{
 	import java.io.*;
 	
 	import org.apache.log4j.Logger;
-	
+	import «t.packagePath».repository.*;
 	import «t.packagePath».model.*;
-	
+	import «t.packagePath».di.*;
+	import javafx.beans.property.*;
+	import javafx.beans.value.*;
+	import javafx.collections.transformation.*;
 	import javafx.event.ActionEvent;
 	import javafx.fxml.FXMLLoader;
 	
@@ -40,10 +43,18 @@ class ExtendedDemoApplicationPaneTemplate implements IGenerator<Entity>{
 			
 			this.«t.name.toFirstLower»Repository = «t.name»Platform.getInstance(«t.name»Repository.class);
 			this.context = «t.name»Platform.getInstance(«t.name»FX.class);
+			
+			context.getMasterData().addAll(personRepository.findAll());
+			SortedList<Person> sortedData = new SortedList<>(context.getFilteredMasterData());
+			sortedData.comparatorProperty().bind(tableView.comparatorProperty());
+			tableView.setItems(sortedData);
 		}
 		
 		public void initialize() {
 			textFieldSearch.textProperty().addListener(this::onSearchTextChanged);
+			«FOR field : t.field»
+			setupCellValueFactory(column«field.name.toFirstUpper», e-> new SimpleObjectProperty(e.get«field.name.toFirstUpper»()));
+			«ENDFOR»
 		}
 		
 		public void onSearchTextChanged(ObservableValue<? extends String> observable, String oldValue, String newValue) {

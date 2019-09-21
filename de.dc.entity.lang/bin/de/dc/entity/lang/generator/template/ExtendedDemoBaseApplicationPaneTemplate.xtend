@@ -9,9 +9,13 @@ class ExtendedDemoBaseApplicationPaneTemplate implements IGenerator<Entity>{
 	override gen(Entity t)'''
 	package «t.packagePath».extended;
 	
+	import java.util.function.Function;
+	
+	import javafx.beans.value.ObservableValue;
 	import javafx.event.*;
 	import javafx.fxml.FXML;
 	import javafx.scene.control.*;
+	import javafx.scene.control.TableColumn.CellDataFeatures;
 	import javafx.scene.layout.*;
 	
 	public abstract class ExtendedBase«t.name»ApplicationPane<T> extends BorderPane{
@@ -21,7 +25,12 @@ class ExtendedDemoBaseApplicationPaneTemplate implements IGenerator<Entity>{
 	
 	    @FXML
 	    protected TableView<T> tableView;
-	
+		
+		«FOR field : t.field»
+		@FXML
+		protected TableColumn<T, String> column«field.name.toFirstUpper»;
+	 	«ENDFOR»
+	 	
 	    @FXML
 	    protected MenuItem menuItemClipboard;
 	
@@ -57,6 +66,10 @@ class ExtendedDemoBaseApplicationPaneTemplate implements IGenerator<Entity>{
 	
 	    @FXML
 	    protected abstract void onMenuItemAction(ActionEvent event);
+	    
+		protected <T, U> void setupCellValueFactory(TableColumn<T, U> column, Function<T, ObservableValue<U>> mapper) {
+			column.setCellValueFactory((CellDataFeatures<T, U> c) -> mapper.apply(c.getValue()));
+		}
 	}
 	'''
 }
