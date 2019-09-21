@@ -20,6 +20,7 @@ class ExtendedDemoApplicationPaneTemplate implements IGenerator<Entity>{
 	import javafx.fxml.FXMLLoader;
 	import javafx.scene.layout.AnchorPane;
 	import javafx.scene.web.WebView;
+	import javafx.beans.binding.*;
 	import javafx.application.Platform;
 	
 	import java.sql.*;
@@ -47,6 +48,9 @@ class ExtendedDemoApplicationPaneTemplate implements IGenerator<Entity>{
 			
 			this.«t.name.toFirstLower»Repository = «t.name»Platform.getInstance(«t.name»Repository.class);
 			this.context = «t.name»Platform.getInstance(«t.name»FX.class);
+			
+			labelItemsCounter.textProperty().bind(Bindings.size(context.getMasterData()).asString());
+			labelFilteredItemsCounter.textProperty().bind(Bindings.size(context.getFilteredMasterData()).asString());
 			
 			Filtered«t.name»TableView tableView = «t.name»Platform.getInstance(Filtered«t.name»TableView.class);
 			AnchorPane.setBottomAnchor(tableView, 0d);

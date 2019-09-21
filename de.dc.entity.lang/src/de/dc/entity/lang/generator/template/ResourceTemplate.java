@@ -7,6 +7,7 @@ public enum ResourceTemplate {
 	CREATE_SQL(new CreateSqlTemplate(), "/init/"),
 	FXML_SEARCH_PANEL(new FxmlSearchPaneTemplate(), "/filter/"),
 	FXML_EXTENDED_DEMO(new ExtendedFxmlDemoApplicationPaneTemplate(), "/extended/"),
+	CSS(new CssTemplate(), "/extended/")
 	; 
 	
 	private IGenerator<Entity> template;

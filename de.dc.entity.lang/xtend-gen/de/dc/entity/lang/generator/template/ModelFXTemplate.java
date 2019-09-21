@@ -285,6 +285,9 @@ public class ModelFXTemplate implements IGenerator<Entity> {
         _builder.newLine();
       }
     }
+    _builder.append("    ");
+    _builder.append("clear();");
+    _builder.newLine();
     _builder.append("  ");
     _builder.append("}");
     _builder.newLine();

@@ -37,7 +37,13 @@ class ExtendedDemoBaseApplicationPaneTemplate implements IGenerator<Entity>{
 	 
 	     @FXML
 	     protected TableColumn<?, ?> columnValue;
-	    
+
+	   @FXML
+	    protected Label labelItemsCounter;
+	
+	    @FXML
+	    protected Label labelFilteredItemsCounter;
+
 		protected <T, U> void setupCellValueFactory(TableColumn<T, U> column, Function<T, ObservableValue<U>> mapper) {
 			column.setCellValueFactory((CellDataFeatures<T, U> c) -> mapper.apply(c.getValue()));
 		}

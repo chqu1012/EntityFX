@@ -73,6 +73,7 @@ class ModelFXTemplate implements IGenerator<Entity>{
 	    «ELSE»
 	    this.enableSubmitProperty.set(true);
 	    «ENDIF»
+	    clear();
 	  }
 	
 	  public ObjectProperty<«name»> get«name»Property() {

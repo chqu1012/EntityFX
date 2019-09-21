@@ -58,6 +58,8 @@ public class ExtendedDemoApplicationPaneTemplate implements IGenerator<Entity> {
     _builder.newLine();
     _builder.append("import javafx.scene.web.WebView;");
     _builder.newLine();
+    _builder.append("import javafx.beans.binding.*;");
+    _builder.newLine();
     _builder.append("import javafx.application.Platform;");
     _builder.newLine();
     _builder.newLine();
@@ -165,6 +167,14 @@ public class ExtendedDemoApplicationPaneTemplate implements IGenerator<Entity> {
     _builder.append(_name_10, "\t\t");
     _builder.append("FX.class);");
     _builder.newLineIfNotEmpty();
+    _builder.append("\t\t");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append("labelItemsCounter.textProperty().bind(Bindings.size(context.getMasterData()).asString());");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append("labelFilteredItemsCounter.textProperty().bind(Bindings.size(context.getFilteredMasterData()).asString());");
+    _builder.newLine();
     _builder.append("\t\t");
     _builder.newLine();
     _builder.append("\t\t");
