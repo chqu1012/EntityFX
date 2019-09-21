@@ -19,6 +19,11 @@ class ExtendedDemoApplicationPaneTemplate implements IGenerator<Entity>{
 	import «t.packagePath».repository.*;
 	import javafx.fxml.FXMLLoader;
 	import javafx.scene.layout.AnchorPane;
+	import javafx.scene.web.WebView;
+	import javafx.application.Platform;
+	
+	import java.sql.*;
+	import org.h2.tools.Server;
 	
 	public class Extended«t.name»ApplicationPane extends ExtendedBase«t.name»ApplicationPane<«t.name»> {
 	
@@ -56,6 +61,23 @@ class ExtendedDemoApplicationPaneTemplate implements IGenerator<Entity>{
 			AnchorPane.setRightAnchor(form, 0d);
 			AnchorPane.setLeftAnchor(form, 0d);
 			anchorPaneFormular.getChildren().add(form);
+			
+			WebView webView = new WebView();
+			AnchorPane.setBottomAnchor(webView, 0d);
+			AnchorPane.setTopAnchor(webView, 0d);
+			AnchorPane.setRightAnchor(webView, 0d);
+			AnchorPane.setLeftAnchor(webView, 0d);
+			anchorPanePreferences.getChildren().add(webView);
+			
+			try {
+				Class.forName("org.h2.Driver");
+				Server server = Server.createWebServer("-web", "-webAllowOthers", "-webPort", "9082");
+				server.start();
+				String serverUrl = server.getURL();
+				Platform.runLater(() ->webView.getEngine().load(serverUrl));
+			} catch (ClassNotFoundException | SQLException e) {
+				log.error("Failed to open h2 console!", e);
+			}
 		}
 	}
 	'''
