@@ -21,6 +21,9 @@ class CreateSqlTemplate implements IGenerator<Entity>{
 	«val parametersWithDatatype = t.field.filter[useByRepository].map[it.name.splitCamelCaseString.map[it].reduce[p1, p2|p1+'_'+p2].toUpperCase+' '+it.datatype.value].reduce[p1, p2|p1+', '+p2]»
 	«val parameters = t.field.filter[useByRepository].map[it.name.splitCamelCaseString.map[it].reduce[p1, p2|p1+'_'+p2].toUpperCase].reduce[p1, p2|p1+', '+p2]»
 	CREATE TABLE IF NOT EXISTS «t.name.splitCamelCaseString.map[it].reduce[p1, p2|p1+'_'+p2].toUpperCase»(ID BIGINT AUTO_INCREMENT, «parametersWithDatatype»);
+	«IF t.useHistory»
+	CREATE TABLE IF NOT EXISTS HISTORY_«t.name.splitCamelCaseString.map[it].reduce[p1, p2|p1+'_'+p2].toUpperCase»(ID BIGINT AUTO_INCREMENT, «t.name.toUpperCase»_ID BIGINT,«parametersWithDatatype»);
+	«ENDIF»
 	«IF t.repository!==null»
 	«IF t.repository.generateDummyInsert»
 	«FOR i : 1..50»

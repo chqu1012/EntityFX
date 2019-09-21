@@ -31,15 +31,24 @@ class EntityDslGenerator implements IGenerator {
 				]			
 			}else{
 				Templates.values().forEach[tpl|
-					val tplPath = tpl.getExportPath(entity)
-					val content = tpl.template.gen(entity)
-					fsa.generateFile(exportPath+'/'+tplPath, content);
+					if(!entity.generateDemo && (tpl==Templates.Demo || 
+						tpl==Templates.ExtendedDemoApplication ||tpl==Templates.ExtendedDemoApplicationPane || 
+						tpl==Templates.ExtendedDemoBaseApplicationPane)){
+					}else{
+						val tplPath = tpl.getExportPath(entity)
+						val content = tpl.template.gen(entity)
+						fsa.generateFile(exportPath+'/'+tplPath, content);
+					}
 				]
 				
 				ResourceTemplate.values().forEach[tpl|
-					val tplPath = tpl.getExportPath(entity)
-					val content = tpl.template.gen(entity)
-					fsa.generateFile(exportPath+'/'+tplPath, content);
+					if(!entity.generateDemo && (tpl==ResourceTemplate.FXML_EXTENDED_DEMO || tpl==ResourceTemplate.CSS)){
+						return
+					}else{
+						val tplPath = tpl.getExportPath(entity)
+						val content = tpl.template.gen(entity)
+						fsa.generateFile(exportPath+'/'+tplPath, content);
+					}
 				]
 			}
 		}

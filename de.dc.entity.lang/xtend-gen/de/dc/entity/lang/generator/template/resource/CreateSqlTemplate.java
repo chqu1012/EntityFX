@@ -86,6 +86,27 @@ public class CreateSqlTemplate implements IGenerator<Entity> {
     _builder.append(");");
     _builder.newLineIfNotEmpty();
     {
+      boolean _isUseHistory = t.isUseHistory();
+      if (_isUseHistory) {
+        _builder.append("CREATE TABLE IF NOT EXISTS HISTORY_");
+        final Function1<String, String> _function_8 = (String it) -> {
+          return it;
+        };
+        final Function2<String, String, String> _function_9 = (String p1, String p2) -> {
+          return ((p1 + "_") + p2);
+        };
+        String _upperCase_1 = IterableExtensions.<String>reduce(ListExtensions.<String, String>map(((List<String>)Conversions.doWrapArray(this.splitCamelCaseString(t.getName()))), _function_8), _function_9).toUpperCase();
+        _builder.append(_upperCase_1);
+        _builder.append("(ID BIGINT AUTO_INCREMENT, ");
+        String _upperCase_2 = t.getName().toUpperCase();
+        _builder.append(_upperCase_2);
+        _builder.append("_ID BIGINT,");
+        _builder.append(parametersWithDatatype);
+        _builder.append(");");
+        _builder.newLineIfNotEmpty();
+      }
+    }
+    {
       Repository _repository = t.getRepository();
       boolean _tripleNotEquals = (_repository != null);
       if (_tripleNotEquals) {
@@ -96,8 +117,8 @@ public class CreateSqlTemplate implements IGenerator<Entity> {
               IntegerRange _upTo = new IntegerRange(1, 50);
               for(final Integer i : _upTo) {
                 _builder.append("INSERT INTO ");
-                String _upperCase_1 = t.getName().toUpperCase();
-                _builder.append(_upperCase_1);
+                String _upperCase_3 = t.getName().toUpperCase();
+                _builder.append(_upperCase_3);
                 _builder.append("(");
                 _builder.append(parameters);
                 _builder.append(") VALUES(");

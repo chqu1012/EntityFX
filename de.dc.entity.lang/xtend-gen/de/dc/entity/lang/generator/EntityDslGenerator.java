@@ -48,15 +48,24 @@ public class EntityDslGenerator implements IGenerator {
           ((List<SpringTemplates>)Conversions.doWrapArray(SpringTemplates.values())).forEach(_function);
         } else {
           final Consumer<Templates> _function_1 = (Templates tpl) -> {
-            final String tplPath = tpl.getExportPath(entity);
-            final String content = tpl.getTemplate().gen(entity);
-            fsa.generateFile(((exportPath + "/") + tplPath), content);
+            if (((!entity.isGenerateDemo()) && (((Objects.equal(tpl, Templates.Demo) || 
+              Objects.equal(tpl, Templates.ExtendedDemoApplication)) || Objects.equal(tpl, Templates.ExtendedDemoApplicationPane)) || 
+              Objects.equal(tpl, Templates.ExtendedDemoBaseApplicationPane)))) {
+            } else {
+              final String tplPath = tpl.getExportPath(entity);
+              final String content = tpl.getTemplate().gen(entity);
+              fsa.generateFile(((exportPath + "/") + tplPath), content);
+            }
           };
           ((List<Templates>)Conversions.doWrapArray(Templates.values())).forEach(_function_1);
           final Consumer<ResourceTemplate> _function_2 = (ResourceTemplate tpl) -> {
-            final String tplPath = tpl.getExportPath(entity);
-            final String content = tpl.getTemplate().gen(entity);
-            fsa.generateFile(((exportPath + "/") + tplPath), content);
+            if (((!entity.isGenerateDemo()) && (Objects.equal(tpl, ResourceTemplate.FXML_EXTENDED_DEMO) || Objects.equal(tpl, ResourceTemplate.CSS)))) {
+              return;
+            } else {
+              final String tplPath = tpl.getExportPath(entity);
+              final String content = tpl.getTemplate().gen(entity);
+              fsa.generateFile(((exportPath + "/") + tplPath), content);
+            }
           };
           ((List<ResourceTemplate>)Conversions.doWrapArray(ResourceTemplate.values())).forEach(_function_2);
         }
