@@ -8,6 +8,7 @@ import org.eclipse.xtend2.lib.StringConcatenation;
 import org.eclipse.xtext.xbase.lib.Functions.Function1;
 import org.eclipse.xtext.xbase.lib.Functions.Function2;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
+import org.eclipse.xtext.xbase.lib.StringExtensions;
 
 @SuppressWarnings("all")
 public class ExtendedDemoApplicationPaneTemplate implements IGenerator<Entity> {
@@ -76,9 +77,26 @@ public class ExtendedDemoApplicationPaneTemplate implements IGenerator<Entity> {
     _builder.append("\t");
     _builder.newLine();
     _builder.append("\t");
-    _builder.append("public Extended");
+    _builder.append("protected ");
     String _name_4 = t.getName();
     _builder.append(_name_4, "\t");
+    _builder.append("FX context; ");
+    _builder.newLineIfNotEmpty();
+    _builder.append("\t");
+    _builder.append("protected  ");
+    String _name_5 = t.getName();
+    _builder.append(_name_5, "\t");
+    _builder.append("Repository ");
+    String _firstLower = StringExtensions.toFirstLower(t.getName());
+    _builder.append(_firstLower, "\t");
+    _builder.append("Repository;");
+    _builder.newLineIfNotEmpty();
+    _builder.append("\t");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("public Extended");
+    String _name_6 = t.getName();
+    _builder.append(_name_6, "\t");
     _builder.append("ApplicationPane() {");
     _builder.newLineIfNotEmpty();
     _builder.append("\t\t");
@@ -106,6 +124,29 @@ public class ExtendedDemoApplicationPaneTemplate implements IGenerator<Entity> {
     _builder.append("\t\t");
     _builder.append("}");
     _builder.newLine();
+    _builder.append("\t\t");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append("this.");
+    String _firstLower_1 = StringExtensions.toFirstLower(t.getName());
+    _builder.append(_firstLower_1, "\t\t");
+    _builder.append("Repository = ");
+    String _name_7 = t.getName();
+    _builder.append(_name_7, "\t\t");
+    _builder.append("Platform.getInstance(");
+    String _name_8 = t.getName();
+    _builder.append(_name_8, "\t\t");
+    _builder.append("Repository.class);");
+    _builder.newLineIfNotEmpty();
+    _builder.append("\t\t");
+    _builder.append("this.context = ");
+    String _name_9 = t.getName();
+    _builder.append(_name_9, "\t\t");
+    _builder.append("Platform.getInstance(");
+    String _name_10 = t.getName();
+    _builder.append(_name_10, "\t\t");
+    _builder.append("FX.class);");
+    _builder.newLineIfNotEmpty();
     _builder.append("\t");
     _builder.append("}");
     _builder.newLine();
@@ -139,11 +180,11 @@ public class ExtendedDemoApplicationPaneTemplate implements IGenerator<Entity> {
           if (_isRequired) {
             _builder.append("\t\t\t");
             _builder.append("boolean contains");
-            String _name_5 = field.getName();
-            _builder.append(_name_5, "\t\t\t");
+            String _name_11 = field.getName();
+            _builder.append(_name_11, "\t\t\t");
             _builder.append(" = String.valueOf(p.get");
-            String _name_6 = field.getName();
-            _builder.append(_name_6, "\t\t\t");
+            String _name_12 = field.getName();
+            _builder.append(_name_12, "\t\t\t");
             _builder.append("()).toLowerCase().contains(newValue.toLowerCase());");
             _builder.newLineIfNotEmpty();
           }
@@ -155,8 +196,8 @@ public class ExtendedDemoApplicationPaneTemplate implements IGenerator<Entity> {
       return Boolean.valueOf(it.isRequired());
     };
     final Function1<Field, String> _function_1 = (Field it) -> {
-      String _name_7 = it.getName();
-      return ("contains" + _name_7);
+      String _name_13 = it.getName();
+      return ("contains" + _name_13);
     };
     final Function2<String, String, String> _function_2 = (String p1, String p2) -> {
       return ((p1 + " || ") + p2);

@@ -30,6 +30,11 @@ public class ExtendedDemoApplicationTemplate implements IGenerator<Entity> {
     _builder.append(_packagePath_1);
     _builder.append(".extended.*;");
     _builder.newLineIfNotEmpty();
+    _builder.append("import ");
+    String _packagePath_2 = t.getPackagePath();
+    _builder.append(_packagePath_2);
+    _builder.append(".*;");
+    _builder.newLineIfNotEmpty();
     _builder.append("import javafx.application.Application;");
     _builder.newLine();
     _builder.append("import javafx.scene.*;");
@@ -70,6 +75,13 @@ public class ExtendedDemoApplicationTemplate implements IGenerator<Entity> {
     _builder.newLine();
     _builder.append("\t");
     _builder.append("public static void main(String[] args) {");
+    _builder.newLine();
+    _builder.append("\t\t");
+    String _name_2 = t.getName();
+    _builder.append(_name_2, "\t\t");
+    _builder.append("Platform.init();");
+    _builder.newLineIfNotEmpty();
+    _builder.append("\t\t");
     _builder.newLine();
     _builder.append("\t\t");
     _builder.append("launch(args);");

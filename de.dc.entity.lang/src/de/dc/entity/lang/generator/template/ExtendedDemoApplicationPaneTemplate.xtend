@@ -24,6 +24,9 @@ class ExtendedDemoApplicationPaneTemplate implements IGenerator<Entity>{
 		
 		private static final String FXML = "/«t.packagePath.replace('.', '/')»/extended/Extended«t.name»ApplicationPane.fxml";
 		
+		protected «t.name»FX context; 
+		protected  «t.name»Repository «t.name.toFirstLower»Repository;
+		
 		public Extended«t.name»ApplicationPane() {
 			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(FXML));
 			fxmlLoader.setRoot(this);
@@ -34,6 +37,9 @@ class ExtendedDemoApplicationPaneTemplate implements IGenerator<Entity>{
 			} catch (IOException exception) {
 				log.error("Failed to load fxml " + FXML, exception);
 			}
+			
+			this.«t.name.toFirstLower»Repository = «t.name»Platform.getInstance(«t.name»Repository.class);
+			this.context = «t.name»Platform.getInstance(«t.name»FX.class);
 		}
 		
 		public void initialize() {

@@ -10,6 +10,7 @@ class ExtendedDemoApplicationTemplate implements IGenerator<Entity>{
 	package «t.packagePath»;
 	
 	import «t.packagePath».extended.*;
+	import «t.packagePath».*;
 	import javafx.application.Application;
 	import javafx.scene.*;
 	import javafx.stage.Stage;
@@ -25,6 +26,8 @@ class ExtendedDemoApplicationTemplate implements IGenerator<Entity>{
 		}
 	
 		public static void main(String[] args) {
+			«t.name»Platform.init();
+			
 			launch(args);
 		}
 	}
