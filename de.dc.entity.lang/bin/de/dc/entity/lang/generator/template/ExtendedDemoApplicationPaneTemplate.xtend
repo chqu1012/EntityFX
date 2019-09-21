@@ -36,6 +36,23 @@ class ExtendedDemoApplicationPaneTemplate implements IGenerator<Entity>{
 			}
 		}
 		
+		public void initialize() {
+			textFieldSearch.textProperty().addListener(this::onSearchTextChanged);
+		}
+		
+		public void onSearchTextChanged(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+			context.getFilteredMasterData().setPredicate(p->{
+				boolean isEmpty = newValue==null || newValue.isEmpty();
+				«FOR field : t.field»
+				«IF field.isRequired»
+				boolean contains«field.name» = String.valueOf(p.get«field.name»()).toLowerCase().contains(newValue.toLowerCase());
+				«ENDIF»
+				«ENDFOR»
+				«val contains = t.field.filter[isRequired].map['contains'+it.name].reduce[p1, p2|p1+' || '+p2]»
+				return isEmpty «IF t.field.filter[isRequired].size>0»||«ENDIF» «contains»;
+			});
+		}
+		
 		@Override
 		protected void onMenuItemAction(ActionEvent event) {
 			Object source = event.getSource();

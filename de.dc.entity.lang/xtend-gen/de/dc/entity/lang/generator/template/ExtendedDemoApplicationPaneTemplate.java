@@ -2,7 +2,12 @@ package de.dc.entity.lang.generator.template;
 
 import de.dc.entity.lang.generator.template.IGenerator;
 import de.dc.entity.model.Entity;
+import de.dc.entity.model.Field;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.xtend2.lib.StringConcatenation;
+import org.eclipse.xtext.xbase.lib.Functions.Function1;
+import org.eclipse.xtext.xbase.lib.Functions.Function2;
+import org.eclipse.xtext.xbase.lib.IterableExtensions;
 
 @SuppressWarnings("all")
 public class ExtendedDemoApplicationPaneTemplate implements IGenerator<Entity> {
@@ -100,6 +105,82 @@ public class ExtendedDemoApplicationPaneTemplate implements IGenerator<Entity> {
     _builder.newLine();
     _builder.append("\t\t");
     _builder.append("}");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("}");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("public void initialize() {");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append("textFieldSearch.textProperty().addListener(this::onSearchTextChanged);");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("}");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("public void onSearchTextChanged(ObservableValue<? extends String> observable, String oldValue, String newValue) {");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append("context.getFilteredMasterData().setPredicate(p->{");
+    _builder.newLine();
+    _builder.append("\t\t\t");
+    _builder.append("boolean isEmpty = newValue==null || newValue.isEmpty();");
+    _builder.newLine();
+    {
+      EList<Field> _field = t.getField();
+      for(final Field field : _field) {
+        {
+          boolean _isRequired = field.isRequired();
+          if (_isRequired) {
+            _builder.append("\t\t\t");
+            _builder.append("boolean contains");
+            String _name_5 = field.getName();
+            _builder.append(_name_5, "\t\t\t");
+            _builder.append(" = String.valueOf(p.get");
+            String _name_6 = field.getName();
+            _builder.append(_name_6, "\t\t\t");
+            _builder.append("()).toLowerCase().contains(newValue.toLowerCase());");
+            _builder.newLineIfNotEmpty();
+          }
+        }
+      }
+    }
+    _builder.append("\t\t\t");
+    final Function1<Field, Boolean> _function = (Field it) -> {
+      return Boolean.valueOf(it.isRequired());
+    };
+    final Function1<Field, String> _function_1 = (Field it) -> {
+      String _name_7 = it.getName();
+      return ("contains" + _name_7);
+    };
+    final Function2<String, String, String> _function_2 = (String p1, String p2) -> {
+      return ((p1 + " || ") + p2);
+    };
+    final String contains = IterableExtensions.<String>reduce(IterableExtensions.<Field, String>map(IterableExtensions.<Field>filter(t.getField(), _function), _function_1), _function_2);
+    _builder.newLineIfNotEmpty();
+    _builder.append("\t\t\t");
+    _builder.append("return isEmpty ");
+    {
+      final Function1<Field, Boolean> _function_3 = (Field it) -> {
+        return Boolean.valueOf(it.isRequired());
+      };
+      int _size = IterableExtensions.size(IterableExtensions.<Field>filter(t.getField(), _function_3));
+      boolean _greaterThan = (_size > 0);
+      if (_greaterThan) {
+        _builder.append("||");
+      }
+    }
+    _builder.append(" ");
+    _builder.append(contains, "\t\t\t");
+    _builder.append(";");
+    _builder.newLineIfNotEmpty();
+    _builder.append("\t\t");
+    _builder.append("});");
     _builder.newLine();
     _builder.append("\t");
     _builder.append("}");
