@@ -37,16 +37,15 @@ public class ProjectUtil {
 		IJavaProject javaProject = JavaCore.create(project);
 		createFolder(project, "bin");
 		IFolder srcFolder = createFolder(project, "src");
-		IFolder xentityFolder;
+		IFolder resource;
 		if (model.isUseGradle()) {
 			IFolder mainFolder = createFolder(srcFolder.getFolder("main"));
 			createFolder(mainFolder.getFolder("java"));
-			IFolder resource = createFolder(mainFolder.getFolder("resources"));
-			xentityFolder = createFolder(resource.getFolder("xentity"));
+			resource = createFolder(mainFolder.getFolder("resources"));
 		}else {
-			createFolder(project.getFolder("resources"));
-			xentityFolder = createFolder(srcFolder.getFolder("xentity"));
+			resource = createFolder(project.getFolder("resources"));
 		}
+		IFolder xentityFolder = createFolder(resource.getFolder("xentity"));
 		createFolder(project, "src-gen");
 		createFolder(project, "data");
 		IFolder metaInfFolder = createFolder(project, "META-INF");

@@ -140,6 +140,21 @@ public class Templates {
     _builder.append("\t\t");
     _builder.append("</buildCommand>");
     _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append("<buildCommand>");
+    _builder.newLine();
+    _builder.append("\t\t\t");
+    _builder.append("<name>org.eclipse.xtext.ui.shared.xtextBuilder</name>");
+    _builder.newLine();
+    _builder.append("\t\t\t");
+    _builder.append("<arguments>");
+    _builder.newLine();
+    _builder.append("\t\t\t");
+    _builder.append("</arguments>");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append("</buildCommand>");
+    _builder.newLine();
     {
       if (useGradle) {
         _builder.append("\t\t");
@@ -173,6 +188,9 @@ public class Templates {
     _builder.newLine();
     _builder.append("\t \t");
     _builder.append("<nature>org.eclipse.pde.PluginNature</nature>");
+    _builder.newLine();
+    _builder.append("\t \t");
+    _builder.append("<nature>org.eclipse.xtext.ui.shared.xtextNature</nature>");
     _builder.newLine();
     {
       if (useGradle) {

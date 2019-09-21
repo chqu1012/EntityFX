@@ -279,6 +279,10 @@ public class ModelFXTemplate implements IGenerator<Entity> {
         _builder.append("    ");
         _builder.append("this.enableSubmitProperty.bind(isEnabled);");
         _builder.newLine();
+      } else {
+        _builder.append("    ");
+        _builder.append("this.enableSubmitProperty.set(true);");
+        _builder.newLine();
       }
     }
     _builder.append("  ");

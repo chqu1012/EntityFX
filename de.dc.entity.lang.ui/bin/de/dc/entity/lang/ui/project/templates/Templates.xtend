@@ -57,6 +57,11 @@ class Templates {
 				<arguments>
 				</arguments>
 			</buildCommand>
+			<buildCommand>
+				<name>org.eclipse.xtext.ui.shared.xtextBuilder</name>
+				<arguments>
+				</arguments>
+			</buildCommand>
 			«IF useGradle»
 			<buildCommand>
 				<name>org.eclipse.buildship.core.gradleprojectbuilder</name>
@@ -68,6 +73,7 @@ class Templates {
 		<natures>
 			<nature>org.eclipse.jdt.core.javanature</nature>
 		 	<nature>org.eclipse.pde.PluginNature</nature>
+		 	<nature>org.eclipse.xtext.ui.shared.xtextNature</nature>
 		 	«IF useGradle»
 		 	<nature>org.eclipse.buildship.core.gradleprojectnature</nature>
 			«ENDIF»

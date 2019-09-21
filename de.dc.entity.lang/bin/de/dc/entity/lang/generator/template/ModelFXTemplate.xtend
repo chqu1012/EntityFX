@@ -70,6 +70,8 @@ class ModelFXTemplate implements IGenerator<Entity>{
 	    «IF !filteredFields.isEmpty»
 	    BooleanBinding isEnabled = «fields»;
 	    this.enableSubmitProperty.bind(isEnabled);
+	    «ELSE»
+	    this.enableSubmitProperty.set(true);
 	    «ENDIF»
 	  }
 	
