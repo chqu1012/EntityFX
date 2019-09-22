@@ -11,7 +11,7 @@ class ExtendedDemoBaseApplicationPaneTemplate implements IGenerator<Entity>{
 	
 	import java.util.function.Function;
 	
-	import javafx.beans.value.ObservableValue;
+	import javafx.beans.value.*;
 	import javafx.event.*;
 	import javafx.fxml.FXML;
 	import javafx.scene.control.*;
@@ -20,14 +20,17 @@ class ExtendedDemoBaseApplicationPaneTemplate implements IGenerator<Entity>{
 	
 	public abstract class ExtendedBase«t.name»ApplicationPane<T> extends BorderPane{
 	
+		 @FXML
+	     protected TabPane tabPaneLeft;
+	     
 	     @FXML
-	     protected AnchorPane anchorPaneTableView;
-	 
+	     protected TabPane tabPaneCenter;
+	     
 	     @FXML
-	     protected AnchorPane anchorPanePreferences;
-	 
+	     protected TabPane tabPaneRight;
+	     
 	     @FXML
-	     protected AnchorPane anchorPaneFormular;
+	     protected TabPane tabPaneBottom;
 	 
 	     @FXML
 	     protected TableView<?> tableViewPropertyView;
@@ -38,15 +41,15 @@ class ExtendedDemoBaseApplicationPaneTemplate implements IGenerator<Entity>{
 	     @FXML
 	     protected TableColumn<?, ?> columnValue;
 
-	   @FXML
-	    protected Label labelItemsCounter;
+	     @FXML
+	     protected Label labelItemsCounter;
 	
-	    @FXML
-	    protected Label labelFilteredItemsCounter;
+	     @FXML
+	     protected Label labelFilteredItemsCounter;
 
-		protected <T, U> void setupCellValueFactory(TableColumn<T, U> column, Function<T, ObservableValue<U>> mapper) {
+		 protected <T, U> void setupCellValueFactory(TableColumn<T, U> column, Function<T, ObservableValue<U>> mapper) {
 			column.setCellValueFactory((CellDataFeatures<T, U> c) -> mapper.apply(c.getValue()));
-		}
+		 }
 	}
 	'''
 }

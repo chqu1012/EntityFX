@@ -22,9 +22,10 @@ class ExtendedDemoApplicationPaneTemplate implements IGenerator<Entity>{
 	import javafx.scene.web.WebView;
 	import javafx.beans.binding.*;
 	import javafx.application.Platform;
-	
+	import javafx.scene.Node;
 	import java.sql.*;
 	import org.h2.tools.Server;
+	import javafx.scene.control.Tab;
 	
 	public class Extended«t.name»ApplicationPane extends ExtendedBase«t.name»ApplicationPane<«t.name»> {
 	
@@ -53,25 +54,13 @@ class ExtendedDemoApplicationPaneTemplate implements IGenerator<Entity>{
 			labelFilteredItemsCounter.textProperty().bind(Bindings.size(context.getFilteredMasterData()).asString());
 			
 			Filtered«t.name»TableView tableView = «t.name»Platform.getInstance(Filtered«t.name»TableView.class);
-			AnchorPane.setBottomAnchor(tableView, 0d);
-			AnchorPane.setTopAnchor(tableView, 0d);
-			AnchorPane.setRightAnchor(tableView, 0d);
-			AnchorPane.setLeftAnchor(tableView, 0d);
-			anchorPaneTableView.getChildren().add(tableView);
+			createCenterTab("«t.name» TableView", tableView);
 	
 			«t.name»Formular form = «t.name»Platform.getInstance(«t.name»Formular.class);
-			AnchorPane.setBottomAnchor(form, 0d);
-			AnchorPane.setTopAnchor(form, 0d);
-			AnchorPane.setRightAnchor(form, 0d);
-			AnchorPane.setLeftAnchor(form, 0d);
-			anchorPaneFormular.getChildren().add(form);
+			createRightTab("«t.name» Form", form);
 			
 			WebView webView = new WebView();
-			AnchorPane.setBottomAnchor(webView, 0d);
-			AnchorPane.setTopAnchor(webView, 0d);
-			AnchorPane.setRightAnchor(webView, 0d);
-			AnchorPane.setLeftAnchor(webView, 0d);
-			anchorPanePreferences.getChildren().add(webView);
+			createCenterTab("Preferences", webView);
 			
 			try {
 				Class.forName("org.h2.Driver");
@@ -82,6 +71,32 @@ class ExtendedDemoApplicationPaneTemplate implements IGenerator<Entity>{
 			} catch (ClassNotFoundException | SQLException e) {
 				log.error("Failed to open h2 console!", e);
 			}
+		}
+		
+		protected void createRightTab(String name, Node node) {
+			tabPaneRight.getTabs().add(createTab(name, node));
+		}
+		protected void createLeftTab(String name, Node node) {
+			tabPaneLeft.getTabs().add(createTab(name, node));
+			
+		}
+		protected void createCenterTab(String name, Node node) {
+			tabPaneCenter.getTabs().add(createTab(name, node));
+			
+		}
+		protected void createBottomTab(String name, Node node) {
+			tabPaneBottom.getTabs().add(createTab(name, node));
+		}
+		
+		private Tab createTab(String name, Node node) {
+			Tab tab = new Tab(name);
+			AnchorPane.setBottomAnchor(node, 0d);
+			AnchorPane.setTopAnchor(node, 0d);
+			AnchorPane.setRightAnchor(node, 0d);
+			AnchorPane.setLeftAnchor(node, 0d);
+			AnchorPane anchorPane = new AnchorPane(node);
+			tab.setContent(anchorPane);
+			return tab;
 		}
 	}
 	'''

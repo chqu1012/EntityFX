@@ -10,6 +10,8 @@ import de.dc.entity.model.Entity
 import de.dc.entity.lang.generator.template.Templates
 import de.dc.entity.lang.generator.template.ResourceTemplate
 import de.dc.entity.lang.generator.template.spring.SpringTemplates
+import de.dc.entity.lang.generator.template.base.NavigationTemplate
+import java.util.Arrays
 
 class EntityDslGenerator implements IGenerator {
 	
@@ -18,6 +20,7 @@ class EntityDslGenerator implements IGenerator {
 
 	override void doGenerate(Resource input, IFileSystemAccess fsa) { 
 		jvmModelGenerator.doGenerate(input, fsa)
+		
 		for(entity : input.allContents.toIterable.filter(Entity)){
 			val exportPath = entity.packagePath.replace('.', '/')
 			if(entity.useSpring){

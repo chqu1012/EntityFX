@@ -1,10 +1,11 @@
 package de.dc.entity.lang.demo.metro;
 
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 
 import org.apache.log4j.Logger;
 
-import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -16,6 +17,7 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.SplitPane;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 
 public class MetroDemoPane extends SplitPane{
@@ -39,7 +41,9 @@ public class MetroDemoPane extends SplitPane{
 	
 	private static final String FXML = "/de/dc/entity/lang/demo/metro/MetroDemo.fxml";
 	
-	private ObservableList<String> navigationItems = FXCollections.observableArrayList("Eins", "Zwei", "Drei", "Vier", "Fünf");
+	private Map<String, Pane> paneMap = new HashMap<>();
+	
+	private ObservableList<String> navigationItems = FXCollections.observableArrayList();
 	private FilteredList<String> filteredNavigationItem = new FilteredList<>(navigationItems);
 	
 	public MetroDemoPane() {
@@ -51,6 +55,14 @@ public class MetroDemoPane extends SplitPane{
 		} catch (IOException exception) {
 			log.error("Failed to load fxml " + FXML, exception);
 		}
+		
+		paneMap.put("Eins", null);
+		paneMap.put("Zwei", null);
+		paneMap.put("Drei", null);
+		paneMap.put("Vier", null);
+		paneMap.put("Fünf", null);
+		
+		navigationItems.addAll(paneMap.keySet());
 		
 		listViewNavigation.setItems(filteredNavigationItem);
 		textSearchField.textProperty().addListener(this::onNavigationItemSearch);
@@ -66,7 +78,10 @@ public class MetroDemoPane extends SplitPane{
 	
 	@FXML
     private void onMouseClicked(MouseEvent event) {
-		
+		String selection = listViewNavigation.getSelectionModel().getSelectedItem();
+		if (selection!=null && paneMap.get(selection)!=null) {
+			paneMap.get(selection).toFront();
+		}
 	}
 
 }

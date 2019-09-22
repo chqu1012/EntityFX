@@ -27,99 +27,78 @@ class ExtendedFxmlDemoApplicationPaneTemplate implements IGenerator<Entity>{
 	<fx:root maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="600.0" prefWidth="800.0" 
 	type="BorderPane" xmlns="http://javafx.com/javafx/8.0.221" xmlns:fx="http://javafx.com/fxml/1"
 	stylesheets="@Extended«t.name»ApplicationPane.css">
-	      <center>
-	         <SplitPane dividerPositions="0.7" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" orientation="VERTICAL" prefHeight="600.0" prefWidth="800.0">
-	            <items>
-	               <SplitPane dividerPositions="0.2, 0.8" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity">
-	                  <items>
-	                     <TabPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" tabClosingPolicy="UNAVAILABLE">
-	                       <tabs>
-	                         <Tab text="Explorer">
-	                           <content>
-	                             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-	                           </content>
-	                         </Tab>
-	                       </tabs>
-	                     </TabPane>
-	                     <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE">
-	                       <tabs>
-	                         <Tab text="TableView">
-	                           <content>
-	                             <AnchorPane fx:id="anchorPaneTableView" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-	                           </content>
-	                         </Tab>
-	                           <Tab text="Perferences">
-	                             <content>
-	                               <AnchorPane fx:id="anchorPanePreferences" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-	                             </content>
-	                           </Tab>
-	                       </tabs>
-	                     </TabPane>
-	                     <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE">
-	                       <tabs>
-	                         <Tab text="Formular">
-	                           <content>
-	                             <AnchorPane fx:id="anchorPaneFormular" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-	                           </content>
-	                         </Tab>
-	                       </tabs>
-	                     </TabPane>
-	                  </items>
-	               </SplitPane>
-	               <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE">
-	                 <tabs>
-	                   <Tab text="PropertyView">
+	  <center>
+	      <SplitPane dividerPositions="0.7" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" orientation="VERTICAL" prefHeight="600.0" prefWidth="800.0">
+	         <items>
+	            <SplitPane dividerPositions="0.2, 0.8" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity">
+	               <items>
+	                  <TabPane fx:id="tabPaneLeft" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" tabClosingPolicy="UNAVAILABLE">
+	                    <tabs>
+	                      <Tab text="Explorer">
 	                        <content>
-	                           <TableView fx:id="tableViewPropertyView" prefHeight="200.0" prefWidth="200.0">
-	                             <columns>
-	                               <TableColumn fx:id="columnProperty" prefWidth="180.0" text="Property" />
-	                               <TableColumn fx:id="columnValue" prefWidth="618.0" text="Value" />
-	                             </columns>
-	                           </TableView>
+	                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
 	                        </content>
-	                     </Tab>
-	                 </tabs>
-	               </TabPane>
-	            </items>
-	         </SplitPane>
-	      </center>
-	      <top>
-	         <VBox BorderPane.alignment="CENTER">
-	            <children>
-	               <MenuBar>
-	                 <menus>
-	                   <Menu mnemonicParsing="false" text="File">
-	                     <items>
-	                       <MenuItem mnemonicParsing="false" text="Close" />
-	                     </items>
-	                   </Menu>
-	                   <Menu mnemonicParsing="false" text="Edit">
-	                     <items>
-	                       <MenuItem mnemonicParsing="false" text="Delete" />
-	                     </items>
-	                   </Menu>
-	                   <Menu mnemonicParsing="false" text="Help">
-	                     <items>
-	                       <MenuItem mnemonicParsing="false" text="About" />
-	                     </items>
-	                   </Menu>
-	                 </menus>
-	               </MenuBar>
-	               <ToolBar prefHeight="31.0" prefWidth="800.0" />
-	            </children>
-	         </VBox>
-	      </top>
-	      <bottom>
-	         <ToolBar BorderPane.alignment="CENTER">
-	            <items>
-	               <Label text="Items:" />
-	               <Label fx:id="labelItemsCounter" text="---" />
-	               <Separator orientation="VERTICAL" />
-	               <Label text="Filtered Items:" />
-	               <Label fx:id="labelFilteredItemsCounter" text="---" />
-	            </items>
-	         </ToolBar>
-	      </bottom>
+	                      </Tab>
+	                    </tabs>
+	                  </TabPane>
+	                  <TabPane fx:id="tabPaneCenter" prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" />
+	                  <TabPane fx:id="tabPaneRight" prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" />
+	               </items>
+	            </SplitPane>
+	            <TabPane fx:id="tabPaneBottom" prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE">
+	              <tabs>
+	                <Tab text="PropertyView">
+	                     <content>
+	                        <TableView fx:id="tableViewPropertyView" prefHeight="200.0" prefWidth="200.0">
+	                          <columns>
+	                            <TableColumn fx:id="columnProperty" prefWidth="180.0" text="Property" />
+	                            <TableColumn fx:id="columnValue" prefWidth="618.0" text="Value" />
+	                          </columns>
+	                        </TableView>
+	                     </content>
+	                  </Tab>
+	              </tabs>
+	            </TabPane>
+	         </items>
+	      </SplitPane>
+	   </center>
+	   <top>
+	      <VBox BorderPane.alignment="CENTER">
+	         <children>
+	            <MenuBar>
+	              <menus>
+	                <Menu mnemonicParsing="false" text="File">
+	                  <items>
+	                    <MenuItem mnemonicParsing="false" text="Close" />
+	                  </items>
+	                </Menu>
+	                <Menu mnemonicParsing="false" text="Edit">
+	                  <items>
+	                    <MenuItem mnemonicParsing="false" text="Delete" />
+	                  </items>
+	                </Menu>
+	                <Menu mnemonicParsing="false" text="Help">
+	                  <items>
+	                    <MenuItem mnemonicParsing="false" text="About" />
+	                  </items>
+	                </Menu>
+	              </menus>
+	            </MenuBar>
+	            <ToolBar prefHeight="31.0" prefWidth="800.0" />
+	         </children>
+	      </VBox>
+	   </top>
+	   <bottom>
+	      <ToolBar BorderPane.alignment="CENTER">
+	         <items>
+	            <Label text="Items:" />
+	            <Label fx:id="labelItemsCounter" text="---" />
+	            <Separator orientation="VERTICAL" />
+	            <Label text="Filtered Items:" />
+	            <Label fx:id="labelFilteredItemsCounter" text="---" />
+	         </items>
+	      </ToolBar>
+	   </bottom>
 	</fx:root>
 	'''
 }
