@@ -67,6 +67,11 @@ public class MetroDemoPane extends SplitPane{
 		listViewNavigation.setItems(filteredNavigationItem);
 		textSearchField.textProperty().addListener(this::onNavigationItemSearch);
 	}
+	
+	public void addNavigationItem(String name, Pane pane) {
+		paneMap.put(name, pane);
+		navigationItems.add(name);
+	}
     
 	private void onNavigationItemSearch(ObservableValue<? extends String> observable, String oldValue, String newValue) {
 		filteredNavigationItem.setPredicate(p->{

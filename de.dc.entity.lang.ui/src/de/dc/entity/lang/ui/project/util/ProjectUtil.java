@@ -1,5 +1,11 @@
 package de.dc.entity.lang.ui.project.util;
 
+import java.io.File;
+import java.io.IOException;
+import java.net.URISyntaxException;
+import java.net.URL;
+
+import org.apache.commons.io.FileUtils;
 import org.apache.log4j.Logger;
 import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.resources.IProject;
@@ -7,9 +13,12 @@ import org.eclipse.core.resources.IProjectDescription;
 import org.eclipse.core.resources.IWorkspaceRoot;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
+import org.eclipse.core.runtime.FileLocator;
+import org.eclipse.core.runtime.Platform;
 import org.eclipse.jdt.core.IJavaProject;
 import org.eclipse.jdt.core.JavaCore;
 import org.eclipse.xtext.util.StringInputStream;
+import org.osgi.framework.Bundle;
 
 import de.dc.entity.lang.ui.project.model.NewProjectModel;
 import de.dc.entity.lang.ui.project.templates.EntityTemplate;
@@ -48,7 +57,22 @@ public class ProjectUtil {
 		IFolder xentityFolder = createFolder(resource.getFolder("xentity"));
 		createFolder(project, "src-gen");
 		createFolder(project, "data");
+		IFolder libsFolder = createFolder(project, "libs");
 		IFolder metaInfFolder = createFolder(project, "META-INF");
+		
+		Bundle bundle = Platform.getBundle("de.dc.entity.lang.ui");
+		URL fileURL = bundle.getEntry("resources/libs");
+		try {
+			File srcLibFolder = new File(FileLocator.resolve(fileURL).toURI());
+			for (File file : srcLibFolder.listFiles()) {
+				File copied = new File(libsFolder.getRawLocationURI().toString().replaceFirst("file:/", "")+"/"+file.getName());
+				System.out.println(libsFolder.getRawLocationURI().toString().replace("file:/", "")+"/"+file.getName());
+				FileUtils.copyFile(file, copied);
+			}
+			
+		} catch (URISyntaxException | IOException e1) {
+		    e1.printStackTrace();
+		} 
 		
 		try {
 				project.getFile(".classpath").create(new StringInputStream(Templates.genClasspathXml(model.isUseGradle())), true, null);

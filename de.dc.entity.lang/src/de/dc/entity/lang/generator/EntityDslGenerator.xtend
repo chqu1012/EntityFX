@@ -1,17 +1,17 @@
 package de.dc.entity.lang.generator
 
 import com.google.inject.Inject
+import de.dc.entity.lang.generator.template.ResourceTemplate
+import de.dc.entity.lang.generator.template.Templates
+import de.dc.entity.lang.generator.template.metro.MetroResourceTemplates
+import de.dc.entity.lang.generator.template.metro.MetroTemplates
+import de.dc.entity.lang.generator.template.spring.SpringTemplates
+import de.dc.entity.model.Entity
 import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.xtext.generator.IFileSystemAccess
 import org.eclipse.xtext.generator.IGenerator
 import org.eclipse.xtext.naming.IQualifiedNameProvider
 import org.eclipse.xtext.xbase.compiler.JvmModelGenerator
-import de.dc.entity.model.Entity
-import de.dc.entity.lang.generator.template.Templates
-import de.dc.entity.lang.generator.template.ResourceTemplate
-import de.dc.entity.lang.generator.template.spring.SpringTemplates
-import de.dc.entity.lang.generator.template.base.NavigationTemplate
-import java.util.Arrays
 
 class EntityDslGenerator implements IGenerator {
 	
@@ -54,6 +54,18 @@ class EntityDslGenerator implements IGenerator {
 					}
 				]
 			}
+			
+			MetroTemplates.values.forEach[tpl|
+				val tplPath = tpl.getExportPath(entity)
+				val content = tpl.template.gen(entity)
+				fsa.generateFile(exportPath+'/'+tplPath, content);
+			]
+			
+			MetroResourceTemplates.values.forEach[tpl|
+				val tplPath = tpl.getExportPath(entity)
+				val content = tpl.template.gen(entity)
+				fsa.generateFile(exportPath+'/'+tplPath, content);
+			]
 		}
 	}
 }

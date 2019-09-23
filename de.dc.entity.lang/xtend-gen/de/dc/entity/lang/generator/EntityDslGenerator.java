@@ -5,6 +5,8 @@ import com.google.common.collect.Iterables;
 import com.google.inject.Inject;
 import de.dc.entity.lang.generator.template.ResourceTemplate;
 import de.dc.entity.lang.generator.template.Templates;
+import de.dc.entity.lang.generator.template.metro.MetroResourceTemplates;
+import de.dc.entity.lang.generator.template.metro.MetroTemplates;
 import de.dc.entity.lang.generator.template.spring.SpringTemplates;
 import de.dc.entity.model.Entity;
 import java.util.List;
@@ -69,6 +71,18 @@ public class EntityDslGenerator implements IGenerator {
           };
           ((List<ResourceTemplate>)Conversions.doWrapArray(ResourceTemplate.values())).forEach(_function_2);
         }
+        final Consumer<MetroTemplates> _function_3 = (MetroTemplates tpl) -> {
+          final String tplPath = tpl.getExportPath(entity);
+          final String content = tpl.getTemplate().gen(entity);
+          fsa.generateFile(((exportPath + "/") + tplPath), content);
+        };
+        ((List<MetroTemplates>)Conversions.doWrapArray(MetroTemplates.values())).forEach(_function_3);
+        final Consumer<MetroResourceTemplates> _function_4 = (MetroResourceTemplates tpl) -> {
+          final String tplPath = tpl.getExportPath(entity);
+          final String content = tpl.getTemplate().gen(entity);
+          fsa.generateFile(((exportPath + "/") + tplPath), content);
+        };
+        ((List<MetroResourceTemplates>)Conversions.doWrapArray(MetroResourceTemplates.values())).forEach(_function_4);
       }
     }
   }

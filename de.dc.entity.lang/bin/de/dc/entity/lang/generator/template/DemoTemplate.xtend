@@ -28,6 +28,8 @@ class DemoTemplate implements IGenerator<Entity>{
 			SplitPane root = new SplitPane(南ame.toFirstLower蓉ableView, 南ame.toFirstLower肇ormular);
 			root.setStyle("-fx-box-border: transparent;");
 			root.setDividerPosition(0, 0.7);
+			
+			// Metro咨.name與ane root = 南ame與latform.getInstance(Metro咨.name與ane.class);
 			stage.setScene(new Scene(root , 1200, 600));
 			stage.show();
 		}
