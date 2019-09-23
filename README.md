@@ -1,7 +1,12 @@
 # EntityFX
 Using entity model to generate h2 data table structure, JavaFX forms, filtered tableview, search dialog and more
 
-https://github.com/chqu1012/EntityFX/blob/master/de.dc.entity.resources/images/01_metro-example.PNG?raw=true
+![Generated Metro Application](https://github.com/chqu1012/EntityFX/blob/master/de.dc.entity.resources/images/01_metro-example.PNG?raw=true)
+
+![Event Log Example](https://github.com/chqu1012/EntityFX/blob/master/de.dc.entity.resources/images/02_EventLog-Dsl.PNG)
+
+![Event Log History Example](https://github.com/chqu1012/EntityFX/blob/master/de.dc.entity.resources/images/02_EventLogHistory-Dsl.PNG)
+
 
 Features Generation:
 * Dependency Injection Module
