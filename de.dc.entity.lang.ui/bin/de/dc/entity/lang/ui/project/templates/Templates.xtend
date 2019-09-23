@@ -161,6 +161,10 @@ class Templates {
 		<classpathentry kind="con" path="org.eclipse.pde.core.requiredPlugins"/>
 		<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8/"/>
 		<classpathentry kind="con" path="org.eclipse.buildship.core.gradleclasspathcontainer"/>
+		<classpathentry kind="lib" path="libs/h2-1.4.196.jar"/>
+		<classpathentry kind="lib" path="libs/jfxtras-common-8.0-r5.jar"/>
+		<classpathentry kind="lib" path="libs/jfxtras-controls-8.0-r5.jar"/>
+		<classpathentry kind="lib" path="libs/AnimateFX-1.2.1.jar"/>
 	</classpath>
 	'''
 }

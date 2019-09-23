@@ -4,7 +4,8 @@ import de.dc.entity.lang.generator.template.IGenerator;
 import de.dc.entity.model.Entity;
 
 public enum MetroTemplates {
-	Pane(new MetroPaneTemplate(), "/control/metro/")
+	Pane(new MetroPaneTemplate(), "/control/metro/"),
+	Demo(new MetroPaneApplicationTemplate(), "/"),
 	;
 	
 	private IGenerator<Entity> template;

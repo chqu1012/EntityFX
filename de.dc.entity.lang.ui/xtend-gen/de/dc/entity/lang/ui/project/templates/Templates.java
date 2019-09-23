@@ -418,6 +418,18 @@ public class Templates {
     _builder.append("\t");
     _builder.append("<classpathentry kind=\"con\" path=\"org.eclipse.buildship.core.gradleclasspathcontainer\"/>");
     _builder.newLine();
+    _builder.append("\t");
+    _builder.append("<classpathentry kind=\"lib\" path=\"libs/h2-1.4.196.jar\"/>");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("<classpathentry kind=\"lib\" path=\"libs/jfxtras-common-8.0-r5.jar\"/>");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("<classpathentry kind=\"lib\" path=\"libs/jfxtras-controls-8.0-r5.jar\"/>");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("<classpathentry kind=\"lib\" path=\"libs/AnimateFX-1.2.1.jar\"/>");
+    _builder.newLine();
     _builder.append("</classpath>");
     _builder.newLine();
     return _builder.toString();

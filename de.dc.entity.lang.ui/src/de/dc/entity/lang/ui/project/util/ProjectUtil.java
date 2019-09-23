@@ -66,7 +66,6 @@ public class ProjectUtil {
 			File srcLibFolder = new File(FileLocator.resolve(fileURL).toURI());
 			for (File file : srcLibFolder.listFiles()) {
 				File copied = new File(libsFolder.getRawLocationURI().toString().replaceFirst("file:/", "")+"/"+file.getName());
-				System.out.println(libsFolder.getRawLocationURI().toString().replace("file:/", "")+"/"+file.getName());
 				FileUtils.copyFile(file, copied);
 			}
 			
