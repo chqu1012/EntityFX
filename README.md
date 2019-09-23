@@ -20,3 +20,7 @@ Features Generation:
 
 # Version
 * v1.0.16: [Download](https://github.com/chqu1012/EntityFX/blob/master/de.dc.entity.lang.update/de.dc.entity.lang.update-v1.0.16.zip)
+
+# Minimum Requirements
+* Xtext: 2.14.0
+* Eclipse Build: 20190314 
