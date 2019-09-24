@@ -5,6 +5,12 @@ Metro Style Application
 
 ![Generated Metro Application](https://github.com/chqu1012/EntityFX/blob/master/de.dc.entity.resources/images/01_metro-example.PNG?raw=true)
 
+About Page
+![About Pane](https://github.com/chqu1012/EntityFX/blob/master/de.dc.entity.resources/images/02_About-Pane.PNG)
+
+Preference Page with H2 Server User Interface
+![Preference Page](https://github.com/chqu1012/EntityFX/blob/master/de.dc.entity.resources/images/02_H2_Console_Access.PNG)
+
 Classic Style Application
 ![Generated Metro Application](https://github.com/chqu1012/EntityFX/blob/master/de.dc.entity.resources/images/01_classic-example.PNG)
 
