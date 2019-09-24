@@ -31,6 +31,11 @@ Features Generation:
 * Demo Application for each Entity Generation
 
 # ChangeLog
+## v1.0.18
+* Animation on switching pages
+* BugFixes
+* Some ui improvments
+* About Panel
 ## v1.0.17
 * Add Preference Page to Metro Application
 * Metro Template
@@ -42,6 +47,7 @@ Features Generation:
 * Spring Support
 
 # Version
+* v1.0.18: [Download](https://github.com/chqu1012/EntityFX/blob/master/de.dc.entity.resources/builds/de.dc.entity.lang.update-v1.0.18.zip)
 * v1.0.17: [Download](https://github.com/chqu1012/EntityFX/blob/master/de.dc.entity.resources/builds/de.dc.entity.lang.update-v1.0.17.zip)
 * v1.0.16: [Download](https://github.com/chqu1012/EntityFX/blob/master/de.dc.entity.resources/builds/de.dc.entity.lang.update-v1.0.16.zip)
 
