@@ -25,14 +25,26 @@ Features Generation:
 * Demo Application for each Entity Generation
 
 # ChangeLog
-## v1.0.6
+## v1.0.17
+* Add Preference Page to Metro Application
+* Metro Template
+* Metro Code Generation
+* Default Service Generation
+## v1.0.16
 * Eclipse Project Creation
 * Metro Application
 * Spring Support
 
 # Version
+* v1.0.17: [Download](https://github.com/chqu1012/EntityFX/blob/master/de.dc.entity.resources/builds/de.dc.entity.lang.update-v1.0.17.zip)
 * v1.0.16: [Download](https://github.com/chqu1012/EntityFX/blob/master/de.dc.entity.resources/builds/de.dc.entity.lang.update-v1.0.16.zip)
 
 # Minimum Requirements
 * Xtext: 2.14.0
 * Eclipse Build: 20190314 
+
+# Installation
+* Download zip file
+* Open Eclipse Install Manager "Install New Software"
+* Add extracted zip file location to repository
+* Install
