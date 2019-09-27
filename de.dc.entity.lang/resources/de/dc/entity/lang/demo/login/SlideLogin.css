@@ -1,0 +1,41 @@
+.main-content{
+	-fx-background-color: #383838;
+}
+
+.black-button{
+	-fx-background-color: #383838;
+	-fx-border-color: white;
+	-fx-text-fill: white;
+}
+
+.black-button:pressed{
+	-fx-background-color: #002940;
+	-fx-text-fill: white;
+}
+
+.black-button:hover{
+	-fx-background-color: #55A8D5;
+	-fx-text-fill: white;
+}
+
+.form{
+	-fx-background-color: white;
+}
+
+.root{
+	-fx-background-color: transparent;
+}
+
+.text-field{
+	-fx-background-color: transparent;
+	-fx-border-color: gray;
+}
+
+.sign-in-button{
+	-fx-background-color: #55A8D5;
+	-fx-text-fill: white;
+}
+
+.sign-in-label{
+	-fx-text-fill: #55A8D5;
+}

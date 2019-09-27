@@ -2,6 +2,7 @@ package de.dc.entity.lang.ui.project.util;
 
 import java.io.File;
 import java.io.IOException;
+import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;
 
@@ -10,6 +11,7 @@ import org.apache.log4j.Logger;
 import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IProjectDescription;
+import org.eclipse.core.resources.IResource;
 import org.eclipse.core.resources.IWorkspaceRoot;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
@@ -63,13 +65,17 @@ public class ProjectUtil {
 		Bundle bundle = Platform.getBundle("de.dc.entity.lang.ui");
 		URL fileURL = bundle.getEntry("resources/libs");
 		try {
-			File srcLibFolder = new File(FileLocator.resolve(fileURL).toURI());
+			
+			 URL resolvedFileURL = FileLocator.toFileURL(fileURL);
+		     // We need to use the 3-arg constructor of URI in order to properly escape file system chars
+		     URI resolvedURI = new URI(resolvedFileURL.getProtocol(), resolvedFileURL.getPath(), null);
+		     File srcLibFolder = new File(resolvedURI);
+			
 			for (File file : srcLibFolder.listFiles()) {
 				File copied = new File(libsFolder.getRawLocationURI().toString().replaceFirst("file:/", "")+"/"+file.getName());
 				FileUtils.copyFile(file, copied);
 			}
-			
-		} catch (URISyntaxException | IOException e1) {
+		} catch (IOException | URISyntaxException e1) {
 		    e1.printStackTrace();
 		} 
 		
@@ -79,6 +85,7 @@ public class ProjectUtil {
 				project.getFile("build.gradle").create(new StringInputStream(Templates.genBuildGradle()), true, null);
 			}
 			xentityFolder.getFile(model.getEntityName()+".xentity").create(new StringInputStream(EntityTemplate.gen(model)), true, null);
+			xentityFolder.getFile("Metro"+model.getEntityName()+".xentity").create(new StringInputStream(EntityTemplate.genMetroDemo(model)), true, null);
 			if (model.isUseHistory()) {
 				xentityFolder.getFile(model.getEntityName()+"History.xentity").create(new StringInputStream(EntityTemplate.genHistory(model)), true, null);
 			}
@@ -88,10 +95,11 @@ public class ProjectUtil {
 			project.getFile(".project").create(new StringInputStream(Templates.genProjectFile(model.getName(), model.isUseGradle())), true, null);
 			metaInfFolder.getFile("MANIFEST.MF").create(new StringInputStream(Templates.genMetaInfXml(model.getName())), true, null);
 			project.getFile("build.properties").create(new StringInputStream(Templates.genBuildProperties(model.isUseGradle())), true, null);
+
+			project.refreshLocal(IResource.DEPTH_INFINITE, null);
 		} catch (CoreException e) {
 			LOG.error("Failed to create file", e);
 		}
-		
 		return javaProject; 
 	}
 

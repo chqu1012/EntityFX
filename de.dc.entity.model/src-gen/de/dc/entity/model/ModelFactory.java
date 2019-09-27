@@ -22,6 +22,60 @@ public interface ModelFactory extends EFactory {
 	ModelFactory eINSTANCE = de.dc.entity.model.impl.ModelFactoryImpl.init();
 
 	/**
+	 * Returns a new object of class '<em>Project FX</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Project FX</em>'.
+	 * @generated
+	 */
+	ProjectFX createProjectFX();
+
+	/**
+	 * Returns a new object of class '<em>Spring Metro</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Spring Metro</em>'.
+	 * @generated
+	 */
+	SpringMetro createSpringMetro();
+
+	/**
+	 * Returns a new object of class '<em>Metro</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Metro</em>'.
+	 * @generated
+	 */
+	Metro createMetro();
+
+	/**
+	 * Returns a new object of class '<em>Page Container</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Page Container</em>'.
+	 * @generated
+	 */
+	PageContainer createPageContainer();
+
+	/**
+	 * Returns a new object of class '<em>Page</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Page</em>'.
+	 * @generated
+	 */
+	Page createPage();
+
+	/**
+	 * Returns a new object of class '<em>Fxml Page</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Fxml Page</em>'.
+	 * @generated
+	 */
+	FxmlPage createFxmlPage();
+
+	/**
 	 * Returns a new object of class '<em>Entity</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

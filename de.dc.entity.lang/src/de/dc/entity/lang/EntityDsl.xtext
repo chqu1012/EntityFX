@@ -5,12 +5,67 @@ import "http://www.frateranatis.org/entity"
 import "http://www.eclipse.org/emf/2002/Ecore" as ecore
 import "http://www.eclipse.org/xtext/common/JavaVMTypes" as types
 
+ProjectFX: 
+	elements=(Metro | Entity | SpringMetro | Page | FxmlPage | PageContainer)
+;
+
+SpringMetro returns SpringMetro:
+	{SpringMetro}
+	('packagePath' packagePath=QualifiedName)?
+	
+	'SpringMetro'
+	name=ID
+	'{'
+		('title:' title=EString)?
+		('subtitle:' subtitle=EString)?
+		('navigations:' elements+=[NavigationItem|ID] ((',')? elements+=[NavigationItem|ID])*)? 
+	'}'
+;
+
+PageContainer returns PageContainer:
+	{PageContainer}
+	'PageContainer' '{'
+		(pages+=Page ((',')? pages+=Page)*)? 
+		(pages+=FxmlPage ((',')? pages+=FxmlPage)*)? 
+	'}'
+;
+
+Page returns Page:
+	{Page}
+	'Page' name=ID '{'
+		'control:' controller=JvmTypeReference
+	'}' 
+;
+
+FxmlPage returns FxmlPage:
+	{FxmlPage}
+	'FxmlPage' name=ID '{'
+		'fxml:' fxml=EString
+		'controller:' controller=JvmTypeReference
+	'}' 
+;
+
+
+Metro returns Metro:
+	{Metro}
+	('packagePath' packagePath=QualifiedName)?
+	
+	'Metro'
+	name=ID
+	'{'
+		('title:' title=EString)?
+		('subtitle:' subtitle=EString)?
+		('mainNavigation:' mainNavigationItem=[NavigationItem|ID])?
+		('navigations:' navigationItems+=[NavigationItem|ID] ((',')? navigationItems+=[NavigationItem|ID])*)?
+	'}'
+;
+
 Entity returns Entity:
 	{Entity}
 	('packagePath' packagePath=QualifiedName)?
 
 	'Entity'
-	name=EString
+	name=ID
 	'{'
 		('useSpring:' useSpring=EBoolean)?
 		('useHistory:' useHistory=EBoolean)? 

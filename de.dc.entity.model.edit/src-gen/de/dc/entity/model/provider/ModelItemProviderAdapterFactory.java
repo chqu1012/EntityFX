@@ -75,6 +75,144 @@ public class ModelItemProviderAdapterFactory extends ModelAdapterFactory
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link de.dc.entity.model.ProjectFX} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ProjectFXItemProvider projectFXItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.dc.entity.model.ProjectFX}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createProjectFXAdapter() {
+		if (projectFXItemProvider == null) {
+			projectFXItemProvider = new ProjectFXItemProvider(this);
+		}
+
+		return projectFXItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link de.dc.entity.model.SpringMetro} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected SpringMetroItemProvider springMetroItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.dc.entity.model.SpringMetro}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createSpringMetroAdapter() {
+		if (springMetroItemProvider == null) {
+			springMetroItemProvider = new SpringMetroItemProvider(this);
+		}
+
+		return springMetroItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link de.dc.entity.model.Metro} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected MetroItemProvider metroItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.dc.entity.model.Metro}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createMetroAdapter() {
+		if (metroItemProvider == null) {
+			metroItemProvider = new MetroItemProvider(this);
+		}
+
+		return metroItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link de.dc.entity.model.PageContainer} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected PageContainerItemProvider pageContainerItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.dc.entity.model.PageContainer}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createPageContainerAdapter() {
+		if (pageContainerItemProvider == null) {
+			pageContainerItemProvider = new PageContainerItemProvider(this);
+		}
+
+		return pageContainerItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link de.dc.entity.model.Page} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected PageItemProvider pageItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.dc.entity.model.Page}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createPageAdapter() {
+		if (pageItemProvider == null) {
+			pageItemProvider = new PageItemProvider(this);
+		}
+
+		return pageItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link de.dc.entity.model.FxmlPage} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected FxmlPageItemProvider fxmlPageItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.dc.entity.model.FxmlPage}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createFxmlPageAdapter() {
+		if (fxmlPageItemProvider == null) {
+			fxmlPageItemProvider = new FxmlPageItemProvider(this);
+		}
+
+		return fxmlPageItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link de.dc.entity.model.Entity} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -294,6 +432,18 @@ public class ModelItemProviderAdapterFactory extends ModelAdapterFactory
 	 */
 	@Override
 	public void dispose() {
+		if (projectFXItemProvider != null)
+			projectFXItemProvider.dispose();
+		if (springMetroItemProvider != null)
+			springMetroItemProvider.dispose();
+		if (metroItemProvider != null)
+			metroItemProvider.dispose();
+		if (pageContainerItemProvider != null)
+			pageContainerItemProvider.dispose();
+		if (pageItemProvider != null)
+			pageItemProvider.dispose();
+		if (fxmlPageItemProvider != null)
+			fxmlPageItemProvider.dispose();
 		if (entityItemProvider != null)
 			entityItemProvider.dispose();
 		if (repositoryItemProvider != null)

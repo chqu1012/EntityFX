@@ -5,6 +5,7 @@ package de.dc.entity.model.impl;
 import de.dc.entity.model.Entity;
 import de.dc.entity.model.Field;
 import de.dc.entity.model.ModelPackage;
+import de.dc.entity.model.NavigationItem;
 import de.dc.entity.model.Repository;
 
 import java.util.Collection;
@@ -18,7 +19,6 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
@@ -31,7 +31,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link de.dc.entity.model.impl.EntityImpl#getPackagePath <em>Package Path</em>}</li>
  *   <li>{@link de.dc.entity.model.impl.EntityImpl#getName <em>Name</em>}</li>
  *   <li>{@link de.dc.entity.model.impl.EntityImpl#isUseSpring <em>Use Spring</em>}</li>
  *   <li>{@link de.dc.entity.model.impl.EntityImpl#isUseHistory <em>Use History</em>}</li>
@@ -46,27 +45,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public class EntityImpl extends MinimalEObjectImpl.Container implements Entity {
-	/**
-	 * The default value of the '{@link #getPackagePath() <em>Package Path</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPackagePath()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PACKAGE_PATH_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getPackagePath() <em>Package Path</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPackagePath()
-	 * @generated
-	 * @ordered
-	 */
-	protected String packagePath = PACKAGE_PATH_EDEFAULT;
-
+public class EntityImpl extends AbstractModelImpl implements Entity {
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -264,30 +243,6 @@ public class EntityImpl extends MinimalEObjectImpl.Container implements Entity {
 	@Override
 	protected EClass eStaticClass() {
 		return ModelPackage.Literals.ENTITY;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String getPackagePath() {
-		return packagePath;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setPackagePath(String newPackagePath) {
-		String oldPackagePath = packagePath;
-		packagePath = newPackagePath;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ModelPackage.ENTITY__PACKAGE_PATH, oldPackagePath,
-					packagePath));
 	}
 
 	/**
@@ -570,8 +525,6 @@ public class EntityImpl extends MinimalEObjectImpl.Container implements Entity {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case ModelPackage.ENTITY__PACKAGE_PATH:
-			return getPackagePath();
 		case ModelPackage.ENTITY__NAME:
 			return getName();
 		case ModelPackage.ENTITY__USE_SPRING:
@@ -605,9 +558,6 @@ public class EntityImpl extends MinimalEObjectImpl.Container implements Entity {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case ModelPackage.ENTITY__PACKAGE_PATH:
-			setPackagePath((String) newValue);
-			return;
 		case ModelPackage.ENTITY__NAME:
 			setName((String) newValue);
 			return;
@@ -651,9 +601,6 @@ public class EntityImpl extends MinimalEObjectImpl.Container implements Entity {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case ModelPackage.ENTITY__PACKAGE_PATH:
-			setPackagePath(PACKAGE_PATH_EDEFAULT);
-			return;
 		case ModelPackage.ENTITY__NAME:
 			setName(NAME_EDEFAULT);
 			return;
@@ -696,8 +643,6 @@ public class EntityImpl extends MinimalEObjectImpl.Container implements Entity {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case ModelPackage.ENTITY__PACKAGE_PATH:
-			return PACKAGE_PATH_EDEFAULT == null ? packagePath != null : !PACKAGE_PATH_EDEFAULT.equals(packagePath);
 		case ModelPackage.ENTITY__NAME:
 			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		case ModelPackage.ENTITY__USE_SPRING:
@@ -728,14 +673,48 @@ public class EntityImpl extends MinimalEObjectImpl.Container implements Entity {
 	 * @generated
 	 */
 	@Override
+	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
+		if (baseClass == NavigationItem.class) {
+			switch (derivedFeatureID) {
+			case ModelPackage.ENTITY__NAME:
+				return ModelPackage.NAVIGATION_ITEM__NAME;
+			default:
+				return -1;
+			}
+		}
+		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
+		if (baseClass == NavigationItem.class) {
+			switch (baseFeatureID) {
+			case ModelPackage.NAVIGATION_ITEM__NAME:
+				return ModelPackage.ENTITY__NAME;
+			default:
+				return -1;
+			}
+		}
+		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public String toString() {
 		if (eIsProxy())
 			return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (packagePath: ");
-		result.append(packagePath);
-		result.append(", name: ");
+		result.append(" (name: ");
 		result.append(name);
 		result.append(", useSpring: ");
 		result.append(useSpring);

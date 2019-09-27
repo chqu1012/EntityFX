@@ -6,6 +6,7 @@ import java.util.Map;
 
 import org.apache.log4j.Logger;
 
+import de.dc.entity.lang.demo.about.AboutPane;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -56,11 +57,9 @@ public class MetroDemoPane extends SplitPane{
 			log.error("Failed to load fxml " + FXML, exception);
 		}
 		
-		paneMap.put("Eins", null);
-		paneMap.put("Zwei", null);
-		paneMap.put("Drei", null);
-		paneMap.put("Vier", null);
-		paneMap.put("Fünf", null);
+		paneMap.put("About", new AboutPane());
+		
+		addNavigationItem("About", new AboutPane());
 		
 		navigationItems.addAll(paneMap.keySet());
 		
@@ -71,6 +70,7 @@ public class MetroDemoPane extends SplitPane{
 	public void addNavigationItem(String name, Pane pane) {
 		paneMap.put(name, pane);
 		navigationItems.add(name);
+		stackPane.getChildren().add(pane);
 	}
     
 	private void onNavigationItemSearch(ObservableValue<? extends String> observable, String oldValue, String newValue) {

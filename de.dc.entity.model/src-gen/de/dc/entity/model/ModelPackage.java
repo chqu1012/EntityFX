@@ -22,7 +22,6 @@ import org.eclipse.emf.ecore.EReference;
  * <!-- end-user-doc -->
  * @see de.dc.entity.model.ModelFactory
  * @model kind="package"
- *        annotation="http://www.eclipse.org/emf/2002/GenModel multipleEditorPages='false' creationIcons='false' editDirectory='/de.dc.entity.model.edit/src-gen' editorDirectory='/de.dc.entity.model.editor/src-gen' richClientPlatform='true' codeFormatting='true' importerID='org.eclipse.emf.importer.ecore' runtimePlatform='RCP' fileExtensions='entity' tableProviders='true' dataTypeConverters='true' basePackage='de.dc.entity'"
  * @generated
  */
 public interface ModelPackage extends EPackage {
@@ -59,14 +58,51 @@ public interface ModelPackage extends EPackage {
 	ModelPackage eINSTANCE = de.dc.entity.model.impl.ModelPackageImpl.init();
 
 	/**
-	 * The meta object id for the '{@link de.dc.entity.model.impl.EntityImpl <em>Entity</em>}' class.
+	 * The meta object id for the '{@link de.dc.entity.model.impl.ProjectFXImpl <em>Project FX</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see de.dc.entity.model.impl.EntityImpl
-	 * @see de.dc.entity.model.impl.ModelPackageImpl#getEntity()
+	 * @see de.dc.entity.model.impl.ProjectFXImpl
+	 * @see de.dc.entity.model.impl.ModelPackageImpl#getProjectFX()
 	 * @generated
 	 */
-	int ENTITY = 0;
+	int PROJECT_FX = 0;
+
+	/**
+	 * The feature id for the '<em><b>Elements</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROJECT_FX__ELEMENTS = 0;
+
+	/**
+	 * The number of structural features of the '<em>Project FX</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROJECT_FX_FEATURE_COUNT = 1;
+
+	/**
+	 * The number of operations of the '<em>Project FX</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROJECT_FX_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link de.dc.entity.model.impl.AbstractModelImpl <em>Abstract Model</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.dc.entity.model.impl.AbstractModelImpl
+	 * @see de.dc.entity.model.impl.ModelPackageImpl#getAbstractModel()
+	 * @generated
+	 */
+	int ABSTRACT_MODEL = 1;
 
 	/**
 	 * The feature id for the '<em><b>Package Path</b></em>' attribute.
@@ -75,7 +111,44 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY__PACKAGE_PATH = 0;
+	int ABSTRACT_MODEL__PACKAGE_PATH = 0;
+
+	/**
+	 * The number of structural features of the '<em>Abstract Model</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_MODEL_FEATURE_COUNT = 1;
+
+	/**
+	 * The number of operations of the '<em>Abstract Model</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_MODEL_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link de.dc.entity.model.impl.SpringMetroImpl <em>Spring Metro</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.dc.entity.model.impl.SpringMetroImpl
+	 * @see de.dc.entity.model.impl.ModelPackageImpl#getSpringMetro()
+	 * @generated
+	 */
+	int SPRING_METRO = 2;
+
+	/**
+	 * The feature id for the '<em><b>Package Path</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SPRING_METRO__PACKAGE_PATH = ABSTRACT_MODEL__PACKAGE_PATH;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -84,7 +157,373 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY__NAME = 1;
+	int SPRING_METRO__NAME = ABSTRACT_MODEL_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Title</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SPRING_METRO__TITLE = ABSTRACT_MODEL_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Subtitle</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SPRING_METRO__SUBTITLE = ABSTRACT_MODEL_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Elements</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SPRING_METRO__ELEMENTS = ABSTRACT_MODEL_FEATURE_COUNT + 3;
+
+	/**
+	 * The number of structural features of the '<em>Spring Metro</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SPRING_METRO_FEATURE_COUNT = ABSTRACT_MODEL_FEATURE_COUNT + 4;
+
+	/**
+	 * The number of operations of the '<em>Spring Metro</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SPRING_METRO_OPERATION_COUNT = ABSTRACT_MODEL_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link de.dc.entity.model.impl.MetroImpl <em>Metro</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.dc.entity.model.impl.MetroImpl
+	 * @see de.dc.entity.model.impl.ModelPackageImpl#getMetro()
+	 * @generated
+	 */
+	int METRO = 3;
+
+	/**
+	 * The feature id for the '<em><b>Package Path</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int METRO__PACKAGE_PATH = ABSTRACT_MODEL__PACKAGE_PATH;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int METRO__NAME = ABSTRACT_MODEL_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Title</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int METRO__TITLE = ABSTRACT_MODEL_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Subtitle</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int METRO__SUBTITLE = ABSTRACT_MODEL_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Main Navigation Item</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int METRO__MAIN_NAVIGATION_ITEM = ABSTRACT_MODEL_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Navigation Items</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int METRO__NAVIGATION_ITEMS = ABSTRACT_MODEL_FEATURE_COUNT + 4;
+
+	/**
+	 * The number of structural features of the '<em>Metro</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int METRO_FEATURE_COUNT = ABSTRACT_MODEL_FEATURE_COUNT + 5;
+
+	/**
+	 * The number of operations of the '<em>Metro</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int METRO_OPERATION_COUNT = ABSTRACT_MODEL_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link de.dc.entity.model.impl.NavigationItemImpl <em>Navigation Item</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.dc.entity.model.impl.NavigationItemImpl
+	 * @see de.dc.entity.model.impl.ModelPackageImpl#getNavigationItem()
+	 * @generated
+	 */
+	int NAVIGATION_ITEM = 4;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NAVIGATION_ITEM__NAME = 0;
+
+	/**
+	 * The number of structural features of the '<em>Navigation Item</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NAVIGATION_ITEM_FEATURE_COUNT = 1;
+
+	/**
+	 * The number of operations of the '<em>Navigation Item</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NAVIGATION_ITEM_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link de.dc.entity.model.impl.PageContainerImpl <em>Page Container</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.dc.entity.model.impl.PageContainerImpl
+	 * @see de.dc.entity.model.impl.ModelPackageImpl#getPageContainer()
+	 * @generated
+	 */
+	int PAGE_CONTAINER = 5;
+
+	/**
+	 * The feature id for the '<em><b>Package Path</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAGE_CONTAINER__PACKAGE_PATH = ABSTRACT_MODEL__PACKAGE_PATH;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAGE_CONTAINER__NAME = ABSTRACT_MODEL_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Pages</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAGE_CONTAINER__PAGES = ABSTRACT_MODEL_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Page Container</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAGE_CONTAINER_FEATURE_COUNT = ABSTRACT_MODEL_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of operations of the '<em>Page Container</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAGE_CONTAINER_OPERATION_COUNT = ABSTRACT_MODEL_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link de.dc.entity.model.impl.PageImpl <em>Page</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.dc.entity.model.impl.PageImpl
+	 * @see de.dc.entity.model.impl.ModelPackageImpl#getPage()
+	 * @generated
+	 */
+	int PAGE = 6;
+
+	/**
+	 * The feature id for the '<em><b>Package Path</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAGE__PACKAGE_PATH = ABSTRACT_MODEL__PACKAGE_PATH;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAGE__NAME = ABSTRACT_MODEL_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Controller</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAGE__CONTROLLER = ABSTRACT_MODEL_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Page</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAGE_FEATURE_COUNT = ABSTRACT_MODEL_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of operations of the '<em>Page</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAGE_OPERATION_COUNT = ABSTRACT_MODEL_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link de.dc.entity.model.impl.FxmlPageImpl <em>Fxml Page</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.dc.entity.model.impl.FxmlPageImpl
+	 * @see de.dc.entity.model.impl.ModelPackageImpl#getFxmlPage()
+	 * @generated
+	 */
+	int FXML_PAGE = 7;
+
+	/**
+	 * The feature id for the '<em><b>Package Path</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FXML_PAGE__PACKAGE_PATH = PAGE__PACKAGE_PATH;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FXML_PAGE__NAME = PAGE__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Controller</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FXML_PAGE__CONTROLLER = PAGE__CONTROLLER;
+
+	/**
+	 * The feature id for the '<em><b>Fxml</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FXML_PAGE__FXML = PAGE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Fxml Page</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FXML_PAGE_FEATURE_COUNT = PAGE_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Fxml Page</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FXML_PAGE_OPERATION_COUNT = PAGE_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link de.dc.entity.model.impl.EntityImpl <em>Entity</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.dc.entity.model.impl.EntityImpl
+	 * @see de.dc.entity.model.impl.ModelPackageImpl#getEntity()
+	 * @generated
+	 */
+	int ENTITY = 8;
+
+	/**
+	 * The feature id for the '<em><b>Package Path</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY__PACKAGE_PATH = ABSTRACT_MODEL__PACKAGE_PATH;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY__NAME = ABSTRACT_MODEL_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Use Spring</b></em>' attribute.
@@ -93,7 +532,7 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY__USE_SPRING = 2;
+	int ENTITY__USE_SPRING = ABSTRACT_MODEL_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Use History</b></em>' attribute.
@@ -102,7 +541,7 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY__USE_HISTORY = 3;
+	int ENTITY__USE_HISTORY = ABSTRACT_MODEL_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Use Formular</b></em>' attribute.
@@ -111,7 +550,7 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY__USE_FORMULAR = 4;
+	int ENTITY__USE_FORMULAR = ABSTRACT_MODEL_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Use Table View</b></em>' attribute.
@@ -120,7 +559,7 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY__USE_TABLE_VIEW = 5;
+	int ENTITY__USE_TABLE_VIEW = ABSTRACT_MODEL_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Show Details Panel</b></em>' attribute.
@@ -129,7 +568,7 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY__SHOW_DETAILS_PANEL = 6;
+	int ENTITY__SHOW_DETAILS_PANEL = ABSTRACT_MODEL_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Show Search Panel</b></em>' attribute.
@@ -138,7 +577,7 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY__SHOW_SEARCH_PANEL = 7;
+	int ENTITY__SHOW_SEARCH_PANEL = ABSTRACT_MODEL_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Generate Demo</b></em>' attribute.
@@ -147,7 +586,7 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY__GENERATE_DEMO = 8;
+	int ENTITY__GENERATE_DEMO = ABSTRACT_MODEL_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Field</b></em>' containment reference list.
@@ -156,7 +595,7 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY__FIELD = 9;
+	int ENTITY__FIELD = ABSTRACT_MODEL_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Repository</b></em>' containment reference.
@@ -165,7 +604,7 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY__REPOSITORY = 10;
+	int ENTITY__REPOSITORY = ABSTRACT_MODEL_FEATURE_COUNT + 9;
 
 	/**
 	 * The number of structural features of the '<em>Entity</em>' class.
@@ -174,7 +613,7 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_FEATURE_COUNT = 11;
+	int ENTITY_FEATURE_COUNT = ABSTRACT_MODEL_FEATURE_COUNT + 10;
 
 	/**
 	 * The number of operations of the '<em>Entity</em>' class.
@@ -183,7 +622,7 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_OPERATION_COUNT = 0;
+	int ENTITY_OPERATION_COUNT = ABSTRACT_MODEL_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link de.dc.entity.model.impl.RepositoryImpl <em>Repository</em>}' class.
@@ -193,7 +632,7 @@ public interface ModelPackage extends EPackage {
 	 * @see de.dc.entity.model.impl.ModelPackageImpl#getRepository()
 	 * @generated
 	 */
-	int REPOSITORY = 1;
+	int REPOSITORY = 9;
 
 	/**
 	 * The feature id for the '<em><b>Jdbc Url</b></em>' attribute.
@@ -248,7 +687,7 @@ public interface ModelPackage extends EPackage {
 	 * @see de.dc.entity.model.impl.ModelPackageImpl#getSQLStatement()
 	 * @generated
 	 */
-	int SQL_STATEMENT = 2;
+	int SQL_STATEMENT = 10;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -303,7 +742,7 @@ public interface ModelPackage extends EPackage {
 	 * @see de.dc.entity.model.impl.ModelPackageImpl#getField()
 	 * @generated
 	 */
-	int FIELD = 3;
+	int FIELD = 11;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -394,7 +833,7 @@ public interface ModelPackage extends EPackage {
 	 * @see de.dc.entity.model.impl.ModelPackageImpl#getFXControl()
 	 * @generated
 	 */
-	int FX_CONTROL = 4;
+	int FX_CONTROL = 12;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -476,7 +915,252 @@ public interface ModelPackage extends EPackage {
 	 * @see de.dc.entity.model.impl.ModelPackageImpl#getBinding()
 	 * @generated
 	 */
-	int BINDING = 5;
+	int BINDING = 13;
+
+	/**
+	 * Returns the meta object for class '{@link de.dc.entity.model.ProjectFX <em>Project FX</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Project FX</em>'.
+	 * @see de.dc.entity.model.ProjectFX
+	 * @generated
+	 */
+	EClass getProjectFX();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link de.dc.entity.model.ProjectFX#getElements <em>Elements</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Elements</em>'.
+	 * @see de.dc.entity.model.ProjectFX#getElements()
+	 * @see #getProjectFX()
+	 * @generated
+	 */
+	EReference getProjectFX_Elements();
+
+	/**
+	 * Returns the meta object for class '{@link de.dc.entity.model.AbstractModel <em>Abstract Model</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Abstract Model</em>'.
+	 * @see de.dc.entity.model.AbstractModel
+	 * @generated
+	 */
+	EClass getAbstractModel();
+
+	/**
+	 * Returns the meta object for the attribute '{@link de.dc.entity.model.AbstractModel#getPackagePath <em>Package Path</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Package Path</em>'.
+	 * @see de.dc.entity.model.AbstractModel#getPackagePath()
+	 * @see #getAbstractModel()
+	 * @generated
+	 */
+	EAttribute getAbstractModel_PackagePath();
+
+	/**
+	 * Returns the meta object for class '{@link de.dc.entity.model.SpringMetro <em>Spring Metro</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Spring Metro</em>'.
+	 * @see de.dc.entity.model.SpringMetro
+	 * @generated
+	 */
+	EClass getSpringMetro();
+
+	/**
+	 * Returns the meta object for the attribute '{@link de.dc.entity.model.SpringMetro#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see de.dc.entity.model.SpringMetro#getName()
+	 * @see #getSpringMetro()
+	 * @generated
+	 */
+	EAttribute getSpringMetro_Name();
+
+	/**
+	 * Returns the meta object for the attribute '{@link de.dc.entity.model.SpringMetro#getTitle <em>Title</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Title</em>'.
+	 * @see de.dc.entity.model.SpringMetro#getTitle()
+	 * @see #getSpringMetro()
+	 * @generated
+	 */
+	EAttribute getSpringMetro_Title();
+
+	/**
+	 * Returns the meta object for the attribute '{@link de.dc.entity.model.SpringMetro#getSubtitle <em>Subtitle</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Subtitle</em>'.
+	 * @see de.dc.entity.model.SpringMetro#getSubtitle()
+	 * @see #getSpringMetro()
+	 * @generated
+	 */
+	EAttribute getSpringMetro_Subtitle();
+
+	/**
+	 * Returns the meta object for the reference list '{@link de.dc.entity.model.SpringMetro#getElements <em>Elements</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Elements</em>'.
+	 * @see de.dc.entity.model.SpringMetro#getElements()
+	 * @see #getSpringMetro()
+	 * @generated
+	 */
+	EReference getSpringMetro_Elements();
+
+	/**
+	 * Returns the meta object for class '{@link de.dc.entity.model.Metro <em>Metro</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Metro</em>'.
+	 * @see de.dc.entity.model.Metro
+	 * @generated
+	 */
+	EClass getMetro();
+
+	/**
+	 * Returns the meta object for the attribute '{@link de.dc.entity.model.Metro#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see de.dc.entity.model.Metro#getName()
+	 * @see #getMetro()
+	 * @generated
+	 */
+	EAttribute getMetro_Name();
+
+	/**
+	 * Returns the meta object for the attribute '{@link de.dc.entity.model.Metro#getTitle <em>Title</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Title</em>'.
+	 * @see de.dc.entity.model.Metro#getTitle()
+	 * @see #getMetro()
+	 * @generated
+	 */
+	EAttribute getMetro_Title();
+
+	/**
+	 * Returns the meta object for the attribute '{@link de.dc.entity.model.Metro#getSubtitle <em>Subtitle</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Subtitle</em>'.
+	 * @see de.dc.entity.model.Metro#getSubtitle()
+	 * @see #getMetro()
+	 * @generated
+	 */
+	EAttribute getMetro_Subtitle();
+
+	/**
+	 * Returns the meta object for the reference '{@link de.dc.entity.model.Metro#getMainNavigationItem <em>Main Navigation Item</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Main Navigation Item</em>'.
+	 * @see de.dc.entity.model.Metro#getMainNavigationItem()
+	 * @see #getMetro()
+	 * @generated
+	 */
+	EReference getMetro_MainNavigationItem();
+
+	/**
+	 * Returns the meta object for the reference list '{@link de.dc.entity.model.Metro#getNavigationItems <em>Navigation Items</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Navigation Items</em>'.
+	 * @see de.dc.entity.model.Metro#getNavigationItems()
+	 * @see #getMetro()
+	 * @generated
+	 */
+	EReference getMetro_NavigationItems();
+
+	/**
+	 * Returns the meta object for class '{@link de.dc.entity.model.NavigationItem <em>Navigation Item</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Navigation Item</em>'.
+	 * @see de.dc.entity.model.NavigationItem
+	 * @generated
+	 */
+	EClass getNavigationItem();
+
+	/**
+	 * Returns the meta object for the attribute '{@link de.dc.entity.model.NavigationItem#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see de.dc.entity.model.NavigationItem#getName()
+	 * @see #getNavigationItem()
+	 * @generated
+	 */
+	EAttribute getNavigationItem_Name();
+
+	/**
+	 * Returns the meta object for class '{@link de.dc.entity.model.PageContainer <em>Page Container</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Page Container</em>'.
+	 * @see de.dc.entity.model.PageContainer
+	 * @generated
+	 */
+	EClass getPageContainer();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link de.dc.entity.model.PageContainer#getPages <em>Pages</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Pages</em>'.
+	 * @see de.dc.entity.model.PageContainer#getPages()
+	 * @see #getPageContainer()
+	 * @generated
+	 */
+	EReference getPageContainer_Pages();
+
+	/**
+	 * Returns the meta object for class '{@link de.dc.entity.model.Page <em>Page</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Page</em>'.
+	 * @see de.dc.entity.model.Page
+	 * @generated
+	 */
+	EClass getPage();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link de.dc.entity.model.Page#getController <em>Controller</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Controller</em>'.
+	 * @see de.dc.entity.model.Page#getController()
+	 * @see #getPage()
+	 * @generated
+	 */
+	EReference getPage_Controller();
+
+	/**
+	 * Returns the meta object for class '{@link de.dc.entity.model.FxmlPage <em>Fxml Page</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Fxml Page</em>'.
+	 * @see de.dc.entity.model.FxmlPage
+	 * @generated
+	 */
+	EClass getFxmlPage();
+
+	/**
+	 * Returns the meta object for the attribute '{@link de.dc.entity.model.FxmlPage#getFxml <em>Fxml</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Fxml</em>'.
+	 * @see de.dc.entity.model.FxmlPage#getFxml()
+	 * @see #getFxmlPage()
+	 * @generated
+	 */
+	EAttribute getFxmlPage_Fxml();
 
 	/**
 	 * Returns the meta object for class '{@link de.dc.entity.model.Entity <em>Entity</em>}'.
@@ -487,28 +1171,6 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getEntity();
-
-	/**
-	 * Returns the meta object for the attribute '{@link de.dc.entity.model.Entity#getPackagePath <em>Package Path</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Package Path</em>'.
-	 * @see de.dc.entity.model.Entity#getPackagePath()
-	 * @see #getEntity()
-	 * @generated
-	 */
-	EAttribute getEntity_PackagePath();
-
-	/**
-	 * Returns the meta object for the attribute '{@link de.dc.entity.model.Entity#getName <em>Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see de.dc.entity.model.Entity#getName()
-	 * @see #getEntity()
-	 * @generated
-	 */
-	EAttribute getEntity_Name();
 
 	/**
 	 * Returns the meta object for the attribute '{@link de.dc.entity.model.Entity#isUseSpring <em>Use Spring</em>}'.
@@ -892,6 +1554,206 @@ public interface ModelPackage extends EPackage {
 	 */
 	interface Literals {
 		/**
+		 * The meta object literal for the '{@link de.dc.entity.model.impl.ProjectFXImpl <em>Project FX</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.dc.entity.model.impl.ProjectFXImpl
+		 * @see de.dc.entity.model.impl.ModelPackageImpl#getProjectFX()
+		 * @generated
+		 */
+		EClass PROJECT_FX = eINSTANCE.getProjectFX();
+
+		/**
+		 * The meta object literal for the '<em><b>Elements</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PROJECT_FX__ELEMENTS = eINSTANCE.getProjectFX_Elements();
+
+		/**
+		 * The meta object literal for the '{@link de.dc.entity.model.impl.AbstractModelImpl <em>Abstract Model</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.dc.entity.model.impl.AbstractModelImpl
+		 * @see de.dc.entity.model.impl.ModelPackageImpl#getAbstractModel()
+		 * @generated
+		 */
+		EClass ABSTRACT_MODEL = eINSTANCE.getAbstractModel();
+
+		/**
+		 * The meta object literal for the '<em><b>Package Path</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ABSTRACT_MODEL__PACKAGE_PATH = eINSTANCE.getAbstractModel_PackagePath();
+
+		/**
+		 * The meta object literal for the '{@link de.dc.entity.model.impl.SpringMetroImpl <em>Spring Metro</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.dc.entity.model.impl.SpringMetroImpl
+		 * @see de.dc.entity.model.impl.ModelPackageImpl#getSpringMetro()
+		 * @generated
+		 */
+		EClass SPRING_METRO = eINSTANCE.getSpringMetro();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SPRING_METRO__NAME = eINSTANCE.getSpringMetro_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>Title</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SPRING_METRO__TITLE = eINSTANCE.getSpringMetro_Title();
+
+		/**
+		 * The meta object literal for the '<em><b>Subtitle</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SPRING_METRO__SUBTITLE = eINSTANCE.getSpringMetro_Subtitle();
+
+		/**
+		 * The meta object literal for the '<em><b>Elements</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SPRING_METRO__ELEMENTS = eINSTANCE.getSpringMetro_Elements();
+
+		/**
+		 * The meta object literal for the '{@link de.dc.entity.model.impl.MetroImpl <em>Metro</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.dc.entity.model.impl.MetroImpl
+		 * @see de.dc.entity.model.impl.ModelPackageImpl#getMetro()
+		 * @generated
+		 */
+		EClass METRO = eINSTANCE.getMetro();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute METRO__NAME = eINSTANCE.getMetro_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>Title</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute METRO__TITLE = eINSTANCE.getMetro_Title();
+
+		/**
+		 * The meta object literal for the '<em><b>Subtitle</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute METRO__SUBTITLE = eINSTANCE.getMetro_Subtitle();
+
+		/**
+		 * The meta object literal for the '<em><b>Main Navigation Item</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference METRO__MAIN_NAVIGATION_ITEM = eINSTANCE.getMetro_MainNavigationItem();
+
+		/**
+		 * The meta object literal for the '<em><b>Navigation Items</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference METRO__NAVIGATION_ITEMS = eINSTANCE.getMetro_NavigationItems();
+
+		/**
+		 * The meta object literal for the '{@link de.dc.entity.model.impl.NavigationItemImpl <em>Navigation Item</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.dc.entity.model.impl.NavigationItemImpl
+		 * @see de.dc.entity.model.impl.ModelPackageImpl#getNavigationItem()
+		 * @generated
+		 */
+		EClass NAVIGATION_ITEM = eINSTANCE.getNavigationItem();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute NAVIGATION_ITEM__NAME = eINSTANCE.getNavigationItem_Name();
+
+		/**
+		 * The meta object literal for the '{@link de.dc.entity.model.impl.PageContainerImpl <em>Page Container</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.dc.entity.model.impl.PageContainerImpl
+		 * @see de.dc.entity.model.impl.ModelPackageImpl#getPageContainer()
+		 * @generated
+		 */
+		EClass PAGE_CONTAINER = eINSTANCE.getPageContainer();
+
+		/**
+		 * The meta object literal for the '<em><b>Pages</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PAGE_CONTAINER__PAGES = eINSTANCE.getPageContainer_Pages();
+
+		/**
+		 * The meta object literal for the '{@link de.dc.entity.model.impl.PageImpl <em>Page</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.dc.entity.model.impl.PageImpl
+		 * @see de.dc.entity.model.impl.ModelPackageImpl#getPage()
+		 * @generated
+		 */
+		EClass PAGE = eINSTANCE.getPage();
+
+		/**
+		 * The meta object literal for the '<em><b>Controller</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PAGE__CONTROLLER = eINSTANCE.getPage_Controller();
+
+		/**
+		 * The meta object literal for the '{@link de.dc.entity.model.impl.FxmlPageImpl <em>Fxml Page</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.dc.entity.model.impl.FxmlPageImpl
+		 * @see de.dc.entity.model.impl.ModelPackageImpl#getFxmlPage()
+		 * @generated
+		 */
+		EClass FXML_PAGE = eINSTANCE.getFxmlPage();
+
+		/**
+		 * The meta object literal for the '<em><b>Fxml</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FXML_PAGE__FXML = eINSTANCE.getFxmlPage_Fxml();
+
+		/**
 		 * The meta object literal for the '{@link de.dc.entity.model.impl.EntityImpl <em>Entity</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -900,22 +1762,6 @@ public interface ModelPackage extends EPackage {
 		 * @generated
 		 */
 		EClass ENTITY = eINSTANCE.getEntity();
-
-		/**
-		 * The meta object literal for the '<em><b>Package Path</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute ENTITY__PACKAGE_PATH = eINSTANCE.getEntity_PackagePath();
-
-		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute ENTITY__NAME = eINSTANCE.getEntity_Name();
 
 		/**
 		 * The meta object literal for the '<em><b>Use Spring</b></em>' attribute feature.

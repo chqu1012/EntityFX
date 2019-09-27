@@ -4,6 +4,19 @@ import de.dc.entity.lang.ui.project.model.NewProjectModel
 
 class EntityTemplate {
 	
+	def static String genMetroDemo(NewProjectModel model)'''
+	packagePath «model.name.toLowerCase»
+	
+	Metro «model.entityName»{
+		title: "My Application"
+		subtitle: "Small description for this application"
+		mainNavigation: «model.entityName»
+		«IF model.isUseHistory»
+		navigations: «model.entityName»History
+		«ENDIF»
+	}
+	'''
+	
 	def static String gen(NewProjectModel model)'''
 	packagePath «model.name»
 	
@@ -14,9 +27,15 @@ class EntityTemplate {
 	  	
 	  	generateDemo: «model.generateDemo»
 	  	
-		Field(name: Status, datatype:Integer, required: true, useByTableView: true, useByRepository: true)[ 
+		Field(name: Name, datatype:String, required: true, useByTableView: true, useByRepository: true)[ 
+			control: javafx.scene.control.TextField
+		] 
+		Field(name: Message, datatype:String, required: true, useByTableView: true, useByRepository: true)[ 
 			control: javafx.scene.control.TextField
 		]
+		Field(name: Status, datatype:Integer, required: true, useByTableView: true, useByRepository: true)[ 
+			control: javafx.scene.control.TextField
+			]
 		Field(name: CreatedOn, datatype:java.time.LocalDateTime, required: true, useByTableView: true, useByRepository: true)[ 
 			control: jfxtras.scene.control.LocalDateTimeTextField
 			binding: localDateTimeProperty
@@ -41,6 +60,16 @@ class EntityTemplate {
 	  	showSearchPanel: false
 	  	
 	  	generateDemo: false
+		
+		Field(name: Name, datatype:String, required: true, useByTableView: true, useByRepository: true)[ 
+			control: javafx.scene.control.TextField
+		] 
+		Field(name: Message, datatype:String, required: true, useByTableView: true, useByRepository: true)[ 
+			control: javafx.scene.control.TextField
+		]
+		Field(name: Status, datatype:Integer, required: true, useByTableView: true, useByRepository: true)[ 
+			control: javafx.scene.control.TextField
+		]
 		
 		Field(name: CreatedOn, datatype:java.time.LocalDateTime, required: true, useByTableView: true, useByRepository: true)[ 
 			control: jfxtras.scene.control.LocalDateTimeTextField

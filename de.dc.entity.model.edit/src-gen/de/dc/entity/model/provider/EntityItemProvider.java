@@ -11,21 +11,11 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
-import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.eclipse.emf.ecore.EStructuralFeature;
 
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
-import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
-import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.IItemPropertySource;
-import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
-import org.eclipse.emf.edit.provider.ITableItemLabelProvider;
-import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
@@ -34,9 +24,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * <!-- end-user-doc -->
  * @generated
  */
-public class EntityItemProvider extends ItemProviderAdapter
-		implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider,
-		IItemLabelProvider, IItemPropertySource, ITableItemLabelProvider {
+public class EntityItemProvider extends AbstractModelItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -58,7 +46,6 @@ public class EntityItemProvider extends ItemProviderAdapter
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addPackagePathPropertyDescriptor(object);
 			addNamePropertyDescriptor(object);
 			addUseSpringPropertyDescriptor(object);
 			addUseHistoryPropertyDescriptor(object);
@@ -72,22 +59,6 @@ public class EntityItemProvider extends ItemProviderAdapter
 	}
 
 	/**
-	 * This adds a property descriptor for the Package Path feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addPackagePathPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Entity_packagePath_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Entity_packagePath_feature",
-								"_UI_Entity_type"),
-						ModelPackage.Literals.ENTITY__PACKAGE_PATH, true, false, false,
-						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
-	}
-
-	/**
 	 * This adds a property descriptor for the Name feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -96,9 +67,10 @@ public class EntityItemProvider extends ItemProviderAdapter
 	protected void addNamePropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Entity_name_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Entity_name_feature", "_UI_Entity_type"),
-						ModelPackage.Literals.ENTITY__NAME, true, false, false,
+						getResourceLocator(), getString("_UI_NavigationItem_name_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_NavigationItem_name_feature",
+								"_UI_NavigationItem_type"),
+						ModelPackage.Literals.NAVIGATION_ITEM__NAME, true, false, false,
 						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
@@ -257,21 +229,6 @@ public class EntityItemProvider extends ItemProviderAdapter
 	}
 
 	/**
-	 * This returns <code>getImage(object)</code> for the column index <code>0</code> or <code>super.getImage(object)</code> otherwise.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getText(Object)
-	 * @see #getColumnText(Object, int)
-	 * @generated
-	 */
-	@Override
-	public Object getColumnImage(Object object, int columnIndex) {
-		// TODO: implement this method to return appropriate information for each column.
-		// Ensure that you remove @generated or mark it @generated NOT
-		return columnIndex == 0 ? getImage(object) : super.getImage(object);
-	}
-
-	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -295,21 +252,6 @@ public class EntityItemProvider extends ItemProviderAdapter
 	}
 
 	/**
-	 * This returns <code>getText(object)</code> for the column index <code>0</code> or <code>super.getText(object)</code> otherwise.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getImage(Object)
-	 * @see #getColumnImage(Object, int)
-	 * @generated
-	 */
-	@Override
-	public String getColumnText(Object object, int columnIndex) {
-		// TODO: implement this method to return appropriate information for each column.
-		// Ensure that you remove @generated or mark it @generated NOT
-		return columnIndex == 0 ? getText(object) : super.getText(object);
-	}
-
-	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
@@ -321,7 +263,6 @@ public class EntityItemProvider extends ItemProviderAdapter
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Entity.class)) {
-		case ModelPackage.ENTITY__PACKAGE_PATH:
 		case ModelPackage.ENTITY__NAME:
 		case ModelPackage.ENTITY__USE_SPRING:
 		case ModelPackage.ENTITY__USE_HISTORY:
@@ -356,17 +297,6 @@ public class EntityItemProvider extends ItemProviderAdapter
 
 		newChildDescriptors.add(createChildParameter(ModelPackage.Literals.ENTITY__REPOSITORY,
 				ModelFactory.eINSTANCE.createRepository()));
-	}
-
-	/**
-	 * Return the resource locator for this item provider's resources.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public ResourceLocator getResourceLocator() {
-		return ModelEditPlugin.INSTANCE;
 	}
 
 }

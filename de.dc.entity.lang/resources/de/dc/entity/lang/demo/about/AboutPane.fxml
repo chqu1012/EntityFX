@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+
+<fx:root maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" style="-fx-background-color: white;" type="BorderPane" xmlns="http://javafx.com/javafx/8.0.221" xmlns:fx="http://javafx.com/fxml/1">
+   <center>
+      <AnchorPane maxHeight="400.0" maxWidth="800.0" prefHeight="400.0" prefWidth="800.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
+         <effect>
+            <DropShadow height="15.07" radius="7.035" width="15.07" />
+         </effect>
+         <children>
+            <HBox layoutX="74.0" layoutY="78.0" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #007ACC;">
+                     <children>
+                        <ImageView fx:id="imageView" fitHeight="200.0" fitWidth="200.0" layoutX="-14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" style="-fx-background-color: white;" HBox.hgrow="ALWAYS">
+                     <children>
+                        <Label fx:id="labelTitle" layoutX="25.0" layoutY="21.0" text="My Application Title" textFill="#8d8484">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="25.0" layoutY="78.0" text="Version:" textFill="#8d8484" />
+                        <Label layoutX="25.0" layoutY="98.0" text="Built:" textFill="#8d8484" />
+                        <Label fx:id="labelVersion" layoutX="92.0" layoutY="78.0" text="-----" textFill="#8d8484" />
+                        <Label fx:id="labelBuilt" layoutX="92.0" layoutY="98.0" text="-----" textFill="#8d8484" />
+                        <Label layoutX="20.0" layoutY="315.0" prefHeight="42.0" prefWidth="530.0" text="This product includes software developed by other open source projects including the Apache Software Foundation, https://www.apache.org/." wrapText="true" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" />
+                        <Label layoutX="20.0" layoutY="268.0" prefHeight="42.0" prefWidth="530.0" text="(c) Copyright contributors and others 2000, 2019.  All rights reserved. " wrapText="true" />
+                     </children>
+                  </AnchorPane>
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
+   </center>
+</fx:root>

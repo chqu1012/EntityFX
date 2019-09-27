@@ -56,6 +56,18 @@ public class ModelFactoryImpl extends EFactoryImpl implements ModelFactory {
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
+		case ModelPackage.PROJECT_FX:
+			return createProjectFX();
+		case ModelPackage.SPRING_METRO:
+			return createSpringMetro();
+		case ModelPackage.METRO:
+			return createMetro();
+		case ModelPackage.PAGE_CONTAINER:
+			return createPageContainer();
+		case ModelPackage.PAGE:
+			return createPage();
+		case ModelPackage.FXML_PAGE:
+			return createFxmlPage();
 		case ModelPackage.ENTITY:
 			return createEntity();
 		case ModelPackage.REPOSITORY:
@@ -99,6 +111,72 @@ public class ModelFactoryImpl extends EFactoryImpl implements ModelFactory {
 		default:
 			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ProjectFX createProjectFX() {
+		ProjectFXImpl projectFX = new ProjectFXImpl();
+		return projectFX;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public SpringMetro createSpringMetro() {
+		SpringMetroImpl springMetro = new SpringMetroImpl();
+		return springMetro;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Metro createMetro() {
+		MetroImpl metro = new MetroImpl();
+		return metro;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public PageContainer createPageContainer() {
+		PageContainerImpl pageContainer = new PageContainerImpl();
+		return pageContainer;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Page createPage() {
+		PageImpl page = new PageImpl();
+		return page;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public FxmlPage createFxmlPage() {
+		FxmlPageImpl fxmlPage = new FxmlPageImpl();
+		return fxmlPage;
 	}
 
 	/**

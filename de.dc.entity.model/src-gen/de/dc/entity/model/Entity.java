@@ -4,8 +4,6 @@ package de.dc.entity.model;
 
 import org.eclipse.emf.common.util.EList;
 
-import org.eclipse.emf.ecore.EObject;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Entity</b></em>'.
@@ -15,8 +13,6 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link de.dc.entity.model.Entity#getPackagePath <em>Package Path</em>}</li>
- *   <li>{@link de.dc.entity.model.Entity#getName <em>Name</em>}</li>
  *   <li>{@link de.dc.entity.model.Entity#isUseSpring <em>Use Spring</em>}</li>
  *   <li>{@link de.dc.entity.model.Entity#isUseHistory <em>Use History</em>}</li>
  *   <li>{@link de.dc.entity.model.Entity#isUseFormular <em>Use Formular</em>}</li>
@@ -32,51 +28,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface Entity extends EObject {
-	/**
-	 * Returns the value of the '<em><b>Package Path</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Package Path</em>' attribute.
-	 * @see #setPackagePath(String)
-	 * @see de.dc.entity.model.ModelPackage#getEntity_PackagePath()
-	 * @model unique="false"
-	 * @generated
-	 */
-	String getPackagePath();
-
-	/**
-	 * Sets the value of the '{@link de.dc.entity.model.Entity#getPackagePath <em>Package Path</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Package Path</em>' attribute.
-	 * @see #getPackagePath()
-	 * @generated
-	 */
-	void setPackagePath(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Name</em>' attribute.
-	 * @see #setName(String)
-	 * @see de.dc.entity.model.ModelPackage#getEntity_Name()
-	 * @model unique="false"
-	 * @generated
-	 */
-	String getName();
-
-	/**
-	 * Sets the value of the '{@link de.dc.entity.model.Entity#getName <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Name</em>' attribute.
-	 * @see #getName()
-	 * @generated
-	 */
-	void setName(String value);
-
+public interface Entity extends AbstractModel, NavigationItem {
 	/**
 	 * Returns the value of the '<em><b>Use Spring</b></em>' attribute.
 	 * The default value is <code>"true"</code>.

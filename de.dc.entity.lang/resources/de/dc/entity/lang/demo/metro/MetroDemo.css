@@ -1,3 +1,21 @@
+#search-text-field {
+    -fx-background-color: transparent;
+    -fx-background-insets: 1;
+    -fx-border-color: white;
+    -fx-text-fill: white;
+}
+
+.text-field {
+    -fx-background-color: transparent;
+    -fx-background-insets: 1;
+    -fx-border-color: #666666;
+    -fx-text-fill: #7B7B7B;
+}
+
+.text-field:focused {
+    -fx-background-color: transparent;
+    -fx-background-insets: 1;
+}
 .main-content{
 	-fx-background-color: white;
 }

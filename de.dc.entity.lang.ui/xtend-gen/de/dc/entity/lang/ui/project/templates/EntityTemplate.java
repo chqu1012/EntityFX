@@ -5,6 +5,45 @@ import org.eclipse.xtend2.lib.StringConcatenation;
 
 @SuppressWarnings("all")
 public class EntityTemplate {
+  public static String genMetroDemo(final NewProjectModel model) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("packagePath ");
+    String _lowerCase = model.getName().toLowerCase();
+    _builder.append(_lowerCase);
+    _builder.newLineIfNotEmpty();
+    _builder.newLine();
+    _builder.append("Metro ");
+    String _entityName = model.getEntityName();
+    _builder.append(_entityName);
+    _builder.append("{");
+    _builder.newLineIfNotEmpty();
+    _builder.append("\t");
+    _builder.append("title: \"My Application\"");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("subtitle: \"Small description for this application\"");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("mainNavigation: ");
+    String _entityName_1 = model.getEntityName();
+    _builder.append(_entityName_1, "\t");
+    _builder.newLineIfNotEmpty();
+    {
+      boolean _isUseHistory = model.isUseHistory();
+      if (_isUseHistory) {
+        _builder.append("\t");
+        _builder.append("navigations: ");
+        String _entityName_2 = model.getEntityName();
+        _builder.append(_entityName_2, "\t");
+        _builder.append("History");
+        _builder.newLineIfNotEmpty();
+      }
+    }
+    _builder.append("}");
+    _builder.newLine();
+    return _builder.toString();
+  }
+  
   public static String gen(final NewProjectModel model) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("packagePath ");
@@ -43,12 +82,30 @@ public class EntityTemplate {
     _builder.append("  \t");
     _builder.newLine();
     _builder.append("\t");
-    _builder.append("Field(name: Status, datatype:Integer, required: true, useByTableView: true, useByRepository: true)[ ");
+    _builder.append("Field(name: Name, datatype:String, required: true, useByTableView: true, useByRepository: true)[ ");
     _builder.newLine();
     _builder.append("\t\t");
     _builder.append("control: javafx.scene.control.TextField");
     _builder.newLine();
     _builder.append("\t");
+    _builder.append("] ");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("Field(name: Message, datatype:String, required: true, useByTableView: true, useByRepository: true)[ ");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append("control: javafx.scene.control.TextField");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("]");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("Field(name: Status, datatype:Integer, required: true, useByTableView: true, useByRepository: true)[ ");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append("control: javafx.scene.control.TextField");
+    _builder.newLine();
+    _builder.append("\t\t");
     _builder.append("]");
     _builder.newLine();
     _builder.append("\t");
@@ -120,6 +177,35 @@ public class EntityTemplate {
     _builder.newLine();
     _builder.append("  \t");
     _builder.append("generateDemo: false");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("Field(name: Name, datatype:String, required: true, useByTableView: true, useByRepository: true)[ ");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append("control: javafx.scene.control.TextField");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("] ");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("Field(name: Message, datatype:String, required: true, useByTableView: true, useByRepository: true)[ ");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append("control: javafx.scene.control.TextField");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("]");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("Field(name: Status, datatype:Integer, required: true, useByTableView: true, useByRepository: true)[ ");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append("control: javafx.scene.control.TextField");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("]");
     _builder.newLine();
     _builder.append("\t");
     _builder.newLine();

@@ -33,5 +33,5 @@ Require-Bundle: org.eclipse.core.runtime,
  de.dc.entity.lang;bundle-version="1.0.0",
  de.dc.entity.lang.ide;bundle-version="1.0.0",
  de.dc.entity.lang.ui;bundle-version="1.0.0",
- de.dc.scene.builder;bundle-version="1.0.0"
+ de.dc.entity.lang.templates.core;bundle-version="1.0.0"
 Bundle-ActivationPolicy: lazy

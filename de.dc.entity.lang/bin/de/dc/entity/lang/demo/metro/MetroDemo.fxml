@@ -9,7 +9,6 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
 <fx:root dividerPositions="0.2" prefHeight="800.0" prefWidth="1200.0" stylesheets="@MetroDemo.css" type="SplitPane" xmlns="http://javafx.com/javafx/8.0.221" xmlns:fx="http://javafx.com/fxml/1">
    <items>
       <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" spacing="5.0" styleClass="navigation">
@@ -24,7 +23,7 @@
                   <Font name="System Italic" size="12.0" />
                </font>
             </Label>
-            <TextField fx:id="textSearchField" promptText="Search for Modules">
+            <TextField id="search-text-field" fx:id="textSearchField" promptText="Search for Modules">
                <VBox.margin>
                   <Insets left="15.0" right="15.0" top="10.0" />
                </VBox.margin>

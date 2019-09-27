@@ -67,6 +67,46 @@ public class ModelAdapterFactory extends AdapterFactoryImpl {
 	 */
 	protected ModelSwitch<Adapter> modelSwitch = new ModelSwitch<Adapter>() {
 		@Override
+		public Adapter caseProjectFX(ProjectFX object) {
+			return createProjectFXAdapter();
+		}
+
+		@Override
+		public Adapter caseAbstractModel(AbstractModel object) {
+			return createAbstractModelAdapter();
+		}
+
+		@Override
+		public Adapter caseSpringMetro(SpringMetro object) {
+			return createSpringMetroAdapter();
+		}
+
+		@Override
+		public Adapter caseMetro(Metro object) {
+			return createMetroAdapter();
+		}
+
+		@Override
+		public Adapter caseNavigationItem(NavigationItem object) {
+			return createNavigationItemAdapter();
+		}
+
+		@Override
+		public Adapter casePageContainer(PageContainer object) {
+			return createPageContainerAdapter();
+		}
+
+		@Override
+		public Adapter casePage(Page object) {
+			return createPageAdapter();
+		}
+
+		@Override
+		public Adapter caseFxmlPage(FxmlPage object) {
+			return createFxmlPageAdapter();
+		}
+
+		@Override
 		public Adapter caseEntity(Entity object) {
 			return createEntityAdapter();
 		}
@@ -108,6 +148,118 @@ public class ModelAdapterFactory extends AdapterFactoryImpl {
 	@Override
 	public Adapter createAdapter(Notifier target) {
 		return modelSwitch.doSwitch((EObject) target);
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.dc.entity.model.ProjectFX <em>Project FX</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.dc.entity.model.ProjectFX
+	 * @generated
+	 */
+	public Adapter createProjectFXAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.dc.entity.model.AbstractModel <em>Abstract Model</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.dc.entity.model.AbstractModel
+	 * @generated
+	 */
+	public Adapter createAbstractModelAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.dc.entity.model.SpringMetro <em>Spring Metro</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.dc.entity.model.SpringMetro
+	 * @generated
+	 */
+	public Adapter createSpringMetroAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.dc.entity.model.Metro <em>Metro</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.dc.entity.model.Metro
+	 * @generated
+	 */
+	public Adapter createMetroAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.dc.entity.model.NavigationItem <em>Navigation Item</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.dc.entity.model.NavigationItem
+	 * @generated
+	 */
+	public Adapter createNavigationItemAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.dc.entity.model.PageContainer <em>Page Container</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.dc.entity.model.PageContainer
+	 * @generated
+	 */
+	public Adapter createPageContainerAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.dc.entity.model.Page <em>Page</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.dc.entity.model.Page
+	 * @generated
+	 */
+	public Adapter createPageAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.dc.entity.model.FxmlPage <em>Fxml Page</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.dc.entity.model.FxmlPage
+	 * @generated
+	 */
+	public Adapter createFxmlPageAdapter() {
+		return null;
 	}
 
 	/**

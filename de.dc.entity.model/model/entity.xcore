@@ -13,9 +13,47 @@ package de.dc.entity.model
 
 import org.eclipse.xtext.common.types.JvmTypeReference
 
-class Entity{
+class ProjectFX{
+	contains AbstractModel[0..1] elements
+}
+
+abstract class AbstractModel{
 	String packagePath
+}
+
+class SpringMetro extends AbstractModel{
 	String name
+	String title
+	String subtitle	
+	refers NavigationItem[0..*] elements
+}
+
+class Metro extends AbstractModel{
+	String name
+	String title
+	String subtitle
+	refers NavigationItem mainNavigationItem
+	refers NavigationItem[0..*] navigationItems
+	
+}
+
+abstract class NavigationItem{
+	String name
+}
+
+class PageContainer extends AbstractModel, NavigationItem{
+	contains Page[0..*] pages
+}
+
+class Page extends AbstractModel, NavigationItem{
+	contains JvmTypeReference controller
+}
+
+class FxmlPage extends Page{
+	String fxml
+}
+
+class Entity extends AbstractModel, NavigationItem{
 	boolean useSpring = 'true'
 	boolean useHistory = 'true'
 	boolean useFormular = 'true'

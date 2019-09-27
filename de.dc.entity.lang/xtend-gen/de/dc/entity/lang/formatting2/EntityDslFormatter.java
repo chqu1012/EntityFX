@@ -102,6 +102,9 @@ public class EntityDslFormatter extends XbaseFormatter {
     } else if (entity instanceof XFunctionTypeRef) {
       _format((XFunctionTypeRef)entity, document);
       return;
+    } else if (entity instanceof Entity) {
+      _format((Entity)entity, document);
+      return;
     } else if (entity instanceof JvmGenericArrayTypeReference) {
       _format((JvmGenericArrayTypeReference)entity, document);
       return;
@@ -158,9 +161,6 @@ public class EntityDslFormatter extends XbaseFormatter {
       return;
     } else if (entity instanceof XVariableDeclaration) {
       _format((XVariableDeclaration)entity, document);
-      return;
-    } else if (entity instanceof Entity) {
-      _format((Entity)entity, document);
       return;
     } else if (entity instanceof Field) {
       _format((Field)entity, document);
