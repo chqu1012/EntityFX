@@ -34,11 +34,10 @@ Features Generation:
 * Demo Application for each Entity Generation
 
 # ChangeLog
-
-<details><summary>## v1.0.20</summary>
+## <details><summary>v1.0.20</summary><pre>
 * Spring Support
 * Gradle Support
-</details>
+<pre></details>
 
 ## v1.0.19
 * Some BugFixes
