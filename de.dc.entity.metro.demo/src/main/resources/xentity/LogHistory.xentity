@@ -1,0 +1,28 @@
+packagePath de.dc.fx.ui.log.spring.history
+
+Entity LogHistory{
+	useSpring: true 
+  	showDetailsPanel: false
+  	showSearchPanel: false
+ 
+  	generateDemo: false
+ 
+	Field(name: Name, datatype:String, required: true, useByTableView: true, useByRepository: true)[ 
+		control: javafx.scene.control.TextField
+	] 
+	Field(name: Message, datatype:String, required: true, useByTableView: true, useByRepository: true)[ 
+		control: javafx.scene.control.TextField
+	]
+	Field(name: Status, datatype:Integer, required: true, useByTableView: true, useByRepository: true)[ 
+		control: javafx.scene.control.TextField
+	] 
+	
+	Field(name: CreatedOn, datatype:java.time.LocalDateTime, required: true, useByTableView: true, useByRepository: true)[ 
+		control: jfxtras.scene.control.LocalDateTimeTextField
+		binding: localDateTimeProperty
+	]
+			
+	Repository{
+		jdbcUrl: "jdbc:h2:file:./data/Repository;DB_CLOSE_ON_EXIT=true;"
+	}
+}

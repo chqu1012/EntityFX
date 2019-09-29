@@ -1,0 +1,7 @@
+packagePath de.dc.fx.ui.log.spring
+
+SpringMetro Log{
+	title: "My Application"
+	subtitle: "Small description for this application"
+	navigations: Log, LogHistory, About, Information 
+}

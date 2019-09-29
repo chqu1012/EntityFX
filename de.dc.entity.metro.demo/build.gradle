@@ -1,0 +1,44 @@
+buildscript {
+	repositories {
+		mavenCentral()
+		maven { url "http://maven.bestsolution.at/efxclipse-releases/" }
+		maven { url "https://mvnrepository.com/" }
+		maven { url "https://repo.spring.io/snapshot" }
+		maven { url "https://repo.spring.io/milestone" }
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:+")
+	}
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = 1.8
+
+repositories {
+	mavenCentral()
+	maven { url "https://mvnrepository.com/" }
+	maven { url "http://maven.bestsolution.at/efxclipse-releases/" }
+	maven { url "https://repo.spring.io/snapshot" }
+	maven { url "https://repo.spring.io/milestone" }
+}
+
+dependencies {
+	compile('org.springframework.boot:spring-boot-starter-data-jpa')
+	compile('org.springframework.boot:spring-boot-starter-validation')
+	compile group: 'com.jfoenix', name: 'jfoenix', version: '8.0.2'
+	compile group: 'org.controlsfx', name: 'controlsfx', version: '8.40.14'
+	runtime('com.h2database:h2')
+	compile group: 'org.jfxtras', name: 'jfxtras-labs', version: '8.0-r5'
+    compile group: 'commons-io', name: 'commons-io', version: '+'
+	compile group: 'org.eclipse.emf', name: 'org.eclipse.emf.common', version: '+'
+	compile group: 'org.eclipse.emf', name: 'org.eclipse.emf.ecore', version: '+'
+	compile group: 'org.eclipse.emf', name: 'org.eclipse.emf.ecore.xmi', version: '+'
+	compile group: 'at.bestsolution.efxclipse.rt', name: 'org.eclipse.fx.ui.controls', version: '+'
+	compile group: 'at.bestsolution.efxclipse.rt', name: 'org.eclipse.fx.ui.dialogs', version: '+'
+	compile group: 'org.apache.pdfbox', name: 'pdfbox', version: '2.0.16'
+}

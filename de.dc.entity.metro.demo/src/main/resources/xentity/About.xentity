@@ -1,0 +1,9 @@
+PageContainer{
+	Page About{
+		control: de.dc.fx.ui.log.spring.ui.AboutController
+	}
+	
+	Page Information{
+		control: de.dc.fx.ui.log.spring.ui.InformationController
+	}
+}
