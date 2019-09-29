@@ -64,6 +64,12 @@ Features Generation:
 # Minimum Requirements
 * Xtext: 2.14.0
 * Eclipse Build: 20190314 
+* FontAweseomFX 8.9
+* AnimateFX 1.2.1
+* controlsfx 8.40.12
+* fontawesomefx 8.9
+* jfxtras-common 8.0-r5
+* jfxtras-controls 8.0-r5
 
 # Installation
 * Download zip file
