@@ -6,7 +6,7 @@ Metro Style Application
 Metro Login Page, inspired by this [Metro UI Website](http://thevectorlab.net/metrolab/lock.html)
 ![Inspired by this [Metro UI Website](http://thevectorlab.net/metrolab/lock.html)](https://github.com/chqu1012/EntityFX/blob/master/de.dc.entity.resources/images/02-Metro_Login.PNG)
 
-![Metro Toolbar](https://github.com/chqu1012/EntityFX/blob/master/de.dc.entity.resources/images/02-Metro_Toolbar2.PNG)
+![Metro Toolbar](https://github.com/chqu1012/EntityFX/blob/master/de.dc.entity.resources/images/02-Metro_Toolbar3.PNG)
 
 ![Generated Metro Application](https://github.com/chqu1012/EntityFX/blob/master/de.dc.entity.resources/images/01_metro-example.PNG?raw=true)
 
