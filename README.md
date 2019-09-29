@@ -3,6 +3,9 @@ Using entity model to generate h2 data table structure, JavaFX forms, filtered t
 
 Metro Style Application
 
+Metro Login Page, inspired by this [Metro UI Website](http://thevectorlab.net/metrolab/lock.html)
+![Inspired by this [Metro UI Website](http://thevectorlab.net/metrolab/lock.html)](https://github.com/chqu1012/EntityFX/blob/master/de.dc.entity.resources/images/02-Metro_Login.PNG)
+
 ![Generated Metro Application](https://github.com/chqu1012/EntityFX/blob/master/de.dc.entity.resources/images/01_metro-example.PNG?raw=true)
 
 About Page
@@ -61,6 +64,12 @@ Features Generation:
 # Minimum Requirements
 * Xtext: 2.14.0
 * Eclipse Build: 20190314 
+* FontAweseomFX 8.9
+* AnimateFX 1.2.1
+* controlsfx 8.40.12
+* fontawesomefx 8.9
+* jfxtras-common 8.0-r5
+* jfxtras-controls 8.0-r5
 
 # Installation
 * Download zip file
