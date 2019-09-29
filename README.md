@@ -18,6 +18,9 @@ Classic Style Application
 
 ![Event Log History Example](https://github.com/chqu1012/EntityFX/blob/master/de.dc.entity.resources/images/02_EventLogHistory-Dsl.PNG)
 
+Metro Login Page
+![Inspired by this [Metro UI Website](http://thevectorlab.net/metrolab/lock.html)](https://github.com/chqu1012/EntityFX/blob/master/de.dc.entity.resources/images/02-Metro_Login.PNG)
+
 
 Features Generation:
 * Dependency Injection Module
