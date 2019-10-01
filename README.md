@@ -36,6 +36,12 @@ Features Generation:
 * Demo Application for each Entity Generation
 
 # ChangeLog
+## v1.0.24
+* Spring Security
+* Login Authentification
+* EventLogging
+* Fxml Referencing in Page
+* NavigationItem with icons / FontAwesomeFX
 ## v1.0.21
 * Small ui improvments
 ## v1.0.20
@@ -59,6 +65,7 @@ Features Generation:
 * Spring Support
 
 # Version
+* v1.0.24: [Download](https://github.com/chqu1012/EntityFX/blob/master/de.dc.entity.resources/builds/de.dc.entity.lang.update-v1.0.24.zip)
 * v1.0.21: [Download](https://github.com/chqu1012/EntityFX/blob/master/de.dc.entity.resources/builds/de.dc.entity.lang.update-v1.0.21.zip)
 * v1.0.20: [Download](https://github.com/chqu1012/EntityFX/blob/master/de.dc.entity.resources/builds/de.dc.entity.lang.update-v1.0.20.zip)
 * v1.0.19: [Download](https://github.com/chqu1012/EntityFX/blob/master/de.dc.entity.resources/builds/de.dc.entity.lang.update-v1.0.19.zip)
