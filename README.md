@@ -38,6 +38,8 @@ Features Generation:
 * Demo Application for each Entity Generation
 
 # ChangeLog
+## v1.0.26
+* Rest Web Service
 ## v1.0.25
 * Dark Theme Table Form
 * Prepared ListView Dark Theme with control panel
@@ -71,6 +73,7 @@ Features Generation:
 * Spring Support
 
 # Version
+* v1.0.26: [Download](https://github.com/chqu1012/EntityFX/blob/master/de.dc.entity.resources/builds/de.dc.entity.lang.update-v1.0.26.zip)
 * v1.0.25: [Download](https://github.com/chqu1012/EntityFX/blob/master/de.dc.entity.resources/builds/de.dc.entity.lang.update-v1.0.25.zip)
 * v1.0.24: [Download](https://github.com/chqu1012/EntityFX/blob/master/de.dc.entity.resources/builds/de.dc.entity.lang.update-v1.0.24.zip)
 * v1.0.21: [Download](https://github.com/chqu1012/EntityFX/blob/master/de.dc.entity.resources/builds/de.dc.entity.lang.update-v1.0.21.zip)
