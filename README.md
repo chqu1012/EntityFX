@@ -22,7 +22,7 @@ First Steps:
 Create a new project via context menu in PackageExplorer
 ![Create a new project](https://github.com/chqu1012/EntityFX/blob/master/de.dc.entity.resources/images/04-Tutorial_CreateProject.png)
 
-Choose the project type EntityFX
+Choose the project type EntityFX\
 ![Choose the project type EntityFX](https://github.com/chqu1012/EntityFX/blob/master/de.dc.entity.resources/images/04-Tutorial_ChooseProject.png)
 
 Give the project a name
