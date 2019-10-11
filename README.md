@@ -19,19 +19,19 @@ Preference Page with H2 Server User Interface
 
 # How To - Create a full applicaction project in less than 5 minutes
 First Steps:
-* Create a new project via context menu in PackageExplorer
+Create a new project via context menu in PackageExplorer
 ![Create a new project](https://github.com/chqu1012/EntityFX/blob/master/de.dc.entity.resources/images/04-Tutorial_CreateProject.png)
 
-* Choose the project type EntityFX
+Choose the project type EntityFX
 ![Choose the project type EntityFX](https://github.com/chqu1012/EntityFX/blob/master/de.dc.entity.resources/images/04-Tutorial_ChooseProject.png)
 
-* Give the project a name
+Give the project a name
 ![Give the project a name](https://github.com/chqu1012/EntityFX/blob/master/de.dc.entity.resources/images/04-Tutorial_ProjectName.png)
 
-* The project has a domain model, this model requires a name. This will be the database entity
+The project has a domain model, this model requires a name. This will be the database entity
 ![](https://github.com/chqu1012/EntityFX/blob/master/de.dc.entity.resources/images/04-Tutorial_ModelName.png)
 
-* Generated project folder structure with some default files, e.g. gradle dependencies, dsl files for the applciations, etc.
+Generated project folder structure with some default files, e.g. gradle dependencies, dsl files for the applciations, etc.
 ![](https://github.com/chqu1012/EntityFX/blob/master/de.dc.entity.resources/images/04-Tutorial_GenerateProject.png)
 
 Features Generation:
