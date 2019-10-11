@@ -20,7 +20,7 @@ Preference Page with H2 Server User Interface
 
 # Custom Controls
 ## Metro TimeLine
-![Metro Timeline](https://github.com/chqu1012/EntityFX/blob/master/de.dc.entity.resources/images/03-Custom_Timeline.PNG)
+![Metro Timeline](https://github.com/chqu1012/EntityFX/blob/master/de.dc.entity.resources/images/03-Custom_Timeline2.PNG)
 
 Features Generation:
 * Dependency Injection Module
