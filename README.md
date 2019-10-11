@@ -15,7 +15,7 @@ Preference Page with H2 Server User Interface
 
 # Custom Controls
 ## Metro TimeLine
-![Metro Timeline](https://github.com/chqu1012/EntityFX/blob/master/de.dc.entity.resources/images/03-Custom_Timeline3.PNG)
+![Metro Timeline](https://github.com/chqu1012/EntityFX/blob/master/de.dc.entity.resources/images/03-Custom_Timeline4.PNG)
 
 # How To - Create a full applicaction project in less than 5 minutes
 First Steps:
