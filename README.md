@@ -1,4 +1,4 @@
-# EntityFX
+# EntityFX - Fast way to create a JavaFX Form Application with Spring Boot, H2 Database and Rest Services
 Using entity model to generate h2 data table structure, JavaFX forms, filtered tableview, search dialog and more
 
 Metro Style Application
@@ -21,6 +21,19 @@ Preference Page with H2 Server User Interface
 # Custom Controls
 ## Metro TimeLine
 ![Metro Timeline](https://github.com/chqu1012/EntityFX/blob/master/de.dc.entity.resources/images/03-Custom_Timeline2.PNG)
+
+# How To - Create a full applicaction project in less than 5 minutes
+First Steps:
+* Create a new project via context menu in PackageExplorer
+  ![](https://github.com/chqu1012/EntityFX/blob/master/de.dc.entity.resources/images/04-Tutorial_CreateProject.png)
+* Choose the project type EntityFX
+  ![](https://github.com/chqu1012/EntityFX/blob/master/de.dc.entity.resources/images/04-Tutorial_ChooseProject.png)
+* Give the project a name
+  ![](https://github.com/chqu1012/EntityFX/blob/master/de.dc.entity.resources/images/04-Tutorial_ProjectName.png)
+* The project has a domain model, this model requires a name. This will be the database entity
+  ![](https://github.com/chqu1012/EntityFX/blob/master/de.dc.entity.resources/images/04-Tutorial_ModelName.png)
+* Generated project folder structure with some default files, e.g. gradle dependencies, dsl files for the applciations, etc.
+  ![](https://github.com/chqu1012/EntityFX/blob/master/de.dc.entity.resources/images/04-Tutorial_GenerateProject.png)
 
 Features Generation:
 * Dependency Injection Module
