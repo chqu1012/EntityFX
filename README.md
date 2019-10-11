@@ -15,8 +15,8 @@ Preference Page with H2 Server User Interface
 
 # Custom Controls
 ## Metro TimeLine
-![Metro Timeline](https://github.com/chqu1012/EntityFX/blob/master/de.dc.entity.resources/images/03-Custom_Timeline4.PNG | width=100))
-![Metro Timeline](https://github.com/chqu1012/EntityFX/blob/master/de.dc.entity.resources/images/03-Custom_Timeline5.PNG | width=100))
+![Metro Timeline](https://github.com/chqu1012/EntityFX/blob/master/de.dc.entity.resources/images/03-Custom_Timeline4.PNG | width=100)
+![Metro Timeline](https://github.com/chqu1012/EntityFX/blob/master/de.dc.entity.resources/images/03-Custom_Timeline5.PNG | width=100)
 ## Metro Login 
 ![](https://github.com/chqu1012/EntityFX/blob/master/de.dc.entity.resources/images/03-Custom_Login.PNG)
 
