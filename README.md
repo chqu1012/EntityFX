@@ -8,23 +8,19 @@ Metro Login Page, inspired by this [Metro UI Website](http://thevectorlab.net/me
 
 ![Metro Table Dark Theme](https://github.com/chqu1012/EntityFX/blob/master/de.dc.entity.resources/images/02-Metro_DarkTheme.PNG)
 
-![Metro Toolbar](https://github.com/chqu1012/EntityFX/blob/master/de.dc.entity.resources/images/02-Metro_Toolbar3.PNG)
-
-![Generated Metro Application](https://github.com/chqu1012/EntityFX/blob/master/de.dc.entity.resources/images/01_metro-example.PNG?raw=true)
-
 About Page
 ![About Pane](https://github.com/chqu1012/EntityFX/blob/master/de.dc.entity.resources/images/02_About-Pane.PNG)
 
 Preference Page with H2 Server User Interface
 ![Preference Page](https://github.com/chqu1012/EntityFX/blob/master/de.dc.entity.resources/images/02_H2_Console_Access.PNG)
 
-Classic Style Application
-![Generated Metro Application](https://github.com/chqu1012/EntityFX/blob/master/de.dc.entity.resources/images/01_classic-example.PNG)
-
 ![Event Log Example](https://github.com/chqu1012/EntityFX/blob/master/de.dc.entity.resources/images/02_EventLog-Dsl.PNG)
 
 ![Event Log History Example](https://github.com/chqu1012/EntityFX/blob/master/de.dc.entity.resources/images/02_EventLogHistory-Dsl.PNG)
 
+# Custom Controls
+## Metro TimeLine
+![Metro Timeline](https://github.com/chqu1012/EntityFX/blob/master/de.dc.entity.resources/images/03-Custom_Timeline.PNG)
 
 Features Generation:
 * Dependency Injection Module
