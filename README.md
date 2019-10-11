@@ -5,17 +5,12 @@ Metro Style Application
 
 Metro Login Page, inspired by this [Metro UI Website](http://thevectorlab.net/metrolab/lock.html)
 ![Inspired by this [Metro UI Website](http://thevectorlab.net/metrolab/lock.html)](https://github.com/chqu1012/EntityFX/blob/master/de.dc.entity.resources/images/02-Metro_Login.PNG)
-
 ![Metro Table Dark Theme](https://github.com/chqu1012/EntityFX/blob/master/de.dc.entity.resources/images/02-Metro_DarkTheme.PNG)
-
 About Page
 ![About Pane](https://github.com/chqu1012/EntityFX/blob/master/de.dc.entity.resources/images/02_About-Pane.PNG)
-
 Preference Page with H2 Server User Interface
 ![Preference Page](https://github.com/chqu1012/EntityFX/blob/master/de.dc.entity.resources/images/02_H2_Console_Access.PNG)
-
 ![Event Log Example](https://github.com/chqu1012/EntityFX/blob/master/de.dc.entity.resources/images/02_EventLog-Dsl.PNG)
-
 ![Event Log History Example](https://github.com/chqu1012/EntityFX/blob/master/de.dc.entity.resources/images/02_EventLogHistory-Dsl.PNG)
 
 # Custom Controls
@@ -25,15 +20,19 @@ Preference Page with H2 Server User Interface
 # How To - Create a full applicaction project in less than 5 minutes
 First Steps:
 * Create a new project via context menu in PackageExplorer
-  ![](https://github.com/chqu1012/EntityFX/blob/master/de.dc.entity.resources/images/04-Tutorial_CreateProject.png)
+![Create a new project](https://github.com/chqu1012/EntityFX/blob/master/de.dc.entity.resources/images/04-Tutorial_CreateProject.png)
+
 * Choose the project type EntityFX
-  ![](https://github.com/chqu1012/EntityFX/blob/master/de.dc.entity.resources/images/04-Tutorial_ChooseProject.png)
+![Choose the project type EntityFX](https://github.com/chqu1012/EntityFX/blob/master/de.dc.entity.resources/images/04-Tutorial_ChooseProject.png)
+
 * Give the project a name
-  ![](https://github.com/chqu1012/EntityFX/blob/master/de.dc.entity.resources/images/04-Tutorial_ProjectName.png)
+![Give the project a name](https://github.com/chqu1012/EntityFX/blob/master/de.dc.entity.resources/images/04-Tutorial_ProjectName.png)
+
 * The project has a domain model, this model requires a name. This will be the database entity
-  ![](https://github.com/chqu1012/EntityFX/blob/master/de.dc.entity.resources/images/04-Tutorial_ModelName.png)
+![](https://github.com/chqu1012/EntityFX/blob/master/de.dc.entity.resources/images/04-Tutorial_ModelName.png)
+
 * Generated project folder structure with some default files, e.g. gradle dependencies, dsl files for the applciations, etc.
-  ![](https://github.com/chqu1012/EntityFX/blob/master/de.dc.entity.resources/images/04-Tutorial_GenerateProject.png)
+![](https://github.com/chqu1012/EntityFX/blob/master/de.dc.entity.resources/images/04-Tutorial_GenerateProject.png)
 
 Features Generation:
 * Dependency Injection Module
