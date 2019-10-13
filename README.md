@@ -5,6 +5,9 @@ Metro Style Application
 
 Metro Login Page, inspired by this [Metro UI Website](http://thevectorlab.net/metrolab/lock.html)
 ![Inspired by this [Metro UI Website](http://thevectorlab.net/metrolab/lock.html)](https://github.com/chqu1012/EntityFX/blob/master/de.dc.entity.resources/images/02-Metro_Login.PNG)
+
+![Inspired by this [Metro UI Website](http://thevectorlab.net/metrolab/lock.html)](https://github.com/chqu1012/EntityFX/blob/master/de.dc.entity.resources/images/02-Metro_Flat_TableView.PNG)
+
 ![Metro Table Dark Theme](https://github.com/chqu1012/EntityFX/blob/master/de.dc.entity.resources/images/02-Metro_DarkTheme.PNG)
 About Page
 ![About Pane](https://github.com/chqu1012/EntityFX/blob/master/de.dc.entity.resources/images/02_About-Pane.PNG)
@@ -51,6 +54,10 @@ Features Generation:
 * Demo Application for each Entity Generation
 
 # ChangeLog
+## v1.0.29
+* Custom Control Metro Timeline
+* Custom Control Metro TableView
+* Metro Flat Theme
 ## v1.0.27
 * Preference Page H2 Console
 * Cell Features creation
@@ -89,6 +96,7 @@ Features Generation:
 * Spring Support
 
 # Version
+* v1.0.29: [Download](https://github.com/chqu1012/EntityFX/blob/master/de.dc.entity.resources/builds/de.dc.entity.lang.update-v1.0.29.zip)
 * v1.0.27: [Download](https://github.com/chqu1012/EntityFX/blob/master/de.dc.entity.resources/builds/de.dc.entity.lang.update-v1.0.27.zip)
 * v1.0.26: [Download](https://github.com/chqu1012/EntityFX/blob/master/de.dc.entity.resources/builds/de.dc.entity.lang.update-v1.0.26.zip)
 * v1.0.25: [Download](https://github.com/chqu1012/EntityFX/blob/master/de.dc.entity.resources/builds/de.dc.entity.lang.update-v1.0.25.zip)
