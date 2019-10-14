@@ -56,6 +56,10 @@ Features Generation:
 * Demo Application for each Entity Generation
 
 # ChangeLog
+## v1.0.30
+* Metro Agiler Board
+* Metro Agile Group
+* Metro Agile Cell Render
 ## v1.0.29
 * Custom Control Metro Timeline
 * Custom Control Metro TableView
@@ -98,6 +102,7 @@ Features Generation:
 * Spring Support
 
 # Version
+* v1.0.30: [Download](https://github.com/chqu1012/EntityFX/blob/master/de.dc.entity.resources/builds/de.dc.entity.lang.update-v1.0.30.zip)
 * v1.0.29: [Download](https://github.com/chqu1012/EntityFX/blob/master/de.dc.entity.resources/builds/de.dc.entity.lang.update-v1.0.29.zip)
 * v1.0.27: [Download](https://github.com/chqu1012/EntityFX/blob/master/de.dc.entity.resources/builds/de.dc.entity.lang.update-v1.0.27.zip)
 * v1.0.26: [Download](https://github.com/chqu1012/EntityFX/blob/master/de.dc.entity.resources/builds/de.dc.entity.lang.update-v1.0.26.zip)
