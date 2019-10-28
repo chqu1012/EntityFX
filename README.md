@@ -58,6 +58,8 @@ Features Generation:
 * Demo Application for each Entity Generation
 
 # ChangeLog
+## v1.0.32
+* Pojo Table Form Editing Mode
 ## v1.0.31
 * Pojo based TableForm Rendering
 ## v1.0.30
@@ -106,6 +108,7 @@ Features Generation:
 * Spring Support
 
 # Version
+* v1.0.33: [Download](https://github.com/chqu1012/EntityFX/blob/master/de.dc.entity.resources/builds/de.dc.entity.lang.update-v1.0.33.zip)
 * v1.0.31: [Download](https://github.com/chqu1012/EntityFX/blob/master/de.dc.entity.resources/builds/de.dc.entity.lang.update-v1.0.31.zip)
 * v1.0.30: [Download](https://github.com/chqu1012/EntityFX/blob/master/de.dc.entity.resources/builds/de.dc.entity.lang.update-v1.0.30.zip)
 * v1.0.29: [Download](https://github.com/chqu1012/EntityFX/blob/master/de.dc.entity.resources/builds/de.dc.entity.lang.update-v1.0.29.zip)
