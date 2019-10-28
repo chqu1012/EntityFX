@@ -1,6 +1,8 @@
 # EntityFX - Fast way to create a JavaFX Form Application with Spring Boot, H2 Database and Rest Services
 Using entity model to generate h2 data table structure, JavaFX forms, filtered tableview, search dialog and more
 
+Please visit the Wiki Page for more details (Link)[https://github.com/chqu1012/EntityFX/wiki]
+
 Metro Style Application
 
 Metro Login Page, inspired by this [Metro UI Website](http://thevectorlab.net/metrolab/lock.html)
