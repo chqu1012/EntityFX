@@ -28,6 +28,8 @@ Preference Page with H2 Server User Interface
 ![](https://github.com/chqu1012/EntityFX/blob/master/de.dc.entity.resources/images/03-Custom_LightTableView.PNG)
 ## Metro Agiler
 ![](https://github.com/chqu1012/EntityFX/blob/master/de.dc.entity.resources/images/02-Metro_Agiler.PNG)
+## FilteredTableView
+![](https://github.com/chqu1012/EntityFX/blob/master/de.dc.entity.resources/images/03-Custom_FilteredTableView.PNG)
 
 # How To - Create a full applicaction project in less than 5 minutes
 First Steps:
